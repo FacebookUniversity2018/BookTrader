@@ -12,7 +12,7 @@
 
 5.) User Profile with Books 
 
-6.) Search by name, genre, 
+6.) Search by name, genre
 
 
 **Optional:**
