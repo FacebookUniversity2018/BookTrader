@@ -21,7 +21,7 @@
 
 3.) 
 
-**API Endpoints**
+**API Endpoints:**
 
 Facebook API
 
