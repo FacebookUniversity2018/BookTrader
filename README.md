@@ -6,7 +6,7 @@
 
 2.) CV Barcode Scan w/ API database
 
-3.) Facebook Login + Messenger access
+3.) Facebook Login + Messenger/Text message access
 
 4.) Parse Backend to store Users and Books associated with User
 
