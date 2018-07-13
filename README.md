@@ -21,7 +21,7 @@
 
 2.) Messenger in App rather than outsourced
 
-3.) 
+3.) Location Services 
 
 **API Endpoints:**
 
