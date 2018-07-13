@@ -27,4 +27,17 @@ Facebook API
 
 Amazon API/Google Books API
 
+**Model Classes:**
+
+Book
+
+
+
+**UI**
+Side Bar with Profile, Notifications, Messages, Post Book (link to Camera)
+Button: Bookshelf
+
+
+
+
 
