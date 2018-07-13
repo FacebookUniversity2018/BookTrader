@@ -1,6 +1,6 @@
 # BookTrader
 
-Required:
+**Required:**
 
 1.) MapKit 
 
@@ -13,12 +13,18 @@ Required:
 5.) User Profile with Books 
 
 
-Optional:
+**Optional:**
 
 1.) Alert when someone posts a book you're looking for
 
 2.) Messenger in App rather than outsourced
 
 3.) 
+
+**API Endpoints**
+
+Facebook API
+
+Amazon API/Google Books API
 
 
