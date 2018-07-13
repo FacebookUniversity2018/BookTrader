@@ -27,7 +27,7 @@
 
 Facebook API
 
-Amazon API/Google Books API
+Amazon API/Google Books API/Open Library Covers
 
 **Model Classes:**
 
