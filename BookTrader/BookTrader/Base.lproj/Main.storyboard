@@ -90,37 +90,58 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="messageCell" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-Lr-IOU">
+                                                <view contentMode="scaleToFill" restorationIdentifier="messageCell" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-Lr-IOU">
                                                     <rect key="frame" x="0.0" y="-42" width="375" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter_profile" translatesAutoresizingMaskIntoConstraints="NO" id="i2R-MJ-Acp">
+                                                            <rect key="frame" x="20" y="54" width="45" height="45"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="45" id="LUZ-r0-oCF"/>
+                                                                <constraint firstAttribute="height" constant="45" id="drc-mz-Afy"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connor Clancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF8-To-0xM">
+                                                            <rect key="frame" x="81" y="53" width="121" height="21"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi hopefully this works" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIr-1o-zp6">
+                                                            <rect key="frame" x="81" y="75" width="273" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-uI-k04">
+                                                            <rect key="frame" x="288" y="52" width="66" height="18"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.96470588235294119" green="0.76078431372549016" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="hQB-uI-k04" firstAttribute="top" secondItem="pfP-Lr-IOU" secondAttribute="top" constant="52" id="2d6-oU-5qb"/>
+                                                        <constraint firstItem="i2R-MJ-Acp" firstAttribute="top" secondItem="pfP-Lr-IOU" secondAttribute="top" constant="54" id="EZh-6X-kPH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="hQB-uI-k04" secondAttribute="trailing" constant="21" id="Gmo-YT-fQi"/>
+                                                        <constraint firstItem="jF8-To-0xM" firstAttribute="top" secondItem="pfP-Lr-IOU" secondAttribute="top" constant="53" id="KdI-5w-Yaj"/>
+                                                        <constraint firstAttribute="width" constant="375" id="euh-Tf-Aql"/>
+                                                        <constraint firstItem="jF8-To-0xM" firstAttribute="leading" secondItem="i2R-MJ-Acp" secondAttribute="trailing" constant="16" id="geD-yD-WNe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="JIr-1o-zp6" secondAttribute="trailing" constant="21" id="gfZ-Sq-B0e"/>
+                                                        <constraint firstItem="JIr-1o-zp6" firstAttribute="top" secondItem="jF8-To-0xM" secondAttribute="bottom" constant="1" id="okM-qA-UHs"/>
+                                                        <constraint firstItem="hQB-uI-k04" firstAttribute="leading" secondItem="JIr-1o-zp6" secondAttribute="trailing" constant="-66" id="w0Z-9k-XCp"/>
+                                                        <constraint firstItem="i2R-MJ-Acp" firstAttribute="leading" secondItem="pfP-Lr-IOU" secondAttribute="leading" constant="20" id="xTe-Fu-bBW"/>
+                                                        <constraint firstItem="JIr-1o-zp6" firstAttribute="leading" secondItem="i2R-MJ-Acp" secondAttribute="trailing" constant="16" id="yHI-3p-oGF"/>
+                                                        <constraint firstAttribute="bottom" secondItem="i2R-MJ-Acp" secondAttribute="bottom" constant="29" id="yau-uD-uVu"/>
+                                                    </constraints>
                                                 </view>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_profile" translatesAutoresizingMaskIntoConstraints="NO" id="i2R-MJ-Acp">
-                                                    <rect key="frame" x="25" y="-10" width="45" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connor Clancy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jF8-To-0xM">
-                                                    <rect key="frame" x="86" y="-11" width="121" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hello how are you the quick brown fox jumped over the slow lazy dog" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIr-1o-zp6">
-                                                    <rect key="frame" x="86" y="11" width="273" height="54"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-uI-k04">
-                                                    <rect key="frame" x="293" y="-12" width="66" height="18"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pfP-Lr-IOU" firstAttribute="leading" secondItem="42k-s1-7yL" secondAttribute="leading" id="0F1-g3-j3A"/>
+                                                <constraint firstAttribute="trailing" secondItem="pfP-Lr-IOU" secondAttribute="trailing" id="5ok-U1-Hs5"/>
+                                                <constraint firstAttribute="bottom" secondItem="pfP-Lr-IOU" secondAttribute="bottom" constant="-10.5" id="9QS-cQ-ewv"/>
+                                                <constraint firstItem="pfP-Lr-IOU" firstAttribute="top" secondItem="42k-s1-7yL" secondAttribute="top" constant="-42" id="MHk-XE-n3d"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="hQB-uI-k04" id="pW6-UA-uuQ"/>
@@ -663,7 +684,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow" width="39" height="21"/>
+        <image name="books footer" width="339" height="36"/>
+        <image name="burger" width="23" height="17"/>
         <image name="iconmonstr-checkbox-6-240" width="240" height="240"/>
         <image name="images" width="173" height="291"/>
+        <image name="rating bar" width="105" height="13"/>
+        <image name="twitter_profile" width="400" height="400"/>
     </resources>
 </document>
