@@ -15,6 +15,17 @@
 		CE11885820FD0B8200C088BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11885720FD0B8200C088BA /* main.m */; };
 		CE11886220FD0B8200C088BA /* BookTraderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11886120FD0B8200C088BA /* BookTraderTests.m */; };
 		CE11886D20FD0B8200C088BA /* BookTraderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11886C20FD0B8200C088BA /* BookTraderUITests.m */; };
+		CE11889420FD0DA600C088BA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11889320FD0DA600C088BA /* LoginViewController.m */; };
+		CE11889720FD0DB100C088BA /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11889620FD0DB100C088BA /* SignUpViewController.m */; };
+		CE11889A20FD0E1500C088BA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11889920FD0E1500C088BA /* HomeViewController.m */; };
+		CE11889D20FD0ED600C088BA /* HomeNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11889C20FD0ED600C088BA /* HomeNavigationViewController.m */; };
+		CE1188A020FD0F0400C088BA /* MessagesHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11889F20FD0F0400C088BA /* MessagesHomeViewController.m */; };
+		CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188A220FD0F1100C088BA /* MessagesDetailViewController.m */; };
+		CE1188A920FD0F4400C088BA /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188A820FD0F4400C088BA /* BookDetailViewController.m */; };
+		CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188AB20FD0FA400C088BA /* BarcodeAddViewController.m */; };
+		CE1188AF20FD0FD500C088BA /* AddBookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188AE20FD0FD500C088BA /* AddBookDetailsViewController.m */; };
+		CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188B120FD105800C088BA /* PersonalUserViewController.m */; };
+		CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188B420FD106400C088BA /* OtherPersonViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +62,28 @@
 		CE11886820FD0B8200C088BA /* BookTraderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookTraderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE11886C20FD0B8200C088BA /* BookTraderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookTraderUITests.m; sourceTree = "<group>"; };
 		CE11886E20FD0B8200C088BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE11889220FD0DA600C088BA /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CE11889320FD0DA600C088BA /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CE11889520FD0DB100C088BA /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		CE11889620FD0DB100C088BA /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		CE11889820FD0E1500C088BA /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		CE11889920FD0E1500C088BA /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		CE11889B20FD0ED600C088BA /* HomeNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeNavigationViewController.h; sourceTree = "<group>"; };
+		CE11889C20FD0ED600C088BA /* HomeNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeNavigationViewController.m; sourceTree = "<group>"; };
+		CE11889E20FD0F0400C088BA /* MessagesHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesHomeViewController.h; sourceTree = "<group>"; };
+		CE11889F20FD0F0400C088BA /* MessagesHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesHomeViewController.m; sourceTree = "<group>"; };
+		CE1188A120FD0F1100C088BA /* MessagesDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesDetailViewController.h; sourceTree = "<group>"; };
+		CE1188A220FD0F1100C088BA /* MessagesDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesDetailViewController.m; sourceTree = "<group>"; };
+		CE1188A720FD0F4400C088BA /* BookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		CE1188A820FD0F4400C088BA /* BookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
+		CE1188AA20FD0FA400C088BA /* BarcodeAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarcodeAddViewController.h; sourceTree = "<group>"; };
+		CE1188AB20FD0FA400C088BA /* BarcodeAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarcodeAddViewController.m; sourceTree = "<group>"; };
+		CE1188AD20FD0FD500C088BA /* AddBookDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddBookDetailsViewController.h; sourceTree = "<group>"; };
+		CE1188AE20FD0FD500C088BA /* AddBookDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBookDetailsViewController.m; sourceTree = "<group>"; };
+		CE1188B020FD105800C088BA /* PersonalUserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalUserViewController.h; sourceTree = "<group>"; };
+		CE1188B120FD105800C088BA /* PersonalUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalUserViewController.m; sourceTree = "<group>"; };
+		CE1188B320FD106400C088BA /* OtherPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherPersonViewController.h; sourceTree = "<group>"; };
+		CE1188B420FD106400C088BA /* OtherPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherPersonViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +134,15 @@
 		CE11884720FD0B8200C088BA /* BookTrader */ = {
 			isa = PBXGroup;
 			children = (
+				CE1188A620FD0F3300C088BA /* Controllers */,
+				CE1188A520FD0F2C00C088BA /* Views */,
+				CE1188A420FD0F2700C088BA /* Models */,
+				CE11887E20FD0C8800C088BA /* Services */,
+				CE11887F20FD0C9600C088BA /* AddBook */,
+				CE11887D20FD0C8200C088BA /* Messages */,
+				CE11887C20FD0C6C00C088BA /* UserProfile */,
+				CE11887B20FD0C6200C088BA /* HomeMap */,
+				CE11887A20FD0C3900C088BA /* FIrstStop */,
 				CE11884820FD0B8200C088BA /* AppDelegate.h */,
 				CE11884920FD0B8200C088BA /* AppDelegate.m */,
 				CE11884B20FD0B8200C088BA /* ViewController.h */,
@@ -130,6 +172,211 @@
 				CE11886E20FD0B8200C088BA /* Info.plist */,
 			);
 			path = BookTraderUITests;
+			sourceTree = "<group>";
+		};
+		CE11887A20FD0C3900C088BA /* FIrstStop */ = {
+			isa = PBXGroup;
+			children = (
+				CE11888E20FD0D1B00C088BA /* Controllers */,
+				CE11888D20FD0D1500C088BA /* Views */,
+				CE11888C20FD0D1100C088BA /* Models */,
+			);
+			path = FIrstStop;
+			sourceTree = "<group>";
+		};
+		CE11887B20FD0C6200C088BA /* HomeMap */ = {
+			isa = PBXGroup;
+			children = (
+				CE11888B20FD0D0600C088BA /* Controllers */,
+				CE11888A20FD0D0100C088BA /* Views */,
+				CE11888920FD0CFC00C088BA /* Models */,
+			);
+			path = HomeMap;
+			sourceTree = "<group>";
+		};
+		CE11887C20FD0C6C00C088BA /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				CE11888820FD0CF600C088BA /* Controllers */,
+				CE11888720FD0CF200C088BA /* Views */,
+				CE11888620FD0CEC00C088BA /* Models */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		CE11887D20FD0C8200C088BA /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				CE11888520FD0CE600C088BA /* Controllers */,
+				CE11888420FD0CE200C088BA /* Views */,
+				CE11888320FD0CDB00C088BA /* Models */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		CE11887E20FD0C8800C088BA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE11887F20FD0C9600C088BA /* AddBook */ = {
+			isa = PBXGroup;
+			children = (
+				CE11888220FD0CBD00C088BA /* Controllers */,
+				CE11888120FD0CB900C088BA /* Views */,
+				CE11888020FD0CB100C088BA /* Models */,
+			);
+			path = AddBook;
+			sourceTree = "<group>";
+		};
+		CE11888020FD0CB100C088BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE11888120FD0CB900C088BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE11888220FD0CBD00C088BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1188AA20FD0FA400C088BA /* BarcodeAddViewController.h */,
+				CE1188AB20FD0FA400C088BA /* BarcodeAddViewController.m */,
+				CE1188AD20FD0FD500C088BA /* AddBookDetailsViewController.h */,
+				CE1188AE20FD0FD500C088BA /* AddBookDetailsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE11888320FD0CDB00C088BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE11888420FD0CE200C088BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE11888520FD0CE600C088BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE11889E20FD0F0400C088BA /* MessagesHomeViewController.h */,
+				CE11889F20FD0F0400C088BA /* MessagesHomeViewController.m */,
+				CE1188A120FD0F1100C088BA /* MessagesDetailViewController.h */,
+				CE1188A220FD0F1100C088BA /* MessagesDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE11888620FD0CEC00C088BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE11888720FD0CF200C088BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE11888820FD0CF600C088BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1188B020FD105800C088BA /* PersonalUserViewController.h */,
+				CE1188B120FD105800C088BA /* PersonalUserViewController.m */,
+				CE1188B320FD106400C088BA /* OtherPersonViewController.h */,
+				CE1188B420FD106400C088BA /* OtherPersonViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE11888920FD0CFC00C088BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE11888A20FD0D0100C088BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE11888B20FD0D0600C088BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE11889820FD0E1500C088BA /* HomeViewController.h */,
+				CE11889920FD0E1500C088BA /* HomeViewController.m */,
+				CE11889B20FD0ED600C088BA /* HomeNavigationViewController.h */,
+				CE11889C20FD0ED600C088BA /* HomeNavigationViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE11888C20FD0D1100C088BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE11888D20FD0D1500C088BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE11888E20FD0D1B00C088BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE11889220FD0DA600C088BA /* LoginViewController.h */,
+				CE11889320FD0DA600C088BA /* LoginViewController.m */,
+				CE11889520FD0DB100C088BA /* SignUpViewController.h */,
+				CE11889620FD0DB100C088BA /* SignUpViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE1188A420FD0F2700C088BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CE1188A520FD0F2C00C088BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE1188A620FD0F3300C088BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE1188A720FD0F4400C088BA /* BookDetailViewController.h */,
+				CE1188A820FD0F4400C088BA /* BookDetailViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +509,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE11889420FD0DA600C088BA /* LoginViewController.m in Sources */,
+				CE11889720FD0DB100C088BA /* SignUpViewController.m in Sources */,
+				CE11889D20FD0ED600C088BA /* HomeNavigationViewController.m in Sources */,
+				CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */,
+				CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */,
+				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
 				CE11884D20FD0B8200C088BA /* ViewController.m in Sources */,
 				CE11885820FD0B8200C088BA /* main.m in Sources */,
+				CE1188A920FD0F4400C088BA /* BookDetailViewController.m in Sources */,
 				CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */,
+				CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */,
+				CE11889A20FD0E1500C088BA /* HomeViewController.m in Sources */,
+				CE1188AF20FD0FD500C088BA /* AddBookDetailsViewController.m in Sources */,
+				CE1188A020FD0F0400C088BA /* MessagesHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
