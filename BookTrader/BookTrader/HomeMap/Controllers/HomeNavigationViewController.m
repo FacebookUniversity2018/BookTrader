@@ -7,8 +7,11 @@
 //
 
 #import "HomeNavigationViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface HomeNavigationViewController ()
+@interface HomeNavigationViewController () <MKMapViewDelegate>
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @end
 
@@ -17,6 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    // set up map view
+    self.mapView.delegate = self;
+    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
+    [self.mapView setRegion:sfRegion animated:false];
+    
 }
 
 - (void)didReceiveMemoryWarning {
