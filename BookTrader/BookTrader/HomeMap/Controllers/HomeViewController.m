@@ -7,8 +7,13 @@
 //
 
 #import "HomeViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface HomeViewController ()
+@interface HomeViewController () <MKMapViewDelegate>
+
+@property (strong, nonatomic) IBOutlet MKMapView *mapView;
+
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -16,7 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    // set up map view
+    self.mapView.delegate = self;
+    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
+    [self.mapView setRegion:sfRegion animated:false];
+    
+    // set up search bar
+    self.searchBar.layer.borderWidth = 0.0;
+    [self.searchBar setBackgroundImage:[UIImage new]];
 }
 
 - (void)didReceiveMemoryWarning {

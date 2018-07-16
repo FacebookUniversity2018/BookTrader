@@ -26,6 +26,10 @@
 		CE1188AF20FD0FD500C088BA /* AddBookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188AE20FD0FD500C088BA /* AddBookDetailsViewController.m */; };
 		CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188B120FD105800C088BA /* PersonalUserViewController.m */; };
 		CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188B420FD106400C088BA /* OtherPersonViewController.m */; };
+		CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE201B7F20FD33E10055EE13 /* BTUITools.m */; };
+		CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE201B8220FD36840055EE13 /* MapKit.framework */; };
+		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
+		CEDDDD0120FD51A2007AF20B /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,13 @@
 		CE1188B120FD105800C088BA /* PersonalUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalUserViewController.m; sourceTree = "<group>"; };
 		CE1188B320FD106400C088BA /* OtherPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherPersonViewController.h; sourceTree = "<group>"; };
 		CE1188B420FD106400C088BA /* OtherPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherPersonViewController.m; sourceTree = "<group>"; };
+		CE201B7E20FD33E10055EE13 /* BTUITools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTUITools.h; sourceTree = "<group>"; };
+		CE201B7F20FD33E10055EE13 /* BTUITools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTUITools.m; sourceTree = "<group>"; };
+		CE201B8220FD36840055EE13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CEDDDCFC20FD4CC8007AF20B /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		CEDDDCFF20FD51A2007AF20B /* MessageDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailCell.h; sourceTree = "<group>"; };
+		CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +130,7 @@
 				CE11886020FD0B8200C088BA /* BookTraderTests */,
 				CE11886B20FD0B8200C088BA /* BookTraderUITests */,
 				CE11884620FD0B8200C088BA /* Products */,
+				CE201B8120FD36840055EE13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -217,6 +230,7 @@
 		CE11887E20FD0C8800C088BA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CE201B7D20FD333F0055EE13 /* UI Tools */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -266,6 +280,10 @@
 		CE11888420FD0CE200C088BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEDDDCFC20FD4CC8007AF20B /* MessageCell.h */,
+				CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */,
+				CEDDDCFF20FD51A2007AF20B /* MessageDetailCell.h */,
+				CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -377,6 +395,23 @@
 				CE1188A820FD0F4400C088BA /* BookDetailViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE201B7D20FD333F0055EE13 /* UI Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CE201B7E20FD33E10055EE13 /* BTUITools.h */,
+				CE201B7F20FD33E10055EE13 /* BTUITools.m */,
+			);
+			path = "UI Tools";
+			sourceTree = "<group>";
+		};
+		CE201B8120FD36840055EE13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE201B8220FD36840055EE13 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,9 +545,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE11889420FD0DA600C088BA /* LoginViewController.m in Sources */,
+				CEDDDD0120FD51A2007AF20B /* MessageDetailCell.m in Sources */,
 				CE11889720FD0DB100C088BA /* SignUpViewController.m in Sources */,
 				CE11889D20FD0ED600C088BA /* HomeNavigationViewController.m in Sources */,
 				CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */,
+				CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */,
 				CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */,
 				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
 				CE11884D20FD0B8200C088BA /* ViewController.m in Sources */,
@@ -521,6 +558,7 @@
 				CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */,
 				CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */,
 				CE11889A20FD0E1500C088BA /* HomeViewController.m in Sources */,
+				CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */,
 				CE1188AF20FD0FD500C088BA /* AddBookDetailsViewController.m in Sources */,
 				CE1188A020FD0F0400C088BA /* MessagesHomeViewController.m in Sources */,
 			);
