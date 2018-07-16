@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b8a-Ca-i9R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E3D-dC-mLf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -69,6 +69,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SZ-NH-jA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4377" y="260"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JjR-FH-gmN">
+            <objects>
+                <navigationController id="E3D-dC-mLf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RVk-c6-7Be">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jye-pn-jVo" kind="relationship" relationship="rootViewController" id="2IP-Ev-fA8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0a4-tf-99s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2241" y="1814"/>
         </scene>
         <!--Messages Home View Controller-->
         <scene sceneID="5tn-qY-bXE">
@@ -148,6 +164,7 @@
                                             <outlet property="nameLabel" destination="jF8-To-0xM" id="t2a-q6-EZj"/>
                                             <outlet property="previewLabel" destination="JIr-1o-zp6" id="KwE-73-neD"/>
                                             <outlet property="profileImageView" destination="i2R-MJ-Acp" id="qKh-eh-Zhf"/>
+                                            <segue destination="gRi-qi-vc4" kind="show" id="gs5-zp-Pix"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -156,6 +173,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Kf3-wa-252"/>
                     </view>
+                    <navigationItem key="navigationItem" id="aKZ-FV-CWN"/>
                     <connections>
                         <outlet property="tableView" destination="B24-T2-mWG" id="hSF-UJ-dWL"/>
                     </connections>
