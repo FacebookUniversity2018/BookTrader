@@ -28,6 +28,7 @@
 		CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188B420FD106400C088BA /* OtherPersonViewController.m */; };
 		CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE201B7F20FD33E10055EE13 /* BTUITools.m */; };
 		CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE201B8220FD36840055EE13 /* MapKit.framework */; };
+		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		CE201B7E20FD33E10055EE13 /* BTUITools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTUITools.h; sourceTree = "<group>"; };
 		CE201B7F20FD33E10055EE13 /* BTUITools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTUITools.m; sourceTree = "<group>"; };
 		CE201B8220FD36840055EE13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		CEDDDCFC20FD4CC8007AF20B /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
+		CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +277,8 @@
 		CE11888420FD0CE200C088BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CEDDDCFC20FD4CC8007AF20B /* MessageCell.h */,
+				CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,6 +552,7 @@
 				CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */,
 				CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */,
 				CE11889A20FD0E1500C088BA /* HomeViewController.m in Sources */,
+				CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */,
 				CE1188AF20FD0FD500C088BA /* AddBookDetailsViewController.m in Sources */,
 				CE1188A020FD0F0400C088BA /* MessagesHomeViewController.m in Sources */,
 			);
