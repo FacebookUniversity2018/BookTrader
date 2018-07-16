@@ -29,6 +29,7 @@
     
     // set up search bar
     self.searchBar.layer.borderWidth = 0.0;
+    [self.searchBar setBackgroundImage:[UIImage new]];
 }
 
 - (void)didReceiveMemoryWarning {
