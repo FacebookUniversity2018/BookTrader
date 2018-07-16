@@ -232,6 +232,21 @@
                                             <segue destination="gRi-qi-vc4" kind="show" id="gs5-zp-Pix"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessagesHeader" rowHeight="100" id="YMe-Ar-2dK">
+                                        <rect key="frame" x="0.0" y="104" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YMe-Ar-2dK" id="5Ja-Mb-aX1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYW-f1-bhs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>
@@ -879,12 +894,12 @@
         <image name="arrow" width="39" height="21"/>
         <image name="background" width="1920" height="1080"/>
         <image name="books footer" width="339" height="36"/>
-        <image name="envelope" width="38" height="32"/>
-        <image name="open-book" width="1000" height="889"/>
-        <image name="profile" width="480" height="480"/>
         <image name="burger" width="23" height="17"/>
+        <image name="envelope" width="38" height="32"/>
         <image name="iconmonstr-checkbox-6-240" width="240" height="240"/>
         <image name="images" width="173" height="291"/>
+        <image name="open-book" width="1000" height="889"/>
+        <image name="profile" width="480" height="480"/>
         <image name="rating bar" width="105" height="13"/>
         <image name="twitter_profile" width="400" height="400"/>
     </resources>
