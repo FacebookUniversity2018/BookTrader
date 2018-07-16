@@ -29,6 +29,7 @@
 		CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE201B7F20FD33E10055EE13 /* BTUITools.m */; };
 		CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE201B8220FD36840055EE13 /* MapKit.framework */; };
 		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
+		CEDDDD0120FD51A2007AF20B /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		CE201B8220FD36840055EE13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CEDDDCFC20FD4CC8007AF20B /* MessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageCell.h; sourceTree = "<group>"; };
 		CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
+		CEDDDCFF20FD51A2007AF20B /* MessageDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailCell.h; sourceTree = "<group>"; };
+		CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +282,8 @@
 			children = (
 				CEDDDCFC20FD4CC8007AF20B /* MessageCell.h */,
 				CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */,
+				CEDDDCFF20FD51A2007AF20B /* MessageDetailCell.h */,
+				CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE11889420FD0DA600C088BA /* LoginViewController.m in Sources */,
+				CEDDDD0120FD51A2007AF20B /* MessageDetailCell.m in Sources */,
 				CE11889720FD0DB100C088BA /* SignUpViewController.m in Sources */,
 				CE11889D20FD0ED600C088BA /* HomeNavigationViewController.m in Sources */,
 				CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */,
