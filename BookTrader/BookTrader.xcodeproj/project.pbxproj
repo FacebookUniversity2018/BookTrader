@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B11F464420FE64E7000564BE /* SimpleBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */; };
 		CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11884920FD0B8200C088BA /* AppDelegate.m */; };
 		CE11884D20FD0B8200C088BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11884C20FD0B8200C088BA /* ViewController.m */; };
 		CE11885020FD0B8200C088BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE11884E20FD0B8200C088BA /* Main.storyboard */; };
@@ -51,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B11F464220FE64E7000564BE /* SimpleBookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleBookDetailViewController.h; sourceTree = "<group>"; };
+		B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleBookDetailViewController.m; sourceTree = "<group>"; };
 		CE11884520FD0B8200C088BA /* BookTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE11884820FD0B8200C088BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE11884920FD0B8200C088BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 		CE11888820FD0CF600C088BA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B11F464220FE64E7000564BE /* SimpleBookDetailViewController.h */,
+				B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */,
 				CE1188B020FD105800C088BA /* PersonalUserViewController.h */,
 				CE1188B120FD105800C088BA /* PersonalUserViewController.m */,
 				CE1188B320FD106400C088BA /* OtherPersonViewController.h */,
@@ -580,6 +585,7 @@
 				CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */,
 				CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */,
 				CEDDDD0420FD68D1007AF20B /* MessagesHeaderCell.m in Sources */,
+				B11F464420FE64E7000564BE /* SimpleBookDetailViewController.m in Sources */,
 				CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */,
 				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
 				CE11884D20FD0B8200C088BA /* ViewController.m in Sources */,
