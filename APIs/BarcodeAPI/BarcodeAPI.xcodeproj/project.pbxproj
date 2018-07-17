@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		CE33A3B820FD08E700F8A295 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE33A3B720FD08E700F8A295 /* AppDelegate.m */; };
-		CE33A3BB20FD08E700F8A295 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE33A3BA20FD08E700F8A295 /* ViewController.m */; };
 		CE33A3BE20FD08E700F8A295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33A3BC20FD08E700F8A295 /* Main.storyboard */; };
 		CE33A3C020FD08E800F8A295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE33A3BF20FD08E800F8A295 /* Assets.xcassets */; };
 		CE33A3C320FD08E800F8A295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE33A3C120FD08E800F8A295 /* LaunchScreen.storyboard */; };
 		CE33A3C620FD08E800F8A295 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE33A3C520FD08E800F8A295 /* main.m */; };
 		CE33A3D020FD08E800F8A295 /* BarcodeAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE33A3CF20FD08E800F8A295 /* BarcodeAPITests.m */; };
 		CE33A3DB20FD08E800F8A295 /* BarcodeAPIUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE33A3DA20FD08E800F8A295 /* BarcodeAPIUITests.m */; };
+		CECEDF9B20FE653B00D36F03 /* BarcodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECEDF9A20FE653B00D36F03 /* BarcodeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,6 @@
 		CE33A3B320FD08E700F8A295 /* BarcodeAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE33A3B620FD08E700F8A295 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE33A3B720FD08E700F8A295 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CE33A3B920FD08E700F8A295 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CE33A3BA20FD08E700F8A295 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CE33A3BD20FD08E700F8A295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE33A3BF20FD08E800F8A295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE33A3C220FD08E800F8A295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +49,8 @@
 		CE33A3D620FD08E800F8A295 /* BarcodeAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodeAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE33A3DA20FD08E800F8A295 /* BarcodeAPIUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarcodeAPIUITests.m; sourceTree = "<group>"; };
 		CE33A3DC20FD08E900F8A295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECEDF9920FE653B00D36F03 /* BarcodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarcodeViewController.h; sourceTree = "<group>"; };
+		CECEDF9A20FE653B00D36F03 /* BarcodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarcodeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +103,13 @@
 			children = (
 				CE33A3B620FD08E700F8A295 /* AppDelegate.h */,
 				CE33A3B720FD08E700F8A295 /* AppDelegate.m */,
-				CE33A3B920FD08E700F8A295 /* ViewController.h */,
-				CE33A3BA20FD08E700F8A295 /* ViewController.m */,
 				CE33A3BC20FD08E700F8A295 /* Main.storyboard */,
 				CE33A3BF20FD08E800F8A295 /* Assets.xcassets */,
 				CE33A3C120FD08E800F8A295 /* LaunchScreen.storyboard */,
 				CE33A3C420FD08E800F8A295 /* Info.plist */,
 				CE33A3C520FD08E800F8A295 /* main.m */,
+				CECEDF9920FE653B00D36F03 /* BarcodeViewController.h */,
+				CECEDF9A20FE653B00D36F03 /* BarcodeViewController.m */,
 			);
 			path = BarcodeAPI;
 			sourceTree = "<group>";
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE33A3BB20FD08E700F8A295 /* ViewController.m in Sources */,
+				CECEDF9B20FE653B00D36F03 /* BarcodeViewController.m in Sources */,
 				CE33A3C620FD08E800F8A295 /* main.m in Sources */,
 				CE33A3B820FD08E700F8A295 /* AppDelegate.m in Sources */,
 			);
