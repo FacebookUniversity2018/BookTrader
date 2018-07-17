@@ -30,6 +30,7 @@
 		CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE201B8220FD36840055EE13 /* MapKit.framework */; };
 		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
 		CEDDDD0120FD51A2007AF20B /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */; };
+		CEDDDD0420FD68D1007AF20B /* MessagesHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageCell.m; sourceTree = "<group>"; };
 		CEDDDCFF20FD51A2007AF20B /* MessageDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailCell.h; sourceTree = "<group>"; };
 		CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
+		CEDDDD0220FD68D1007AF20B /* MessagesHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesHeaderCell.h; sourceTree = "<group>"; };
+		CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesHeaderCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +287,8 @@
 				CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */,
 				CEDDDCFF20FD51A2007AF20B /* MessageDetailCell.h */,
 				CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */,
+				CEDDDD0220FD68D1007AF20B /* MessagesHeaderCell.h */,
+				CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				CE11889D20FD0ED600C088BA /* HomeNavigationViewController.m in Sources */,
 				CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */,
 				CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */,
+				CEDDDD0420FD68D1007AF20B /* MessagesHeaderCell.m in Sources */,
 				CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */,
 				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
 				CE11884D20FD0B8200C088BA /* ViewController.m in Sources */,
