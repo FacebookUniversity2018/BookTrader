@@ -239,26 +239,43 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYW-f1-bhs">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYW-f1-bhs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-HW-CCG">
-                                                            <rect key="frame" x="8" y="8" width="130" height="34"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="29"/>
+                                                        <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWX-cV-4Nc">
+                                                            <rect key="frame" x="0.0" y="42" width="375" height="56"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="56" id="Two-LJ-qhu"/>
+                                                                <constraint firstAttribute="width" constant="375" id="aD0-cD-ntx"/>
+                                                            </constraints>
+                                                            <textInputTraits key="textInputTraits"/>
+                                                        </searchBar>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brg-HW-CCG">
+                                                            <rect key="frame" x="8" y="6" width="157" height="41"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="157" id="4Bj-Oi-Agg"/>
+                                                                <constraint firstAttribute="height" constant="41" id="AaT-iE-0EA"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="35"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWX-cV-4Nc">
-                                                            <rect key="frame" x="0.0" y="42" width="375" height="56"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                            <textInputTraits key="textInputTraits"/>
-                                                        </searchBar>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="bWX-cV-4Nc" firstAttribute="top" secondItem="Brg-HW-CCG" secondAttribute="bottom" constant="-5" id="H8S-TN-VEP"/>
+                                                        <constraint firstAttribute="height" constant="105" id="TTh-my-hOE"/>
+                                                        <constraint firstItem="Brg-HW-CCG" firstAttribute="leading" secondItem="cYW-f1-bhs" secondAttribute="leading" constant="8" id="tDi-MG-ROP"/>
+                                                        <constraint firstAttribute="width" constant="375" id="yrg-am-jRz"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cYW-f1-bhs" firstAttribute="leading" secondItem="5Ja-Mb-aX1" secondAttribute="leading" id="0wS-kv-udI"/>
+                                                <constraint firstItem="cYW-f1-bhs" firstAttribute="top" secondItem="5Ja-Mb-aX1" secondAttribute="top" id="8Lb-AC-y6U"/>
+                                                <constraint firstAttribute="bottom" secondItem="cYW-f1-bhs" secondAttribute="bottom" constant="-5.5" id="Tua-eg-qFg"/>
+                                                <constraint firstAttribute="trailing" secondItem="cYW-f1-bhs" secondAttribute="trailing" id="pTd-dR-Eq6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="searchBar" destination="bWX-cV-4Nc" id="QzE-w0-uU1"/>
