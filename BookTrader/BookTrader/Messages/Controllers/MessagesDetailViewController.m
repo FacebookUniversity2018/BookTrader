@@ -8,6 +8,7 @@
 
 #import "MessagesDetailViewController.h"
 #import "MessageDetailCell.h"
+#import "MyMessageCell.h"
 
 @interface MessagesDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView reloadData];
     // Do any additional setup after loading the view.
 }
@@ -41,12 +43,21 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MessageDetailCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"DetailCell" forIndexPath:indexPath];
-    return cell;
+    MyMessageCell *myMessageCell = [self.tableView dequeueReusableCellWithIdentifier:@"MyMessageCell" forIndexPath:indexPath];
+    if (indexPath.row % 2 == 0) {
+        return cell;
+    }
+    else {
+        return myMessageCell;
+    }
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
 }
+
+
+
 
 
 
