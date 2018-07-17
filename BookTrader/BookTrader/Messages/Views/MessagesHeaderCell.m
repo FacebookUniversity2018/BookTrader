@@ -15,7 +15,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    // search bar set up
+    self.searchBar.layer.borderWidth = 0.0;
+    [self.searchBar setBackgroundImage:[UIImage new]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

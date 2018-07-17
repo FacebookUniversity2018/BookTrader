@@ -236,6 +236,9 @@
 		CE11887E20FD0C8800C088BA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CECEDF9820FE627B00D36F03 /* GBooksAPI */,
+				CECEDF9720FE626E00D36F03 /* FBLoginAPI */,
+				CECEDF9620FE625D00D36F03 /* BarcodeAPI */,
 				CE201B7D20FD333F0055EE13 /* UI Tools */,
 			);
 			path = Services;
@@ -422,6 +425,27 @@
 				CE201B8220FD36840055EE13 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CECEDF9620FE625D00D36F03 /* BarcodeAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BarcodeAPI;
+			sourceTree = "<group>";
+		};
+		CECEDF9720FE626E00D36F03 /* FBLoginAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FBLoginAPI;
+			sourceTree = "<group>";
+		};
+		CECEDF9820FE627B00D36F03 /* GBooksAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GBooksAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

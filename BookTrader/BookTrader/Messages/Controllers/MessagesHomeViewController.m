@@ -7,6 +7,7 @@
 //
 
 #import "MessagesHomeViewController.h"
+#import "MessagesHeaderCell.h"
 #import "MessageCell.h"
 
 @interface MessagesHomeViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -41,7 +42,12 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MessageCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"MessageCell" forIndexPath:indexPath];
-    return cell;
+    MessagesHeaderCell *headerCell = [self.tableView dequeueReusableCellWithIdentifier:@"MessagesHeader"];
+    if (indexPath.row == 0) {
+        return headerCell;
+    } else {
+        return cell;
+    }
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
