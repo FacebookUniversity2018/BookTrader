@@ -709,6 +709,9 @@
                                         <state key="normal" title="my messages">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="E3D-dC-mLf" kind="show" identifier="homeToMessagesSegue" id="6B6-a5-9bC"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7J-gO-OAD">
                                         <rect key="frame" x="25" y="277" width="87" height="35"/>
