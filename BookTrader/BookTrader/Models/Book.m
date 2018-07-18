@@ -21,6 +21,9 @@
 NSDictionary *rawJson;
 NSString *str_bsnNum;
 BOOL getInfo;
+BOOL sell;
+BOOL trade;
+BOOL gift;
 
 + (nonnull NSString *)parseClassName {
     return @"Book";
