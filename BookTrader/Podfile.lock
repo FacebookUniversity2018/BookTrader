@@ -14,8 +14,17 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - Bolts (1.9.0):
+    - Bolts/AppLinks (= 1.9.0)
+    - Bolts/Tasks (= 1.9.0)
+  - Bolts/AppLinks (1.9.0):
+    - Bolts/Tasks
   - Bolts/Tasks (1.9.0)
   - DateTools (2.0.0)
+  - FBSDKCoreKit (4.34.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.34.0):
+    - FBSDKCoreKit
   - Parse (1.17.1):
     - Parse/Core (= 1.17.1)
   - Parse/Core (1.17.1):
@@ -27,6 +36,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - DateTools
+  - FBSDKLoginKit
   - Parse
   - ParseUI
 
@@ -35,6 +45,8 @@ SPEC REPOS:
     - AFNetworking
     - Bolts
     - DateTools
+    - FBSDKCoreKit
+    - FBSDKLoginKit
     - Parse
     - ParseUI
 
@@ -42,9 +54,11 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
+  FBSDKLoginKit: 8c78f57a145afb756e4755e69195ebe08a42466e
   Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
   ParseUI: 2b37a0bc692a3e7666cf0c37b5521dfddd74a1af
 
-PODFILE CHECKSUM: dee77da9f0fc6a4894aaa7977436c32b19080681
+PODFILE CHECKSUM: b2176471c3ba0acb67e5ee145dbfdf2804eee4da
 
 COCOAPODS: 1.5.3

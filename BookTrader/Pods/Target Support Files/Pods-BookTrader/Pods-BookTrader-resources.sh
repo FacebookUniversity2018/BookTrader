@@ -93,6 +93,7 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle"
+  install_resource "${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle"
   install_resource "${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj"
@@ -100,6 +101,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle"
+  install_resource "${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle"
   install_resource "${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj"
   install_resource "${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj"
