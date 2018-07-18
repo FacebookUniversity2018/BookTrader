@@ -7,18 +7,22 @@
 //
 
 #import "BookDetailViewController.h"
+#import "Book.h"
 
 @interface BookDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *bookCover;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
-@property (strong, nonatomic) IBOutlet UILabel *genreLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @end
 
 @implementation BookDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.titleLabel = self.book.title;
+    self.authorLabel = self.book.author;
+    self.dateLabel = self.book.datePublished;
     // Do any additional setup after loading the view.
 }
 

@@ -9,11 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
 
-@interface Book : PFObject<PFSubclassing>
+@interface Book : PFObject<PFSubclassing> 
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
-@property (strong, nonatomic) NSString *overview;
+@property (strong, nonatomic) NSString *datePublished;
 
+//@property (strong, nonatomic) NSString *overview;
+
+- (void) setIsbn:(NSString *)str_bsn;
 +(void)addBookToDatabase:(NSString * _Nullable )title withAuthor:(NSString * _Nullable)author withOverview:(NSString * _Nullable)overview withCompletion: (PFBooleanResultBlock  _Nullable)completion;
+
 @end
