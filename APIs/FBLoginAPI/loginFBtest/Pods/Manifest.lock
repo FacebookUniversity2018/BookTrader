@@ -24,10 +24,19 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.34.0):
     - FBSDKCoreKit
+  - Parse (1.17.1):
+    - Parse/Core (= 1.17.1)
+  - Parse/Core (1.17.1):
+    - Bolts/Tasks (~> 1.9)
+  - ParseUI (1.2.0):
+    - Bolts/Tasks (~> 1.3)
+    - Parse (~> 1.9)
 
 DEPENDENCIES:
   - AFNetworking
   - FBSDKLoginKit
+  - Parse
+  - ParseUI
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -35,13 +44,17 @@ SPEC REPOS:
     - Bolts
     - FBSDKCoreKit
     - FBSDKLoginKit
+    - Parse
+    - ParseUI
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   FBSDKCoreKit: 0ff57f093b85c8c9d5aba697d3edf68a8960ce78
   FBSDKLoginKit: 8c78f57a145afb756e4755e69195ebe08a42466e
+  Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
+  ParseUI: 2b37a0bc692a3e7666cf0c37b5521dfddd74a1af
 
-PODFILE CHECKSUM: fdd72437ce35bf498276d29899b8b3a8e7a4acf8
+PODFILE CHECKSUM: a1f5cc38a34542d89c97199fd38f2a2f039d307b
 
 COCOAPODS: 1.5.3
