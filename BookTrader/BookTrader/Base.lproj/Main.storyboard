@@ -76,16 +76,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtJ-gp-ns4">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VtJ-gp-ns4" customClass="FBSDKLoginButton">
                                 <rect key="frame" x="73" y="513" width="213" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SIgn Up" image="Login"/>
+                                <state key="normal" title="Login Button" image="Login"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="VtJ-gp-ns4" id="LsQ-LW-meZ"/>
                         <segue destination="l2W-ms-CPE" kind="show" identifier="loginToHomeSegue" id="GVg-UF-tiR"/>
                     </connections>
                 </viewController>
@@ -1406,7 +1407,7 @@
         <segue reference="WpR-MN-ARB"/>
         <segue reference="tmn-nk-c5j"/>
         <segue reference="Stf-NC-mpb"/>
-        <segue reference="cml-hS-oe6"/>
+        <segue reference="GVg-UF-tiR"/>
         <segue reference="DHM-n1-jTW"/>
     </inferredMetricsTieBreakers>
 </document>
