@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface AddBookDetailsViewController : UIViewController
-
+@property NSString *isbn;
 @end
