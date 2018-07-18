@@ -9,6 +9,8 @@ target 'loginFBtest' do
 
     pod 'FBSDKLoginKit'
     pod 'AFNetworking'
+    pod 'Parse'
+    pod 'ParseUI'
 
   target 'loginFBtestTests' do
     inherit! :search_paths
