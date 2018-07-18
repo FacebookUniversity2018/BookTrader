@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageDetailCell : UITableViewCell
+@property (strong, nonatomic) IBOutlet UIView *bubbleView;
 
 @end
