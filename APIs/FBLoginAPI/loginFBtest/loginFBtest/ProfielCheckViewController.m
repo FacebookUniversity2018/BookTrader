@@ -1,25 +1,23 @@
 //
-//  ProfileViewController.m
+//  ProfielCheckViewController.m
 //  loginFBtest
 //
-//  Created by Chaliana Rolon on 7/17/18.
+//  Created by Chaliana Rolon on 7/18/18.
 //  Copyright © 2018 Chaliana Rolon. All rights reserved.
 //
 
-#import "ProfileViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "ProfielCheckViewController.h"
 
-@interface ProfileViewController ()
+@interface ProfielCheckViewController ()
 
 @end
 
-@implementation ProfileViewController
+@implementation ProfielCheckViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Succesfully loaded Profile VC");
-    self.username.text = self.name;
+    self.usernameLabel.text = self.username;
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
