@@ -916,7 +916,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PH9LZZN4D9;
+				DEVELOPMENT_TEAM = HDF54N6KHN;
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -934,7 +934,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = PH9LZZN4D9;
+				DEVELOPMENT_TEAM = HDF54N6KHN;
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

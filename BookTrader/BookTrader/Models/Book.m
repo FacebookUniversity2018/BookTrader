@@ -23,10 +23,6 @@ BOOL getInfo;
     return @"Book";
 }
 
-<<<<<<< HEAD
-//self.title = dictionary[
-//self.author =
-=======
 
 - (void) setIsbn:(NSString *)str_bsn {
     str_bsnNum = str_bsn;
@@ -59,7 +55,6 @@ BOOL getInfo;
     }
 }
 
->>>>>>> d6be8b637bb2997242cd623f9b1f5569dcc23a3a
 
 
 +(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withOverview:(NSString *)overview withCompletion:(PFBooleanResultBlock _Nullable)completion {
