@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <Parse/Parse.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Facebook login
+    [FBSDKLoginButton class ];
+
     
     ParseClientConfiguration *config = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
         configuration.applicationId = @"bookTrader";
@@ -29,6 +34,18 @@
     
     return YES;
 }
+
+- ( BOOL ) application :( UIApplication *) application
+               openURL :( NSURL *) url
+               options :( NSDictionary < UIApplicationOpenURLOptionsKey , id > *) options {
+    
+    BOOL handled = [[ FBSDKApplicationDelegate sharedInstance ] application : application
+                                                                    openURL : url
+                                                          sourceApplication : options [ UIApplicationOpenURLOptionsSourceApplicationKey ]
+                                                                 annotation : options [ UIApplicationOpenURLOptionsAnnotationKey ] ];
+    // Add any custom logic here.
+    
+    return handled ; }
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
