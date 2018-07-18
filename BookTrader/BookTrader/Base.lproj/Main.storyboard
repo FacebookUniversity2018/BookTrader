@@ -85,6 +85,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="l2W-ms-CPE" kind="show" identifier="loginToHomeSegue" id="GVg-UF-tiR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -583,6 +586,9 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </view>
                                                 <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <segue destination="87K-le-6w6" kind="show" identifier="myBooksHomeToBookDetail" id="pUc-75-NA2"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -733,7 +739,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Vws-A0-hba" kind="show" identifier="navToBarcodeSegue" id="quk-fy-MgF"/>
+                                            <segue destination="Vws-A0-hba" kind="presentation" identifier="navToBarcodeSegue" id="quk-fy-MgF"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LDx-8L-tao">
@@ -835,6 +841,9 @@
                                                         </imageView>
                                                     </subviews>
                                                 </view>
+                                                <connections>
+                                                    <segue destination="87K-le-6w6" kind="show" identifier="personalProfileToBookDetailSegue" id="WpR-MN-ARB"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -1017,21 +1026,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0K-eJ-3BN">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIH-va-TsT">
-                                        <rect key="frame" x="8" y="45" width="254" height="58"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="barcode scan">
-                                                <attributes>
-                                                    <font key="NSFont" size="24" name="Baskerville-SemiBold"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -1045,7 +1039,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="414-EE-DSI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="2690"/>
+            <point key="canvasLocation" x="1636" y="2689.2053973013494"/>
         </scene>
         <!--Add Book Details View Controller-->
         <scene sceneID="F0O-cg-KLc">
@@ -1376,7 +1370,8 @@
         <image name="twitter_profile" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6ml-Yl-Jdi"/>
-        <segue reference="cml-hS-oe6"/>
+        <segue reference="pUc-75-NA2"/>
+        <segue reference="mHX-Qo-wtB"/>
+        <segue reference="abl-o7-PdP"/>
     </inferredMetricsTieBreakers>
 </document>
