@@ -17,13 +17,31 @@
 @property (strong, nonatomic) IBOutlet UIView *haveBookView;
 @property (strong, nonatomic) IBOutlet UIView *wantBookView;
 
+// property NSString *title
+// property NSString *created date
+// property NSString *author
+// property UIImage *bookCover
+
 @end
 
 @implementation AddBookDetailsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    }
+    // NSDictionary *bookObj (your rawJson) = [GBooksAPI bookObjectFromIsbn:self.isbn]
+    // [GBooksAPI bookObjectFromIsbn: ] write in the the + GBooksAPI directory and it will do what your
+    // "fetchData" function is doing right now
+    // self.title = bookObj.title
+    // self.created_date = bookObj.createdDate
+    // self.author = bookObj.author
+    // self.bookCover = [That one AFNetworking function that turns a URL into an Image]
+    // then use these variables to set up all of the views
+    
+    // then in the publish button use the parsePostFunction before we leave this page
+    // then we can reload everything in the other views and the book will be posted
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -31,6 +49,8 @@
 - (IBAction)showNewView:(id)sender {
 //}
 
+    
+    
 //segmented control to switch container views
 //- (IBAction)showView:(id)sender {
     if(self.bookControl.selectedSegmentIndex==0){
