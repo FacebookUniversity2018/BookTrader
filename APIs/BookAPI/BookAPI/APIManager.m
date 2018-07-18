@@ -12,7 +12,8 @@
 
 NSString  *coverUrl;
 NSString  *bookTitle;
-NSString *author; 
+NSString *author;
+NSString *datePublished;
 NSDictionary *rawJson;
 BOOL getInfo;
     
@@ -43,6 +44,8 @@ BOOL getInfo;
         NSDictionary *volumeInfo = [[NSDictionary alloc] initWithDictionary:item[@"volumeInfo"]];
         NSDictionary *thumbnails = [[NSDictionary alloc] initWithDictionary:volumeInfo[@"imageLinks"]];
         bookTitle = volumeInfo[@"title"];
+        author = volumeInfo[@"authors"];
+        datePublished= volumeInfo[@"publishedDate"];
         coverUrl = thumbnails[@"thumbnail"];
     }
 }
