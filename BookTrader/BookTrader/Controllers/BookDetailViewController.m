@@ -9,7 +9,10 @@
 #import "BookDetailViewController.h"
 
 @interface BookDetailViewController ()
-
+@property (strong, nonatomic) IBOutlet UIImageView *bookCover;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
+@property (strong, nonatomic) IBOutlet UILabel *genreLabel;
 @end
 
 @implementation BookDetailViewController

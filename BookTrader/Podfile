@@ -6,6 +6,10 @@ target 'BookTrader' do
   # use_frameworks!
 
   # Pods for BookTrader
+  pod 'AFNetworking'
+  pod 'DateTools'
+  pod 'Parse'
+  pod 'ParseUI'
 
   target 'BookTraderTests' do
     inherit! :search_paths

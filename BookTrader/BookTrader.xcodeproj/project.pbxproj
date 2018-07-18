@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069FFA8BAC4BE940D97D6971 /* libPods-BookTraderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDDEE762FF206EB7BAC1B49 /* libPods-BookTraderUITests.a */; };
+		638D487D364591D846D6CC51 /* libPods-BookTraderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B08C3C53361151E73DA239E2 /* libPods-BookTraderTests.a */; };
 		B11F464420FE64E7000564BE /* SimpleBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */; };
+		C1BABBFE04C461CE56267A64 /* libPods-BookTrader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCE42FF7AAF54DC635123BB /* libPods-BookTrader.a */; };
 		CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11884920FD0B8200C088BA /* AppDelegate.m */; };
 		CE11884D20FD0B8200C088BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11884C20FD0B8200C088BA /* ViewController.m */; };
 		CE11885020FD0B8200C088BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE11884E20FD0B8200C088BA /* Main.storyboard */; };
@@ -30,6 +33,8 @@
 		CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE201B7F20FD33E10055EE13 /* BTUITools.m */; };
 		CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE201B8220FD36840055EE13 /* MapKit.framework */; };
 		CE40C70120FE9611004E7300 /* MyMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE40C70020FE9611004E7300 /* MyMessageCell.m */; };
+		CE54694220FEB88700A02E13 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = CE54694120FEB88700A02E13 /* Book.m */; };
+		CE54694520FEB8A400A02E13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CE54694420FEB8A400A02E13 /* User.m */; };
 		CEA8116620FE9EC7004C2FED /* HomeBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8116520FE9EC7004C2FED /* HomeBooksViewController.m */; };
 		CEA8116C20FEA7D6004C2FED /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8116B20FEA7D6004C2FED /* BookCell.m */; };
 		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
@@ -55,6 +60,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2EDDEE762FF206EB7BAC1B49 /* libPods-BookTraderUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookTraderUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32794741CDC4D192FA8F4FD0 /* Pods-BookTraderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderUITests/Pods-BookTraderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		34F91E018A39D750259885D7 /* Pods-BookTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookTrader/Pods-BookTrader.release.xcconfig"; sourceTree = "<group>"; };
+		3C87B8860B5E35372BE544EF /* Pods-BookTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderTests/Pods-BookTraderTests.release.xcconfig"; sourceTree = "<group>"; };
+		B08C3C53361151E73DA239E2 /* libPods-BookTraderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookTraderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11F464220FE64E7000564BE /* SimpleBookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleBookDetailViewController.h; sourceTree = "<group>"; };
 		B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleBookDetailViewController.m; sourceTree = "<group>"; };
 		CE11884520FD0B8200C088BA /* BookTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +110,10 @@
 		CE201B8220FD36840055EE13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CE40C6FF20FE9611004E7300 /* MyMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyMessageCell.h; sourceTree = "<group>"; };
 		CE40C70020FE9611004E7300 /* MyMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyMessageCell.m; sourceTree = "<group>"; };
+		CE54694020FEB88700A02E13 /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		CE54694120FEB88700A02E13 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		CE54694320FEB8A400A02E13 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CE54694420FEB8A400A02E13 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		CEA8116420FE9EC7004C2FED /* HomeBooksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBooksViewController.h; sourceTree = "<group>"; };
 		CEA8116520FE9EC7004C2FED /* HomeBooksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBooksViewController.m; sourceTree = "<group>"; };
 		CEA8116A20FEA7D6004C2FED /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
@@ -110,6 +124,10 @@
 		CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
 		CEDDDD0220FD68D1007AF20B /* MessagesHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesHeaderCell.h; sourceTree = "<group>"; };
 		CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesHeaderCell.m; sourceTree = "<group>"; };
+		D13C1F010B559DE973D9A157 /* Pods-BookTraderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderUITests/Pods-BookTraderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E57F36E6E87BEA6FDA782431 /* Pods-BookTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderTests/Pods-BookTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F125F9DA15566CBEC7BE92C9 /* Pods-BookTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookTrader/Pods-BookTrader.debug.xcconfig"; sourceTree = "<group>"; };
+		FCCE42FF7AAF54DC635123BB /* libPods-BookTrader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookTrader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */,
+				C1BABBFE04C461CE56267A64 /* libPods-BookTrader.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638D487D364591D846D6CC51 /* libPods-BookTraderTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069FFA8BAC4BE940D97D6971 /* libPods-BookTraderUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +167,7 @@
 				CE11886B20FD0B8200C088BA /* BookTraderUITests */,
 				CE11884620FD0B8200C088BA /* Products */,
 				CE201B8120FD36840055EE13 /* Frameworks */,
+				F19A77F339C225C7A0A4C90E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -405,6 +427,10 @@
 		CE1188A420FD0F2700C088BA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE54694020FEB88700A02E13 /* Book.h */,
+				CE54694120FEB88700A02E13 /* Book.m */,
+				CE54694320FEB8A400A02E13 /* User.h */,
+				CE54694420FEB8A400A02E13 /* User.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,6 +464,9 @@
 			isa = PBXGroup;
 			children = (
 				CE201B8220FD36840055EE13 /* MapKit.framework */,
+				FCCE42FF7AAF54DC635123BB /* libPods-BookTrader.a */,
+				B08C3C53361151E73DA239E2 /* libPods-BookTraderTests.a */,
+				2EDDEE762FF206EB7BAC1B49 /* libPods-BookTraderUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -463,6 +492,19 @@
 			path = GBooksAPI;
 			sourceTree = "<group>";
 		};
+		F19A77F339C225C7A0A4C90E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F125F9DA15566CBEC7BE92C9 /* Pods-BookTrader.debug.xcconfig */,
+				34F91E018A39D750259885D7 /* Pods-BookTrader.release.xcconfig */,
+				E57F36E6E87BEA6FDA782431 /* Pods-BookTraderTests.debug.xcconfig */,
+				3C87B8860B5E35372BE544EF /* Pods-BookTraderTests.release.xcconfig */,
+				D13C1F010B559DE973D9A157 /* Pods-BookTraderUITests.debug.xcconfig */,
+				32794741CDC4D192FA8F4FD0 /* Pods-BookTraderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,9 +512,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE11887120FD0B8200C088BA /* Build configuration list for PBXNativeTarget "BookTrader" */;
 			buildPhases = (
+				D97ABCED24FACBDD482873F1 /* [CP] Check Pods Manifest.lock */,
 				CE11884120FD0B8200C088BA /* Sources */,
 				CE11884220FD0B8200C088BA /* Frameworks */,
 				CE11884320FD0B8200C088BA /* Resources */,
+				F1B67F9D5DAD72B8CDCA9D10 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -487,6 +531,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE11887420FD0B8200C088BA /* Build configuration list for PBXNativeTarget "BookTraderTests" */;
 			buildPhases = (
+				E4110E034BC2730CB89420F5 /* [CP] Check Pods Manifest.lock */,
 				CE11885920FD0B8200C088BA /* Sources */,
 				CE11885A20FD0B8200C088BA /* Frameworks */,
 				CE11885B20FD0B8200C088BA /* Resources */,
@@ -505,6 +550,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE11887720FD0B8200C088BA /* Build configuration list for PBXNativeTarget "BookTraderUITests" */;
 			buildPhases = (
+				D60D5786CD854E43E39A3B54 /* [CP] Check Pods Manifest.lock */,
 				CE11886420FD0B8200C088BA /* Sources */,
 				CE11886520FD0B8200C088BA /* Frameworks */,
 				CE11886620FD0B8200C088BA /* Resources */,
@@ -588,6 +634,89 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D60D5786CD854E43E39A3B54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookTraderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D97ABCED24FACBDD482873F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookTrader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4110E034BC2730CB89420F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookTraderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1B67F9D5DAD72B8CDCA9D10 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BookTrader/Pods-BookTrader-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BookTrader/Pods-BookTrader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CE11884120FD0B8200C088BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -601,8 +730,10 @@
 				CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */,
 				CE40C70120FE9611004E7300 /* MyMessageCell.m in Sources */,
 				CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */,
+				CE54694520FEB8A400A02E13 /* User.m in Sources */,
 				CEA8116620FE9EC7004C2FED /* HomeBooksViewController.m in Sources */,
 				CEDDDD0420FD68D1007AF20B /* MessagesHeaderCell.m in Sources */,
+				CE54694220FEB88700A02E13 /* Book.m in Sources */,
 				B11F464420FE64E7000564BE /* SimpleBookDetailViewController.m in Sources */,
 				CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */,
 				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
@@ -781,6 +912,7 @@
 		};
 		CE11887220FD0B8200C088BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F125F9DA15566CBEC7BE92C9 /* Pods-BookTrader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -798,6 +930,7 @@
 		};
 		CE11887320FD0B8200C088BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34F91E018A39D750259885D7 /* Pods-BookTrader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -815,6 +948,7 @@
 		};
 		CE11887520FD0B8200C088BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E57F36E6E87BEA6FDA782431 /* Pods-BookTraderTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -834,6 +968,7 @@
 		};
 		CE11887620FD0B8200C088BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C87B8860B5E35372BE544EF /* Pods-BookTraderTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -853,6 +988,7 @@
 		};
 		CE11887820FD0B8200C088BA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D13C1F010B559DE973D9A157 /* Pods-BookTraderUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HDF54N6KHN;
@@ -871,6 +1007,7 @@
 		};
 		CE11887920FD0B8200C088BA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32794741CDC4D192FA8F4FD0 /* Pods-BookTraderUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HDF54N6KHN;
