@@ -26,12 +26,13 @@
 **API Endpoints:**
 
 Facebook API
-
-Amazon API/Google Books API/Open Library Covers
+Google Books API
+Barcode Scanner
 
 **Model Classes:**
 
 Book
+User
 
 
 

@@ -30,7 +30,6 @@
     newUser.profilePicture = profilePicture;
     
     [newUser saveInBackgroundWithBlock:completion];
-    
 };
 
 @end
