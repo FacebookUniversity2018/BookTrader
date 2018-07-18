@@ -1333,7 +1333,6 @@
         <image name="twitter_profile" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PS6-nd-cAq"/>
         <segue reference="mHX-Qo-wtB"/>
         <segue reference="cml-hS-oe6"/>
     </inferredMetricsTieBreakers>
