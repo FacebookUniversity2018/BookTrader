@@ -8,6 +8,7 @@ target 'loginFBtest' do
   # Pods for loginFBtest
 
     pod 'FBSDKLoginKit'
+    pod 'AFNetworking'
 
   target 'loginFBtestTests' do
     inherit! :search_paths

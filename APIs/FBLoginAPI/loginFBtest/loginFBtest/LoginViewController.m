@@ -56,6 +56,10 @@
     ProfileViewController *profileVC = [segue destinationViewController];
     profileVC.name = self.profile[@"name"];
     
+    NSString *urlString = self.profile[@"picture"][@"data"][@"url"];
+    profileVC.pictureURL = [NSURL URLWithString:urlString];
+    NSLog(@"%@", profileVC.pictureURL);
+    
 }
 
 @end
