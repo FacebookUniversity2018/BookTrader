@@ -46,7 +46,7 @@ BOOL getInfo;
         bookTitle = volumeInfo[@"title"];
         author = volumeInfo[@"authors"];
         datePublished= volumeInfo[@"publishedDate"];
-        coverUrl = thumbnails[@"thumbnail"];
+       // coverUrl = thumbnails[@"thumbnail"];
     }
 }
 
