@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Book.h"
+#import "BarcodeAddViewController.h"
 
 @interface AddBookDetailsViewController : UIViewController
 @property NSString *isbn;
+@property (strong, nonatomic) Book *book;
+
 @end

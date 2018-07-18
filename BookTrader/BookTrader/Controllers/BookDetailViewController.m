@@ -20,9 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.titleLabel = self.book.title;
-    self.authorLabel = self.book.author;
-    self.dateLabel = self.book.datePublished;
+    self.titleLabel.text = self.book.title;
+    self.authorLabel.text = self.book.author;
+    self.dateLabel.text = self.book.datePublished;
     // Do any additional setup after loading the view.
 }
 

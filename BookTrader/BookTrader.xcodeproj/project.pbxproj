@@ -915,6 +915,7 @@
 			baseConfigurationReference = F125F9DA15566CBEC7BE92C9 /* Pods-BookTrader.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PH9LZZN4D9;
 				INFOPLIST_FILE = BookTrader/Info.plist;
@@ -922,8 +923,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader;
+				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -933,6 +935,7 @@
 			baseConfigurationReference = 34F91E018A39D750259885D7 /* Pods-BookTrader.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PH9LZZN4D9;
 				INFOPLIST_FILE = BookTrader/Info.plist;
@@ -940,8 +943,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader;
+				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
