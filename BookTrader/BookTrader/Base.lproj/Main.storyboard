@@ -698,6 +698,9 @@
                                         <state key="normal" title="my profiles">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="RWJ-gs-zVF" kind="show" identifier="navToProfileSegue" id="PS6-nd-cAq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tu3-k5-JVS">
                                         <rect key="frame" x="25" y="206" width="124" height="35"/>
@@ -855,6 +858,14 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EvR-BZ-Ip6">
+                                        <rect key="frame" x="16" y="50" width="13" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="back_arrow"/>
+                                        <connections>
+                                            <segue destination="mKx-ja-pAo" kind="show" identifier="profileToHome" id="mHX-Qo-wtB"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1304,6 +1315,7 @@
         <image name="HarryPotter-1" width="348" height="499"/>
         <image name="Login" width="988" height="160"/>
         <image name="arrow" width="39" height="21"/>
+        <image name="back_arrow" width="13" height="22"/>
         <image name="background" width="1920" height="1080"/>
         <image name="books footer" width="339" height="36"/>
         <image name="burger" width="23" height="17"/>
@@ -1318,6 +1330,8 @@
         <image name="twitter_profile" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="abl-o7-PdP"/>
+        <segue reference="PS6-nd-cAq"/>
+        <segue reference="mHX-Qo-wtB"/>
+        <segue reference="cml-hS-oe6"/>
     </inferredMetricsTieBreakers>
 </document>
