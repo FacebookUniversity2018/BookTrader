@@ -23,7 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    }
+    NSLog(@"isbn:%@", self.isbn);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

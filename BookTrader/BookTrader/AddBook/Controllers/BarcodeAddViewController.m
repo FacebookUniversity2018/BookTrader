@@ -7,6 +7,7 @@
 //
 
 #import "BarcodeAddViewController.h"
+#import "AddBookDetailsViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
 
@@ -14,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIView *previewView;
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
+@property (strong, nonatomic) NSString *isbn;
 
 -(void) stopReading;
 
@@ -50,7 +52,7 @@
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
         if ([[metadataObj type] isEqualToString:AVMetadataObjectTypeEAN13Code]) {
-            NSLog([metadataObj stringValue]);
+            self.isbn = [metadataObj stringValue];
             [self performSelectorOnMainThread:@selector(stopReading) withObject:[metadataObj stringValue] waitUntilDone:NO];
         }
     }
@@ -72,6 +74,8 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
+    AddBookDetailsViewController *bookDetailsViewController = [segue destinationViewController];
+    bookDetailsViewController.isbn = self.isbn;
 }
 
 @end
