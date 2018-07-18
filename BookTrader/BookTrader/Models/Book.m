@@ -8,13 +8,16 @@
 
 #import "Book.h"
 #import <Parse/Parse.h>
-
+@interface Book ()
+- (void)parseData;
+@end
 
 @implementation Book
 
 @dynamic author;
 @dynamic title;
 @dynamic datePublished;
+@dynamic coverURL;
 NSDictionary *rawJson;
 NSString *str_bsnNum;
 BOOL getInfo;
@@ -23,35 +26,34 @@ BOOL getInfo;
     return @"Book";
 }
 
-
 - (void) setIsbn:(NSString *)str_bsn {
     str_bsnNum = str_bsn;
-    [self fetchData];
 }
 
-- (void) fetchData {
++ (NSDictionary *) fetchData:(NSString *)isbn {
     NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
     NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body,
-                             str_bsnNum];
+                             isbn];
     NSError *error;
     NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_request]];
     rawJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    [self parseData: rawJson];
+    return [self parseData:rawJson];
 }
 
-- (void) parseData:(NSDictionary *)raw {
++ (NSDictionary *) parseData:(NSDictionary *)raw {
     NSArray *rawItem = [[NSArray alloc] initWithArray:raw[@"items"]];
     if ([rawItem count] == 0) {
         getInfo = false;
+        return [NSDictionary new];
     } else {
         getInfo = true;
         NSDictionary *item = [[NSDictionary alloc] initWithDictionary:rawItem[0]];
         NSDictionary *volumeInfo = [[NSDictionary alloc] initWithDictionary:item[@"volumeInfo"]];
-        NSDictionary *thumbnails = [[NSDictionary alloc] initWithDictionary:volumeInfo[@"imageLinks"]];
-        self.title = volumeInfo[@"title"];
-        self.author = volumeInfo[@"authors"];
-        self.datePublished= volumeInfo[@"publishedDate"];
-     //   coverUrl = thumbnails[@"thumbnail"];
+        NSDictionary *images = [[NSDictionary alloc] initWithDictionary:volumeInfo[@"imageLinks"]];
+        NSDictionary *res = @{@"title": volumeInfo[@"title"], @"authors": volumeInfo[@"authors"], @"publishedDate":volumeInfo[@"publishedDate"]};
+        return res;
+
+     //   coverUrl = images[@"small"];
     }
 }
 
@@ -61,6 +63,7 @@ BOOL getInfo;
     Book *newBook = [Book new];
     newBook.title = title;
     newBook.author = author;
+    //newBook.datePublished = datePublished;
     //newBook.overview = overview;
 
     [newBook saveInBackgroundWithBlock: completion];
