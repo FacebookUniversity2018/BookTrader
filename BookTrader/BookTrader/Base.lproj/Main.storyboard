@@ -187,15 +187,6 @@
                                     </label>
                                 </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlf-Xf-kIE">
-                                <rect key="frame" x="167" y="528" width="34" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="34" id="RYH-Bl-w2U"/>
-                                    <constraint firstAttribute="height" constant="34" id="Us7-iR-pOE"/>
-                                </constraints>
-                                <color key="tintColor" red="0.37831836938858032" green="0.17030856013298035" blue="0.074392117559909821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button" image="iconmonstr-email-4-240"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconmonstr-check-mark-1-240" translatesAutoresizingMaskIntoConstraints="NO" id="Bpq-yB-da4">
                                 <rect key="frame" x="80" y="419" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -213,26 +204,47 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuW-jV-0bc">
-                                <rect key="frame" x="133" y="499" width="103" height="21"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="message owner">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Baskerville"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zvo-yF-nsM">
+                                <rect key="frame" x="0.0" y="497" width="375" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuW-jV-0bc">
+                                        <rect key="frame" x="129" y="27" width="103" height="21"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="message owner">
+                                                <attributes>
+                                                    <font key="NSFont" size="17" name="Baskerville"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlf-Xf-kIE">
+                                        <rect key="frame" x="170" y="56" width="34" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="RYH-Bl-w2U"/>
+                                            <constraint firstAttribute="height" constant="34" id="Us7-iR-pOE"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.37831836938858032" green="0.17030856013298035" blue="0.074392117559909821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button" image="iconmonstr-email-4-240"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.96875897251315468" blue="0.86075985924970622" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="tlf-Xf-kIE" firstAttribute="centerX" secondItem="Zvo-yF-nsM" secondAttribute="centerX" id="6bf-hH-JLF"/>
+                                    <constraint firstItem="tlf-Xf-kIE" firstAttribute="centerX" secondItem="Zvo-yF-nsM" secondAttribute="centerX" id="kuY-yJ-Idb"/>
+                                    <constraint firstItem="ZuW-jV-0bc" firstAttribute="centerX" secondItem="Zvo-yF-nsM" secondAttribute="centerX" constant="-7" id="oHd-DS-gJJ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ZuW-jV-0bc" firstAttribute="centerX" secondItem="oeN-s1-gn2" secondAttribute="centerX" id="HVV-Yc-1V2"/>
-                            <constraint firstItem="tlf-Xf-kIE" firstAttribute="centerX" secondItem="oeN-s1-gn2" secondAttribute="centerX" id="b3F-mT-k9t"/>
-                            <constraint firstItem="tlf-Xf-kIE" firstAttribute="centerX" secondItem="oeN-s1-gn2" secondAttribute="centerX" id="lnu-gk-byn"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zj7-nU-HiN"/>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="VI8-zJ-E6c" id="cur-kt-gxk"/>
+                        <outlet property="bookCover" destination="Fbb-Qb-aK0" id="LMC-QY-Hek"/>
+                        <outlet property="genreLabel" destination="dW3-kg-mgg" id="Udg-Ha-wCW"/>
+                        <outlet property="titleLabel" destination="fbm-B6-Whw" id="BLa-SS-Hms"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HH-tL-HT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -968,6 +980,20 @@
                                     </label>
                                 </subviews>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-EJ-yNS">
+                                <rect key="frame" x="0.0" y="465" width="375" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="about?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-D7-L8f">
+                                        <rect key="frame" x="161" y="8" width="53" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="F9k-D5-61C"/>
@@ -1187,7 +1213,7 @@
                                         <state key="normal" image="iconmonstr-checkbox-6-240"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.84754439650000002" blue="0.57031264680000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-2f-HtK">
                                 <rect key="frame" x="0.0" y="103" width="375" height="39"/>
@@ -1206,13 +1232,13 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-kB-vc7">
                                 <rect key="frame" x="159" y="59" width="49" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.84754439650000002" blue="0.57031264680000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.014304199256002903" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.84754439645121815" blue="0.57031264676940574" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="tt0-41-EQt"/>
                     </view>
                 </viewController>
@@ -1284,7 +1310,7 @@
                                         <state key="normal" image="iconmonstr-checkbox-6-240"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.84754439650000002" blue="0.57031264680000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKz-Iw-c93">
                                 <rect key="frame" x="86" y="75" width="19" height="18"/>
@@ -1304,7 +1330,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.84754439650000002" blue="0.57031264680000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="IrZ-DX-zfD"/>
                     </view>
                 </viewController>
