@@ -19,6 +19,10 @@
     return @"Book";
 }
 
+self.title = dictionary[
+self.author =
+
+
 +(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withOverview:(NSString *)overview withCompletion:(PFBooleanResultBlock _Nullable)completion {
     Book *newBook = [Book new];
     newBook.title = title;

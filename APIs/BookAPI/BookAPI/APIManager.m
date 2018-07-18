@@ -10,10 +10,12 @@
 
 @implementation APIManager {
 
-NSString  *str_coverUrl;
-NSString  *str_bookTitle;
+NSString  *coverUrl;
+NSString  *bookTitle;
+NSString *author; 
 NSDictionary *rawJson;
 BOOL getInfo;
+    
 }
 
 - (void) setIsbn:(NSString *)str_bsn {
@@ -40,8 +42,8 @@ BOOL getInfo;
         NSDictionary *item = [[NSDictionary alloc] initWithDictionary:rawItem[0]];
         NSDictionary *volumeInfo = [[NSDictionary alloc] initWithDictionary:item[@"volumeInfo"]];
         NSDictionary *thumbnails = [[NSDictionary alloc] initWithDictionary:volumeInfo[@"imageLinks"]];
-        str_bookTitle = volumeInfo[@"title"];
-        str_coverUrl = thumbnails[@"thumbnail"];
+        bookTitle = volumeInfo[@"title"];
+        coverUrl = thumbnails[@"thumbnail"];
     }
 }
 
@@ -50,11 +52,11 @@ BOOL getInfo;
 }
 
 - (NSString *) getCover {
-    return str_coverUrl;
+    return coverUrl;
 }
 
 - (NSString *) getTitle {
-    return str_bookTitle;
+    return bookTitle;
 }
 
 - (NSString *) getBookIsbn {
