@@ -1414,14 +1414,8 @@
         <segue reference="xeT-kZ-RnR"/>
         <segue reference="pUc-75-NA2"/>
         <segue reference="tmn-nk-c5j"/>
-<<<<<<< HEAD
-        <segue reference="Stf-NC-mpb"/>
-        <segue reference="GVg-UF-tiR"/>
-        <segue reference="DHM-n1-jTW"/>
-=======
         <segue reference="8dm-Tj-N7N"/>
         <segue reference="abl-o7-PdP"/>
         <segue reference="Qtl-3P-aZe"/>
->>>>>>> 47022736609e1306e22fe59f331c5bc950b7cd32
     </inferredMetricsTieBreakers>
 </document>
