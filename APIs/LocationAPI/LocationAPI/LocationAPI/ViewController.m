@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController ()
+@interface ViewController () <CLLocationManagerDelegate>
+@property (strong, nonatomic) IBOutlet UILabel *latitude;
+@property (strong, nonatomic) IBOutlet UILabel *longitude;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -16,7 +20,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager startUpdatingLocation];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = [locations lastObject];
+    self.latitude.text = [NSString stringWithFormat:@"%f", location.coordinate.latitude];
+    self.longitude.text = [NSString stringWithFormat:@"%f", location.coordinate.longitude];
 }
 
 

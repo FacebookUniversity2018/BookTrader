@@ -15,6 +15,7 @@
 		CE3A964120FFFA6600EAD0E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A964020FFFA6600EAD0E3 /* main.m */; };
 		CE3A964B20FFFA6600EAD0E3 /* LocationAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A964A20FFFA6600EAD0E3 /* LocationAPITests.m */; };
 		CE3A965620FFFA6600EAD0E3 /* LocationAPIUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A965520FFFA6600EAD0E3 /* LocationAPIUITests.m */; };
+		CE3A966520FFFB1F00EAD0E3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE3A966420FFFB1F00EAD0E3 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CE3A965120FFFA6600EAD0E3 /* LocationAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3A965520FFFA6600EAD0E3 /* LocationAPIUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationAPIUITests.m; sourceTree = "<group>"; };
 		CE3A965720FFFA6600EAD0E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE3A966420FFFB1F00EAD0E3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3A966520FFFB1F00EAD0E3 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				CE3A964920FFFA6600EAD0E3 /* LocationAPITests */,
 				CE3A965420FFFA6600EAD0E3 /* LocationAPIUITests */,
 				CE3A962F20FFFA6500EAD0E3 /* Products */,
+				CE3A966320FFFB1E00EAD0E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +134,14 @@
 				CE3A965720FFFA6600EAD0E3 /* Info.plist */,
 			);
 			path = LocationAPIUITests;
+			sourceTree = "<group>";
+		};
+		CE3A966320FFFB1E00EAD0E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE3A966420FFFB1F00EAD0E3 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HDF54N6KHN;
+				DEVELOPMENT_TEAM = A5TQ98F5H4;
 				INFOPLIST_FILE = LocationAPI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -451,7 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HDF54N6KHN;
+				DEVELOPMENT_TEAM = A5TQ98F5H4;
 				INFOPLIST_FILE = LocationAPI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
