@@ -7,13 +7,15 @@
 //
 
 #import "HomeViewController.h"
+#import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface HomeViewController () <MKMapViewDelegate>
+@interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
-
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLGeocoder *geocoder;
 
 @end
 
@@ -30,8 +32,24 @@
     // set up search bar
     self.searchBar.layer.borderWidth = 0.0;
     [self.searchBar setBackgroundImage:[UIImage new]];
+    
+    // user location
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.geocoder = [CLGeocoder new];
+    
+    [self.locationManager startUpdatingLocation];
 }
 
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
+    NSLog(@"I failed");
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations {
+    NSLog(@"%@", locations);
+    [self.locationManager stopUpdatingLocation];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
