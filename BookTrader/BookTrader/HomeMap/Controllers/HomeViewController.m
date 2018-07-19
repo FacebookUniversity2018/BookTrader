@@ -93,8 +93,9 @@
     CLLocation *location = [locations lastObject];
     MKCoordinateRegion currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1));
     self.currentLocation = currentLocation;
-    // NSLog([NSString stringWithFormat:@"%f", location.coordinate.latitude]);
-    // NSLog([NSString stringWithFormat:@"%f", location.coordinate.longitude]);
+    [self.mapView setRegion:currentLocation animated:true];
+//    NSLog([NSString stringWithFormat:@"%f", location.coordinate.latitude]);
+//    NSLog([NSString stringWithFormat:@"%f", location.coordinate.longitude]);
 }
 
 
