@@ -11,14 +11,20 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
+// for test
+#import "BTBookTestModel.h"
 
-@interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+
+@interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (nonatomic) MKCoordinateRegion currentLocation;
+@property (strong, nonatomic) NSArray *books;
+@property (strong, nonatomic) NSArray *users;
+@property (strong, nonatomic) NSArray *filteredData;
 
 
 @end
@@ -37,6 +43,7 @@
     [self.mapView setRegion:sfRegion animated:false];
     
     // set up search bar
+    self.searchBar.delegate = self;
     self.searchBar.layer.borderWidth = 0.0;
     [self.searchBar setBackgroundImage:[UIImage new]];
     
@@ -46,8 +53,34 @@
     [self.locationManager requestWhenInUseAuthorization];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.geocoder = [CLGeocoder new];
-    
     [self.locationManager startUpdatingLocation];
+    
+    // populate users (test data now can switch to real data when exists)
+    PFQuery *usersQuery = [PFQuery queryWithClassName:@"UserTest"];
+    [usersQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.users = objects;
+            NSLog(@"users updated: %lu", (unsigned long)self.users.count);
+        }
+    }];
+    
+    
+    // populate books (test data now can switch to real data when exists)
+    PFQuery *booksQuery = [PFQuery queryWithClassName:@"BookTest"];
+    [booksQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.books = objects;
+            NSLog(@"books updated: %lu", self.books.count);
+        }
+    }];
+
+    
+    
+    
     
 }
 
@@ -74,6 +107,8 @@
     
 }
 
+
+
 /*
 #pragma mark - Navigation
 
@@ -84,6 +119,16 @@
 }
 */
 
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        self.filteredData = [self.books filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(title contains[c] %@)", searchText]];
+    }
+    else {
+        self.filteredData = self.books;
+    }
+}
 
 
 
