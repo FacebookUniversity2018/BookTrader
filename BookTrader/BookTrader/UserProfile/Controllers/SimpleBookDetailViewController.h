@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Book.h"
 
 @interface SimpleBookDetailViewController : UIViewController
+
+@property NSString *isbn;
+@property (strong, nonatomic) Book *book;
 
 @end
