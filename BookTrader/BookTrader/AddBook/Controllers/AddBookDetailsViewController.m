@@ -23,14 +23,17 @@
 @property (strong, nonatomic) IBOutlet UIButton *buyButton;
 @property (strong, nonatomic) IBOutlet UIButton *wantTradeButton;
 @property (strong, nonatomic) IBOutlet UIButton *wantGiftButton;
+@property (strong, nonatomic) NSString *bookURL;
+//post
+@property (strong, nonatomic) NSURL *url;
+
 @property (nonatomic, assign) BOOL sell;
 @property (nonatomic, assign) BOOL trade;
 @property (nonatomic, assign) BOOL gift;
 @property (nonatomic, assign) BOOL buy;
 @property (nonatomic, assign) BOOL wantGift;
 @property (nonatomic, assign) BOOL wantTrade;
-
-
+@property (nonatomic, assign) BOOL location;
 
 @end
 
@@ -41,15 +44,33 @@
     [self.book setIsbn:self.isbn];
     NSDictionary *currentBook = [Book fetchData:self.isbn];
     self.titleLabel.text = currentBook[@"title"];
+    NSLog(@"%@", self.titleLabel.text);
+
     NSArray *authors = currentBook[@"authors"];
     self.authorLabel.text = authors[0];
     self.dateLabel.text = currentBook[@"publishedDate"];
     NSDictionary *images = currentBook[@"imageLinks"];
-    NSString *bookURL = images[@"thumbnail"];
+    self.bookURL = images[@"thumbnail"];
 
-    NSURL *url = [NSURL URLWithString:bookURL];
-    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    self.url = [NSURL URLWithString:self.
+                bookURL];
+    NSData *imageData = [NSData dataWithContentsOfURL:self.url];
     self.bookCover.image = [UIImage imageWithData:imageData];
+}
+
+- (IBAction)onPublish:(id)sender {
+    NSString *title =  self.titleLabel.text;
+
+    NSLog(@"%@", _titleLabel.text);
+
+NSString *author = self.authorLabel.text;
+NSString *date = self.dateLabel.text;
+NSString *urlString = self.bookURL;
+    
+[Book addBookToDatabase:title withAuthor:author withDate:date withCover:urlString withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
+[self dismissViewControllerAnimated:true completion:nil];
+    NSLog(@"published!");
+    NSLog(@"%@", _titleLabel.text);
 }
 
 - (void)didReceiveMemoryWarning {

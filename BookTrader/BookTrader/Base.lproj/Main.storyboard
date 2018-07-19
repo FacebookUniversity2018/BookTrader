@@ -1093,20 +1093,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AdB-IX-hbl">
-                                <rect key="frame" x="120" y="451" width="134" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="have"/>
-                                    <segment title="want"/>
-                                </segments>
-                                <color key="tintColor" red="0.37831836938858032" green="0.17030856013298035" blue="0.074392117559909821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="showNewView:" destination="j06-5r-WOD" eventType="valueChanged" id="D42-4y-ryy"/>
-                                </connections>
-                            </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arC-MC-8NV">
-                                <rect key="frame" x="0.0" y="487" width="375" height="144"/>
+                                <rect key="frame" x="0.0" y="473" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.62843197770000003" green="0.19619659449999999" blue="0.66199412030000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
@@ -1114,14 +1102,14 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eah-Ty-4fn">
-                                <rect key="frame" x="0.0" y="487" width="375" height="144"/>
+                                <rect key="frame" x="0.0" y="473" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="Erd-Mq-cAq" kind="embed" id="SiO-Qy-Or9"/>
                                 </connections>
                             </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="jPn-vt-54t">
-                                <rect key="frame" x="101" y="121" width="173" height="217"/>
+                                <rect key="frame" x="101" y="121" width="173" height="199"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Tw-yZ-ePI">
@@ -1132,8 +1120,20 @@
                                     <segue destination="Vws-A0-hba" kind="show" identifier="bookAddDetailsToBarcodeSegue" id="xeT-kZ-RnR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-UT-JkV">
+                                <rect key="frame" x="16" y="62" width="218" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="book details">
+                                        <attributes>
+                                            <font key="NSFont" size="29" name="Baskerville-SemiBold"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ze-8K-Q2I">
-                                <rect key="frame" x="57" y="346" width="318" height="107"/>
+                                <rect key="frame" x="79" y="317" width="318" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="author:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDp-RE-Fdw">
@@ -1185,18 +1185,18 @@
                                     </label>
                                 </subviews>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0Z-UT-JkV">
-                                <rect key="frame" x="16" y="62" width="218" height="42"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AdB-IX-hbl">
+                                <rect key="frame" x="120" y="420" width="134" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="book details">
-                                        <attributes>
-                                            <font key="NSFont" size="29" name="Baskerville-SemiBold"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <segments>
+                                    <segment title="have"/>
+                                    <segment title="want"/>
+                                </segments>
+                                <color key="tintColor" red="0.37831836938858032" green="0.17030856013298035" blue="0.074392117559909821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="showNewView:" destination="j06-5r-WOD" eventType="valueChanged" id="D42-4y-ryy"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4ET-2u-A4r"/>
@@ -1220,18 +1220,18 @@
             <objects>
                 <viewController title="List Book" id="4RQ-tJ-9CF" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ABa-Yl-ioN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="price?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-Mi-r0M">
-                                <rect key="frame" x="101" y="54" width="50" height="26"/>
+                                <rect key="frame" x="57" y="87" width="50" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-2f-HtK">
-                                <rect key="frame" x="0.0" y="84" width="375" height="39"/>
+                                <rect key="frame" x="-9" y="119" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -1243,26 +1243,37 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                                <connections>
+                                    <action selector="onPublish:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="J6k-eK-EU2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vic-pN-WqU">
+                                <rect key="frame" x="169" y="91" width="19" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                                <connections>
+                                    <action selector="sellButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="YeD-AT-4mu"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-kB-vc7">
-                                <rect key="frame" x="151" y="58" width="49" height="18"/>
+                                <rect key="frame" x="115" y="92" width="49" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.014304199256002903" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lg6-1W-cVK">
-                                <rect key="frame" x="100" y="0.0" width="175" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="use current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JJ-3U-Hwh">
+                                <rect key="frame" x="196" y="91" width="129" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lg6-1W-cVK">
+                                <rect key="frame" x="91" y="0.0" width="175" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlV-ft-I1A">
-                                        <rect key="frame" x="110" y="21" width="19" height="18"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="iconmonstr-checkbox-6-240"/>
-                                        <connections>
-                                            <action selector="tradeButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="SFg-vc-mbk"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="gift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-P5-jS6">
                                         <rect key="frame" x="146" y="21" width="24" height="18"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1301,16 +1312,19 @@
                                             <action selector="sellButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="bah-ex-qYs"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlV-ft-I1A">
+                                        <rect key="frame" x="112" y="22" width="19" height="18"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                                        <connections>
+                                            <action selector="tradeButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="SFg-vc-mbk"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="Lg6-1W-cVK" firstAttribute="leading" secondItem="tt0-41-EQt" secondAttribute="leading" constant="100" id="LQD-kw-BBF"/>
-                            <constraint firstItem="tt0-41-EQt" firstAttribute="trailing" secondItem="Lg6-1W-cVK" secondAttribute="trailing" constant="100" id="kWQ-DI-CdE"/>
-                            <constraint firstItem="Lg6-1W-cVK" firstAttribute="leading" secondItem="tt0-41-EQt" secondAttribute="leading" constant="100" id="mSp-j5-O5N"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tt0-41-EQt"/>
                     </view>
                     <connections>
@@ -1329,11 +1343,11 @@
             <objects>
                 <viewController title="Want Book" id="Erd-Mq-cAq" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcZ-Az-vke">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="144"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-hH-dxm">
-                                <rect key="frame" x="0.0" y="84" width="375" height="39"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -1346,6 +1360,23 @@
                                         </fragment>
                                     </attributedString>
                                 </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07r-Uf-01Y">
+                                <rect key="frame" x="113" y="91" width="221" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="be notified when this book is listed?">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="ArialMT"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKz-Iw-c93">
+                                <rect key="frame" x="86" y="89" width="19" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="iconmonstr-checkbox-6-240"/>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G6j-vY-b5V">
                                 <rect key="frame" x="86" y="0.0" width="203" height="61"/>
@@ -1399,23 +1430,6 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07r-Uf-01Y">
-                                <rect key="frame" x="113" y="60" width="221" height="16"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="be notified when this book is listed?">
-                                        <attributes>
-                                            <font key="NSFont" size="14" name="ArialMT"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKz-Iw-c93">
-                                <rect key="frame" x="86" y="59" width="19" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="iconmonstr-checkbox-6-240"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="IrZ-DX-zfD"/>

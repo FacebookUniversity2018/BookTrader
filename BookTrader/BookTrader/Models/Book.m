@@ -14,10 +14,7 @@
 
 @implementation Book
 
-@dynamic author;
-@dynamic title;
-@dynamic datePublished;
-@dynamic coverURL;
+@dynamic author, title, date, coverURL;
 NSDictionary *rawJson;
 NSString *str_bsnNum;
 BOOL getInfo;
@@ -58,11 +55,14 @@ BOOL gift;
 }
 
 
-+(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withOverview:(NSString *)overview withCompletion:(PFBooleanResultBlock _Nullable)completion {
++(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withCompletion:(PFBooleanResultBlock _Nullable)completion {
+    
     Book *newBook = [Book new];
     newBook.title = title;
     newBook.author = author;
-    //newBook.datePublished = datePublished;
+    newBook.date = date;
+    newBook.coverURL = coverURL;
+  //  newBook.user = [PFUser currentUser];
     //newBook.overview = overview;
 
     [newBook saveInBackgroundWithBlock: completion];

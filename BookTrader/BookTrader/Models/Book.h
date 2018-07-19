@@ -14,14 +14,15 @@
 
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
-@property (strong, nonatomic) NSString *datePublished;
+@property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverURL;
 @property (strong, nonatomic) User *user;
 
 
 
 - (void) setIsbn:(NSString *)str_bsn;
-+(void)addBookToDatabase:(NSString * _Nullable )title withAuthor:(NSString * _Nullable)author withOverview:(NSString * _Nullable)overview withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 + (NSDictionary *) fetchData:(NSString *)isbn;
 + (NSDictionary *) parseData:(NSDictionary *)raw;
+
++(void) addBookToDatabase: (NSString * )title withAuthor:(NSString * )author withDate:(NSString *)date withCover:(NSString *)coverURL withCompletion:(PFBooleanResultBlock _Nullable)completion;
 @end
