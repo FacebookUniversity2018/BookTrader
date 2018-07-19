@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MessagesHomeViewController : UIViewController
-
+@property (strong, nonatomic) NSString *navigationControl;
 @end

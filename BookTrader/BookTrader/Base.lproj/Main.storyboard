@@ -408,7 +408,7 @@
                                     <navigationItem title="Title" id="31R-Qa-WRp">
                                         <barButtonItem key="leftBarButtonItem" title="Item" id="xhu-cN-XJv">
                                             <connections>
-                                                <segue destination="mKx-ja-pAo" kind="show" identifier="messageHomeToHomeSegue" id="Stf-NC-mpb"/>
+                                                <action selector="tappedBackButton:" destination="jye-pn-jVo" id="dus-UV-6g5"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -419,14 +419,12 @@
                         <viewLayoutGuide key="safeArea" id="Kf3-wa-252"/>
                     </view>
                     <navigationItem key="navigationItem" id="aKZ-FV-CWN">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="AhV-27-9h5">
-                            <connections>
-                                <segue destination="mKx-ja-pAo" kind="show" identifier="messagesToHomeSegue" id="xKp-qZ-GPh"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="AhV-27-9h5"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="B24-T2-mWG" id="hSF-UJ-dWL"/>
+                        <segue destination="RWJ-gs-zVF" kind="show" identifier="messagesToProfileSegue" id="fQh-8g-dHm"/>
+                        <segue destination="mKx-ja-pAo" kind="show" identifier="messagesToNavSegue" id="Sfx-XH-8fp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E3Q-9v-qS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1470,8 +1468,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="xeT-kZ-RnR"/>
         <segue reference="WpR-MN-ARB"/>
-        <segue reference="PS6-nd-cAq"/>
-        <segue reference="8dm-Tj-N7N"/>
+        <segue reference="fQh-8g-dHm"/>
+        <segue reference="Sfx-XH-8fp"/>
         <segue reference="cml-hS-oe6"/>
         <segue reference="iRC-o5-TUh"/>
     </inferredMetricsTieBreakers>

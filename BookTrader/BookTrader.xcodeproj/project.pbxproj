@@ -201,7 +201,7 @@
 				CE11887D20FD0C8200C088BA /* Messages */,
 				CE11887C20FD0C6C00C088BA /* UserProfile */,
 				CE11887B20FD0C6200C088BA /* HomeMap */,
-				CE11887A20FD0C3900C088BA /* FIrstStop */,
+				CE11887A20FD0C3900C088BA /* FirstStop */,
 				CEEFE6D421010B3A0021CE63 /* Tests */,
 				CE11884820FD0B8200C088BA /* AppDelegate.h */,
 				CE11884920FD0B8200C088BA /* AppDelegate.m */,
@@ -234,14 +234,14 @@
 			path = BookTraderUITests;
 			sourceTree = "<group>";
 		};
-		CE11887A20FD0C3900C088BA /* FIrstStop */ = {
+		CE11887A20FD0C3900C088BA /* FirstStop */ = {
 			isa = PBXGroup;
 			children = (
 				CE11888E20FD0D1B00C088BA /* Controllers */,
 				CE11888D20FD0D1500C088BA /* Views */,
 				CE11888C20FD0D1100C088BA /* Models */,
 			);
-			path = FIrstStop;
+			path = FirstStop;
 			sourceTree = "<group>";
 		};
 		CE11887B20FD0C6200C088BA /* HomeMap */ = {
