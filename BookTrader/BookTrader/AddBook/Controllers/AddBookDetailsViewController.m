@@ -44,6 +44,12 @@
     NSArray *authors = currentBook[@"authors"];
     self.authorLabel.text = authors[0];
     self.dateLabel.text = currentBook[@"publishedDate"];
+    NSDictionary *images = currentBook[@"imageLinks"];
+    NSString *bookURL = images[@"thumbnail"];
+
+    NSURL *url = [NSURL URLWithString:bookURL];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    self.bookCover.image = [UIImage imageWithData:imageData];
 }
 
 - (void)didReceiveMemoryWarning {
