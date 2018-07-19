@@ -11,45 +11,31 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-// testing imports
-#import "BTUserTestModel.h"
+// for test
 #import "BTBookTestModel.h"
 
-@interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+
+@interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
 @property (nonatomic) MKCoordinateRegion currentLocation;
+@property (strong, nonatomic) NSArray *books;
+@property (strong, nonatomic) NSArray *users;
+@property (strong, nonatomic) NSArray *filteredData;
+
 
 @end
 
 @implementation HomeViewController
 
+// Test functions
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // this is just here for testing right now
-    // add test user to database
-    /*
-    [BTUserTestModel BTAddUserToDatabase:@"0000003" withFirstName:@"Dafeng" withLastName:@"Jin" withBio:@"Now us four are all in here" withImage:nil withMyBooksArray:nil withWantBooksArray:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            NSLog(@"yay, posted");
-        } else {
-            NSLog(@"didn't work");
-        }
-    }];
-    */
-    CLLocationCoordinate2D location00 = CLLocationCoordinate2DMake(37.783333, -122.416567);
-    CLLocationCoordinate2D location01 = CLLocationCoordinate2DMake(37.783333, -122.42);
-    CLLocationCoordinate2D location02 = CLLocationCoordinate2DMake(37.783333, -122.4162);
-    CLLocationCoordinate2D location03 = CLLocationCoordinate2DMake(37.783333, -122.41662);
-    CLLocationCoordinate2D location04 = CLLocationCoordinate2DMake(37.783333, -122.416262);
-    CLLocationCoordinate2D location05 = CLLocationCoordinate2DMake(37.75, -122.416667);
-    CLLocationCoordinate2D location06 = CLLocationCoordinate2DMake(37.785, -122.416667);
-    CLLocationCoordinate2D location07 = CLLocationCoordinate2DMake(37.7835, -122.416667);
-    CLLocationCoordinate2D location08 = CLLocationCoordinate2DMake(37.783335, -122.416667);
-    CLLocationCoordinate2D location09 = CLLocationCoordinate2DMake(37.7833335, -122.416667);
     
     // set up map view
     self.mapView.delegate = self;
@@ -57,6 +43,7 @@
     [self.mapView setRegion:sfRegion animated:false];
     
     // set up search bar
+    self.searchBar.delegate = self;
     self.searchBar.layer.borderWidth = 0.0;
     [self.searchBar setBackgroundImage:[UIImage new]];
     
@@ -66,8 +53,35 @@
     [self.locationManager requestWhenInUseAuthorization];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.geocoder = [CLGeocoder new];
-    
     [self.locationManager startUpdatingLocation];
+    
+    // populate users (test data now can switch to real data when exists)
+    PFQuery *usersQuery = [PFQuery queryWithClassName:@"UserTest"];
+    [usersQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.users = objects;
+            NSLog(@"users updated: %lu", (unsigned long)self.users.count);
+        }
+    }];
+    
+    
+    // populate books (test data now can switch to real data when exists)
+    PFQuery *booksQuery = [PFQuery queryWithClassName:@"BookTest"];
+    [booksQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.books = objects;
+            NSLog(@"books updated: %lu", self.books.count);
+        }
+    }];
+
+    
+    
+    
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
@@ -79,8 +93,9 @@
     CLLocation *location = [locations lastObject];
     MKCoordinateRegion currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1));
     self.currentLocation = currentLocation;
-    // NSLog([NSString stringWithFormat:@"%f", location.coordinate.latitude]);
-    // NSLog([NSString stringWithFormat:@"%f", location.coordinate.longitude]);
+    [self.mapView setRegion:currentLocation animated:true];
+//    NSLog([NSString stringWithFormat:@"%f", location.coordinate.latitude]);
+//    NSLog([NSString stringWithFormat:@"%f", location.coordinate.longitude]);
 }
 
 
@@ -93,14 +108,35 @@
     
 }
 
-/*
-#pragma mark - Navigation
+
+
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier]  isEqual: @"navigationSegue"]) {
+        // for nav header
+    } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
+        // for my books
+    } else {
+        NSLog(@"error");
+    }
 }
-*/
+
+
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+        self.filteredData = [self.books filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(title contains[c] %@)", searchText]];
+    }
+    else {
+        self.filteredData = self.books;
+    }
+}
+
+
+
+
 
 @end

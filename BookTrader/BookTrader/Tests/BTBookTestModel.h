@@ -20,11 +20,11 @@
 @property (nonatomic) BOOL sell;
 @property (nonatomic) BOOL gift;
 @property (nonatomic) BOOL trade;
-@property (nonatomic) CLLocationCoordinate2D location;
+@property (nonatomic) int location;
 @property (strong, nonatomic) BTUserTestModel *user;
 
 + (void) BTAddBookToDatabase:(NSString *)bookId withTitle:(NSString *)title withAuthor:(NSString *)author
                 withOverview:(NSString *)overview withGenre:(NSString *)genre canSell:(BOOL)sell canGift:(BOOL)gift
-                    canTrade:(BOOL)trade withLocation:(CLLocationCoordinate2D)location withUser:(BTUserTestModel *)user withCompletion:(PFBooleanResultBlock _Nullable)completion;
+                    canTrade:(BOOL)trade withLocation:(int)location withUser:(BTUserTestModel *)user withCompletion:(PFBooleanResultBlock _Nullable)completion;
 
 @end

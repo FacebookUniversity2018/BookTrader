@@ -74,8 +74,14 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
-    AddBookDetailsViewController *bookDetailsViewController = [segue destinationViewController];
-    bookDetailsViewController.isbn = self.isbn;
+    if ([[segue identifier] isEqualToString:@"barcodeToDetailsSegue"]) {
+        AddBookDetailsViewController *bookDetailsViewController = [segue destinationViewController];
+        bookDetailsViewController.isbn = self.isbn;
+    } else if ([[segue identifier] isEqualToString:@"barcodeAddToHomeSegue"]) {
+        
+    } else {
+        NSLog([segue identifier]);
+    }
 }
 
 @end

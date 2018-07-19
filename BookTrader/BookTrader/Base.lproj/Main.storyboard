@@ -838,6 +838,9 @@
                                         <state key="normal" image="envelope">
                                             <color key="titleColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="jye-pn-jVo" kind="show" identifier="profileToMessagesSegue" id="iRC-o5-TUh"/>
+                                        </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="5-stars" translatesAutoresizingMaskIntoConstraints="NO" id="t6Y-U4-Hg1">
                                         <rect key="frame" x="131" y="221" width="121" height="19"/>
@@ -1466,10 +1469,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xeT-kZ-RnR"/>
-        <segue reference="pUc-75-NA2"/>
-        <segue reference="tmn-nk-c5j"/>
-        <segue reference="E7I-hl-tBA"/>
-        <segue reference="abl-o7-PdP"/>
-        <segue reference="Qtl-3P-aZe"/>
+        <segue reference="WpR-MN-ARB"/>
+        <segue reference="PS6-nd-cAq"/>
+        <segue reference="8dm-Tj-N7N"/>
+        <segue reference="cml-hS-oe6"/>
+        <segue reference="iRC-o5-TUh"/>
     </inferredMetricsTieBreakers>
 </document>

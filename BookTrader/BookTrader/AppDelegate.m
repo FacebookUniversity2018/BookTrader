@@ -11,6 +11,10 @@
 #import <Parse/Parse.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+// test imports
+#import "BTUserTestModel.h"
+#import "BTBookTestModel.h"
+
 @interface AppDelegate ()
 
 @end
@@ -22,6 +26,10 @@
     // Facebook login
     [FBSDKLoginButton class ];
 
+    [[FBSDKApplicationDelegate sharedInstance] application : application
+                               didFinishLaunchingWithOptions : launchOptions ];
+    
+    
     
     ParseClientConfiguration *config = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
         configuration.applicationId = @"bookTrader";
@@ -46,6 +54,7 @@
     // Add any custom logic here.
     
     return handled ; }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
