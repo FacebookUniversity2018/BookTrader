@@ -9,8 +9,14 @@
 #import "LoginViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "User.h"
+
 
 @interface LoginViewController ()
+
+@property (strong, nonatomic) NSDictionary *profileInfo;
+@property BOOL logged;
+@property BOOL userExist;
 
 @end
 
@@ -18,6 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self userExist];
+    
+    if([FBSDKAccessToken currentAccessTokenIsActive]) {
+        self.logged = YES;
+    } else{
+        self.logged = NO;
+    }
     
     // Handle clicks on the button
     [self.loginButton addTarget : self action : @selector (loginButtonClicked) forControlEvents : UIControlEventTouchUpInside ];
@@ -30,20 +43,69 @@
 }
 
 - ( void ) loginButtonClicked {
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions : @[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result , NSError *error ) {
-        if ( error ) {
-            NSLog (@"Process error" );
-        } else if ( result . isCancelled ) {
-            NSLog (@ "Canceled" );
-            
-        } else {
-            NSLog (@"Logged in" );
-        
+    if(self.logged == YES) {
+        if([FBSDKAccessToken currentAccessTokenIsActive]) {
+            FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+            [login logOut];
+            self.logged = NO;
+            NSLog(@"Logout");
+        }
+    } else if (self.logged == NO){
+        FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+        [login logInWithReadPermissions : @[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result , NSError *error ) {
+            if ( error ) {
+                NSLog (@"Process error" );
+            } else if ( result . isCancelled ) {
+                NSLog (@ "Canceled" );
+            } else {
+                NSLog (@"Logged in" );
+                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture, first_name, last_name"}]
+                 startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                     if (!error) {
+                         NSLog(@"user:%@", result);
+                         self.profileInfo = result;
+                         if(!self.userExist) {
+                             [self createUser];
+                         }
+                     }
+                 }];
+            }
+            self.logged = YES;
+        }];
     }
-        
+}
+
+// Add user to parse
+- (void) createUser {
+    [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"first_name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if(error) {
+            NSLog(@"%@", error.localizedDescription);
+        }
     }];
     
+}
+
+// Verify if user is already on Parse
+- (void) userExists: (NSString *) userID {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query includeKey:@"userId"];
+    [query whereKey:@"userId" containsString:[FBSDKAccessToken currentAccessToken].userID];
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *users, NSError *error) {
+        if (users != nil) {
+            // do something with the array of object returned by the call
+            NSLog(@"Successfully retrieved user if any");
+            if(users.count == 0) {
+                self.userExist = NO;
+            } else {
+                self.userExist = YES;
+            }
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 /*
