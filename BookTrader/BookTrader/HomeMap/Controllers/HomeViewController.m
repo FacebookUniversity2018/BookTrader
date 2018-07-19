@@ -8,8 +8,10 @@
 
 #import "HomeViewController.h"
 #import "Book.h"
+#import "HomeNavigationViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+
 
 // for test
 #import "BTBookTestModel.h"
@@ -39,8 +41,8 @@
     
     // set up map view
     self.mapView.delegate = self;
-    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
-    [self.mapView setRegion:sfRegion animated:false];
+    self.currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
+    [self.mapView setRegion:self.currentLocation animated:false];
     
     // set up search bar
     self.searchBar.delegate = self;
@@ -120,6 +122,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier]  isEqual: @"navigationSegue"]) {
         // for nav header
+        HomeNavigationViewController *navViewController = [segue destinationViewController];
+        navViewController.currentLocation = self.currentLocation;
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         // for my books
     } else {

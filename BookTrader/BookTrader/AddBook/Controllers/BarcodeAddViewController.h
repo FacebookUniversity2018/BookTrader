@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
 @interface BarcodeAddViewController : UIViewController
-
+@property (nonatomic) MKCoordinateRegion currentLocation;
 @end
