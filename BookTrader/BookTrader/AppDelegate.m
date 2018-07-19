@@ -11,6 +11,10 @@
 #import <Parse/Parse.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+// test imports
+#import "BTUserTestModel.h"
+#import "BTBookTestModel.h"
+
 @interface AppDelegate ()
 
 @end
@@ -34,7 +38,6 @@
     }];
     
     [Parse initializeWithConfiguration:config];
-    
     
     return YES;
 }

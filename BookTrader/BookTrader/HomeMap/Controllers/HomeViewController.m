@@ -7,8 +7,10 @@
 //
 
 #import "HomeViewController.h"
+#import "Book.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+
 
 @interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -16,10 +18,15 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
+@property (nonatomic) MKCoordinateRegion currentLocation;
+
 
 @end
 
 @implementation HomeViewController
+
+// Test functions
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,23 +43,35 @@
     // user location
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
+    [self.locationManager requestWhenInUseAuthorization];
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.geocoder = [CLGeocoder new];
     
     [self.locationManager startUpdatingLocation];
+    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
     NSLog(@"I failed");
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations {
-    NSLog(@"%@", locations);
-    [self.locationManager stopUpdatingLocation];
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation *location = [locations lastObject];
+    MKCoordinateRegion currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1));
+    self.currentLocation = currentLocation;
+    // NSLog([NSString stringWithFormat:@"%f", location.coordinate.latitude]);
+    // NSLog([NSString stringWithFormat:@"%f", location.coordinate.longitude]);
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateLocation {
+    
 }
 
 /*
@@ -64,5 +83,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+
+
 
 @end
