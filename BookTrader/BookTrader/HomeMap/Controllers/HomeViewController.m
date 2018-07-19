@@ -128,7 +128,6 @@
     else {
         self.filteredData = self.books;
     }
-    
 }
 
 
