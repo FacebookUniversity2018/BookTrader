@@ -52,14 +52,10 @@ BOOL gift;
         getInfo = true;
         NSDictionary *item = [[NSDictionary alloc] initWithDictionary:rawItem[0]];
         NSDictionary *volumeInfo = [[NSDictionary alloc] initWithDictionary:item[@"volumeInfo"]];
-        NSDictionary *images = [[NSDictionary alloc] initWithDictionary:volumeInfo[@"imageLinks"]];
-        NSDictionary *res = @{@"title": volumeInfo[@"title"], @"authors": volumeInfo[@"authors"], @"publishedDate":volumeInfo[@"publishedDate"]};
+        NSDictionary *res = @{@"title": volumeInfo[@"title"], @"authors": volumeInfo[@"authors"], @"publishedDate":volumeInfo[@"publishedDate"], @"imageLinks": volumeInfo[@"imageLinks"]};
         return res;
-
-     //   coverUrl = images[@"small"];
     }
 }
-
 
 
 +(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withOverview:(NSString *)overview withCompletion:(PFBooleanResultBlock _Nullable)completion {
