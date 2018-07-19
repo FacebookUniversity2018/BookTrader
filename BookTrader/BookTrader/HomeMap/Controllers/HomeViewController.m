@@ -7,8 +7,13 @@
 //
 
 #import "HomeViewController.h"
+#import "Book.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+
+// testing imports
+#import "BTUserTestModel.h"
+#import "BTBookTestModel.h"
 
 @interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
@@ -24,6 +29,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    // this is just here for testing right now
+    // add test user to database
+    /*
+    [BTUserTestModel BTAddUserToDatabase:@"0000003" withFirstName:@"Dafeng" withLastName:@"Jin" withBio:@"Now us four are all in here" withImage:nil withMyBooksArray:nil withWantBooksArray:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"yay, posted");
+        } else {
+            NSLog(@"didn't work");
+        }
+    }];
+    */
+    CLLocationCoordinate2D location00 = CLLocationCoordinate2DMake(37.783333, -122.416567);
+    CLLocationCoordinate2D location01 = CLLocationCoordinate2DMake(37.783333, -122.42);
+    CLLocationCoordinate2D location02 = CLLocationCoordinate2DMake(37.783333, -122.4162);
+    CLLocationCoordinate2D location03 = CLLocationCoordinate2DMake(37.783333, -122.41662);
+    CLLocationCoordinate2D location04 = CLLocationCoordinate2DMake(37.783333, -122.416262);
+    CLLocationCoordinate2D location05 = CLLocationCoordinate2DMake(37.75, -122.416667);
+    CLLocationCoordinate2D location06 = CLLocationCoordinate2DMake(37.785, -122.416667);
+    CLLocationCoordinate2D location07 = CLLocationCoordinate2DMake(37.7835, -122.416667);
+    CLLocationCoordinate2D location08 = CLLocationCoordinate2DMake(37.783335, -122.416667);
+    CLLocationCoordinate2D location09 = CLLocationCoordinate2DMake(37.7833335, -122.416667);
     
     // set up map view
     self.mapView.delegate = self;

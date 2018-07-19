@@ -41,6 +41,8 @@
 		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
 		CEDDDD0120FD51A2007AF20B /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */; };
 		CEDDDD0420FD68D1007AF20B /* MessagesHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */; };
+		CEEFE6D721010B860021CE63 /* BTBookTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE6D621010B860021CE63 /* BTBookTestModel.m */; };
+		CEEFE6DA21010B920021CE63 /* BTUserTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE6D921010B920021CE63 /* BTUserTestModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,10 @@
 		CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
 		CEDDDD0220FD68D1007AF20B /* MessagesHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesHeaderCell.h; sourceTree = "<group>"; };
 		CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesHeaderCell.m; sourceTree = "<group>"; };
+		CEEFE6D521010B860021CE63 /* BTBookTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTBookTestModel.h; sourceTree = "<group>"; };
+		CEEFE6D621010B860021CE63 /* BTBookTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTBookTestModel.m; sourceTree = "<group>"; };
+		CEEFE6D821010B920021CE63 /* BTUserTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTUserTestModel.h; sourceTree = "<group>"; };
+		CEEFE6D921010B920021CE63 /* BTUserTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTUserTestModel.m; sourceTree = "<group>"; };
 		D13C1F010B559DE973D9A157 /* Pods-BookTraderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderUITests/Pods-BookTraderUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E57F36E6E87BEA6FDA782431 /* Pods-BookTraderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderTests/Pods-BookTraderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F125F9DA15566CBEC7BE92C9 /* Pods-BookTrader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTrader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookTrader/Pods-BookTrader.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 				CE11887C20FD0C6C00C088BA /* UserProfile */,
 				CE11887B20FD0C6200C088BA /* HomeMap */,
 				CE11887A20FD0C3900C088BA /* FIrstStop */,
+				CEEFE6D421010B3A0021CE63 /* Tests */,
 				CE11884820FD0B8200C088BA /* AppDelegate.h */,
 				CE11884920FD0B8200C088BA /* AppDelegate.m */,
 				CE11884B20FD0B8200C088BA /* ViewController.h */,
@@ -496,6 +503,17 @@
 			path = GBooksAPI;
 			sourceTree = "<group>";
 		};
+		CEEFE6D421010B3A0021CE63 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CEEFE6D521010B860021CE63 /* BTBookTestModel.h */,
+				CEEFE6D621010B860021CE63 /* BTBookTestModel.m */,
+				CEEFE6D821010B920021CE63 /* BTUserTestModel.h */,
+				CEEFE6D921010B920021CE63 /* BTUserTestModel.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		F19A77F339C225C7A0A4C90E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -745,6 +763,8 @@
 				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
 				CE11884D20FD0B8200C088BA /* ViewController.m in Sources */,
 				CE11885820FD0B8200C088BA /* main.m in Sources */,
+				CEEFE6D721010B860021CE63 /* BTBookTestModel.m in Sources */,
+				CEEFE6DA21010B920021CE63 /* BTUserTestModel.m in Sources */,
 				CE1188A920FD0F4400C088BA /* BookDetailViewController.m in Sources */,
 				CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */,
 				CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */,
