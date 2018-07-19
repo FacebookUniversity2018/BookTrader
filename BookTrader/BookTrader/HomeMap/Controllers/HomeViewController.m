@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLGeocoder *geocoder;
+@property (nonatomic) MKCoordinateRegion currentLocation;
 
 @end
 
@@ -50,6 +51,8 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *location = [locations lastObject];
+    MKCoordinateRegion currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1));
+    self.currentLocation = currentLocation;
     // NSLog([NSString stringWithFormat:@"%f", location.coordinate.latitude]);
     // NSLog([NSString stringWithFormat:@"%f", location.coordinate.longitude]);
 }
@@ -58,6 +61,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)updateLocation {
+    
 }
 
 /*
