@@ -32,4 +32,41 @@
     [newUser saveInBackgroundWithBlock:completion];
 };
 
+// function that takes a user id and returns a User object
++ (id) getUserWithID: (NSString *) userID {
+    __block User *user = [User new];
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query includeKey:@"userId"];
+    [query whereKey:@"userId" containsString:userID];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if(!error) {
+            user = objects[0];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+            user = nil;
+        }
+    }];
+    return user;
+}
+
+/**
+ Method to convert UIImage to PFFile
+ - parameter image: Image that the user wants to upload to parse
+ - returns: PFFile for the the data in the image
+ */
++ (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    NSData *imageData = UIImagePNGRepresentation(image);
+    
+    // get image data and check ifthat is not nil
+    if (!imageData) {
+        return nil;
+    }
+    return [PFFile fileWithName:@"image.png" data:imageData];
+}
+
 @end

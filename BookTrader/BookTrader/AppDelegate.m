@@ -22,6 +22,10 @@
     // Facebook login
     [FBSDKLoginButton class ];
 
+    [[FBSDKApplicationDelegate sharedInstance] application : application
+                               didFinishLaunchingWithOptions : launchOptions ];
+    
+    
     
     ParseClientConfiguration *config = [ParseClientConfiguration configurationWithBlock:^(id<ParseMutableClientConfiguration>  _Nonnull configuration) {
         configuration.applicationId = @"bookTrader";
@@ -46,6 +50,7 @@
     // Add any custom logic here.
     
     return handled ; }
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
