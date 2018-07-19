@@ -109,15 +109,19 @@
 
 
 
-/*
-#pragma mark - Navigation
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([[segue identifier]  isEqual: @"navigationSegue"]) {
+        // for nav header
+    } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
+        // for my books
+    } else {
+        NSLog(@"error");
+    }
 }
-*/
+
 
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
