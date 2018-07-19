@@ -36,7 +36,14 @@
 };
 
 + (BTUserTestModel *) BTGetUserWithUserId:(NSString *)userId {
-    
+    PFQuery *query = [PFQuery queryWithClassName:@"BookTest"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            // search for user;
+        }
+    }];
     return [BTUserTestModel new];
 };
 @end
