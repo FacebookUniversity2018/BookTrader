@@ -35,6 +35,7 @@
 		CE40C70120FE9611004E7300 /* MyMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE40C70020FE9611004E7300 /* MyMessageCell.m */; };
 		CE54694220FEB88700A02E13 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = CE54694120FEB88700A02E13 /* Book.m */; };
 		CE54694520FEB8A400A02E13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CE54694420FEB8A400A02E13 /* User.m */; };
+		CE6967F720FFF56A004CF435 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6967F620FFF56A004CF435 /* CoreLocation.framework */; };
 		CEA8116620FE9EC7004C2FED /* HomeBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8116520FE9EC7004C2FED /* HomeBooksViewController.m */; };
 		CEA8116C20FEA7D6004C2FED /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8116B20FEA7D6004C2FED /* BookCell.m */; };
 		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
@@ -114,6 +115,7 @@
 		CE54694120FEB88700A02E13 /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		CE54694320FEB8A400A02E13 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CE54694420FEB8A400A02E13 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		CE6967F620FFF56A004CF435 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CEA8116420FE9EC7004C2FED /* HomeBooksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBooksViewController.h; sourceTree = "<group>"; };
 		CEA8116520FE9EC7004C2FED /* HomeBooksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBooksViewController.m; sourceTree = "<group>"; };
 		CEA8116A20FEA7D6004C2FED /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6967F720FFF56A004CF435 /* CoreLocation.framework in Frameworks */,
 				CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */,
 				C1BABBFE04C461CE56267A64 /* libPods-BookTrader.a in Frameworks */,
 			);
@@ -463,6 +466,7 @@
 		CE201B8120FD36840055EE13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE6967F620FFF56A004CF435 /* CoreLocation.framework */,
 				CE201B8220FD36840055EE13 /* MapKit.framework */,
 				FCCE42FF7AAF54DC635123BB /* libPods-BookTrader.a */,
 				B08C3C53361151E73DA239E2 /* libPods-BookTraderTests.a */,
