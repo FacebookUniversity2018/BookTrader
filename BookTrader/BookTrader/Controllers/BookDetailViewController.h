@@ -12,6 +12,6 @@
 @interface BookDetailViewController : UIViewController
 
 @property (strong, nonatomic) Book *book;
-@property NSString *isbn;
+@property (strong, nonatomic) NSString *isbn;
 
 @end

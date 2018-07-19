@@ -602,7 +602,7 @@
                                                 </view>
                                                 <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <segue destination="87K-le-6w6" kind="show" identifier="myBooksHomeToBookDetail" id="pUc-75-NA2"/>
+                                                    <segue destination="87K-le-6w6" kind="show" identifier="myBooksHomeToBookDetailSegue" id="pUc-75-NA2"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -950,7 +950,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_arrow"/>
                                 <connections>
-                                    <segue destination="mKx-ja-pAo" kind="show" identifier="bookDetailsToHomeSegue" id="E7I-hl-tBA"/>
+                                    <action selector="tappedBackButton:" destination="87K-le-6w6" eventType="touchUpInside" id="lul-uV-NE8"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="U0N-X4-kDB">
@@ -1045,6 +1045,8 @@
                         <outlet property="bookCover" destination="U0N-X4-kDB" id="X48-aT-1rV"/>
                         <outlet property="dateLabel" destination="ugB-YZ-fLa" id="X1r-5h-cjc"/>
                         <outlet property="titleLabel" destination="Fl7-pK-Cts" id="LpH-sb-O8f"/>
+                        <segue destination="RWJ-gs-zVF" kind="show" identifier="bookDetailsToProfileSegue" id="t21-dR-ACs"/>
+                        <segue destination="2Qd-Gq-nxq" kind="show" identifier="bookDetailsToBookshelfSegue" id="5qs-6K-ecv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w19-l2-RZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1468,9 +1470,10 @@
     <inferredMetricsTieBreakers>
         <segue reference="xeT-kZ-RnR"/>
         <segue reference="WpR-MN-ARB"/>
-        <segue reference="fQh-8g-dHm"/>
+        <segue reference="t21-dR-ACs"/>
         <segue reference="Sfx-XH-8fp"/>
         <segue reference="cml-hS-oe6"/>
+        <segue reference="5qs-6K-ecv"/>
         <segue reference="iRC-o5-TUh"/>
     </inferredMetricsTieBreakers>
 </document>

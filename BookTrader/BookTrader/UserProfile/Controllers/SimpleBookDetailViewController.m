@@ -28,6 +28,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)tappedBackButton:(id)sender {
+    if ([self.navigationControl isEqualToString:@"profile"]) {
+        [self performSegueWithIdentifier:@"bookDetailsToProfileSegue" sender:nil];
+    } else if ([self.navigationControl isEqualToString:@"bookshelf"]) {
+        [self performSegueWithIdentifier:@"bookDetailsToBookshelfSegue" sender:nil];
+    } else {
+        NSLog(@"back button in book details broken because of navigation");
+    }
+}
+
 /*
 #pragma mark - Navigation
 

@@ -8,6 +8,7 @@
 
 #import "PersonalUserViewController.h"
 #import "MessagesHomeViewController.h"
+#import "SimpleBookDetailViewController.h"
 
 @interface PersonalUserViewController ()
 
@@ -32,8 +33,9 @@
     if ([[segue identifier] isEqualToString:@"profileToMessagesSegue"]) {
         MessagesHomeViewController *messagesViewController = [segue destinationViewController];
         messagesViewController.navigationControl = @"profileView";
-    } else {
-        
+    } else if ([[segue identifier] isEqualToString:@"personalProfileToBookDetailSegue"]) {
+        SimpleBookDetailViewController *bookDetailViewController = [segue destinationViewController];
+        bookDetailViewController.navigationControl = @"profile";
     }
 }
 
