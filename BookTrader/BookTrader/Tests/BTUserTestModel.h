@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSArray *booksHave;
 @property (strong, nonatomic) NSArray *booksWant;
 
-+(void) BTAddUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName
++ (void) BTAddUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName
                     withBio:(NSString *)bio withImage:(PFFile *)imageFile withMyBooksArray:(NSArray *)booksHave withWantBooksArray:(NSArray *)booksWant withCompletion:(PFBooleanResultBlock _Nullable)completion;
++ (BTUserTestModel *) BTGetUserWithUserId:(NSString *)userId;
 @end

@@ -34,4 +34,9 @@
     
     [user saveInBackgroundWithBlock: completion];
 };
+
++ (BTUserTestModel *) BTGetUserWithUserId:(NSString *)userId {
+    
+    return [BTUserTestModel new];
+};
 @end
