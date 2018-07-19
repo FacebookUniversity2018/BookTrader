@@ -8,6 +8,9 @@
 
 #import "BTUserTestModel.h"
 
+@interface BTUserTestModel ()
+@end
+
 @implementation BTUserTestModel
 @dynamic userId;
 @dynamic firstName;
@@ -16,6 +19,7 @@
 @dynamic imageFile;
 @dynamic booksHave;
 @dynamic booksWant;
+@dynamic queriedUser;
 
 + (nonnull NSString *)parseClassName {
     return @"UserTest";
@@ -35,15 +39,5 @@
     [user saveInBackgroundWithBlock: completion];
 };
 
-+ (BTUserTestModel *) BTGetUserWithUserId:(NSString *)userId {
-    PFQuery *query = [PFQuery queryWithClassName:@"BookTest"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            // search for user;
-        }
-    }];
-    return [BTUserTestModel new];
-};
+
 @end

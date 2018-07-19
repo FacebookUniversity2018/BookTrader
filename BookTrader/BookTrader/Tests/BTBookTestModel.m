@@ -28,7 +28,7 @@
 
 + (void) BTAddBookToDatabase:(NSString *)bookId withTitle:(NSString *)title withAuthor:(NSString *)author
                 withOverview:(NSString *)overview withGenre:(NSString *)genre canSell:(BOOL)sell canGift:(BOOL)gift
-                    canTrade:(BOOL)trade withLocation:(CLLocationCoordinate2D)location withUser:(BTUserTestModel *)user withCompletion:(PFBooleanResultBlock _Nullable)completion {
+                    canTrade:(BOOL)trade withLocation:(int)location withUser:(BTUserTestModel *)user withCompletion:(PFBooleanResultBlock _Nullable)completion {
     BTBookTestModel *book = [BTBookTestModel new];
     book.bookId = bookId;
     book.title = title;

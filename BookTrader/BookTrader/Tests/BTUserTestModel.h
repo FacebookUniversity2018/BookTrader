@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import "Parse/Parse.h"
 
 @interface BTUserTestModel : PFObject<PFSubclassing>
@@ -17,8 +18,9 @@
 @property (strong, nonatomic) PFFile *imageFile;
 @property (strong, nonatomic) NSArray *booksHave;
 @property (strong, nonatomic) NSArray *booksWant;
+@property (strong, nonatomic) BTUserTestModel *queriedUser;
 
 + (void) BTAddUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName
                     withBio:(NSString *)bio withImage:(PFFile *)imageFile withMyBooksArray:(NSArray *)booksHave withWantBooksArray:(NSArray *)booksWant withCompletion:(PFBooleanResultBlock _Nullable)completion;
-+ (BTUserTestModel *) BTGetUserWithUserId:(NSString *)userId;
+
 @end
