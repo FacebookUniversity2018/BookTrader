@@ -8,10 +8,13 @@
 
 #import "HomeNavigationViewController.h"
 #import <MapKit/MapKit.h>
+#import "User.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface HomeNavigationViewController () <MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) User *currUser;
 
 @end
 
@@ -37,6 +40,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    // Get the current logged in user
+    self.currUser = [User getUserWithID:[FBSDKAccessToken currentAccessToken].userID];
+    NSLog(@"%@", self.currUser);
+}
 /*
 #pragma mark - Navigation
 
