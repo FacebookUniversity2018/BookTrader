@@ -78,11 +78,11 @@
     NSLog(@"%@", self.title);
     self.own = true;
     
-    [Book addBookToDatabase: withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
+    /*[Book addBookToDatabase: withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
              }];
 
-    
+    */
     
 [self dismissViewControllerAnimated:true completion:nil];
     NSLog(@"published!");
@@ -90,9 +90,10 @@
 - (IBAction)onRequest:(id)sender {
     self.own = false;
     
-    [Book addBookToDatabase:nil withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
+  /*  [Book addBookToDatabase:nil withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
              }];
+   */
 }
 
 - (void)didReceiveMemoryWarning {
