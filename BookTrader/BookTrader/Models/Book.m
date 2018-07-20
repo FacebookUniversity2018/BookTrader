@@ -9,22 +9,14 @@
 #import "Book.h"
 #import <Parse/Parse.h>
 @interface Book ()
-- (void)parseData;
 @end
 
 @implementation Book
 
-@dynamic author, title, date, coverURL,longitude,latitude;
+@dynamic author, title, date, coverURL,longitude,latitude, own, want, sell, trade, gift, location,user;
 NSString *str_bsnNum;
 NSDictionary *rawJson;
 BOOL getInfo;
-BOOL sell;
-BOOL trade;
-BOOL gift;
-BOOL buy;
-BOOL wantTrade;
-BOOL wantGift;
-BOOL location;
 
 
 + (nonnull NSString *)parseClassName {
