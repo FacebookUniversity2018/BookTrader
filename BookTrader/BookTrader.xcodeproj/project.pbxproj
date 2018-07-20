@@ -36,6 +36,7 @@
 		CE54694220FEB88700A02E13 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = CE54694120FEB88700A02E13 /* Book.m */; };
 		CE54694520FEB8A400A02E13 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CE54694420FEB8A400A02E13 /* User.m */; };
 		CE6967F720FFF56A004CF435 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE6967F620FFF56A004CF435 /* CoreLocation.framework */; };
+		CE742E77210252A8000ED8F0 /* BTUserDefualts.m in Sources */ = {isa = PBXBuildFile; fileRef = CE742E76210252A8000ED8F0 /* BTUserDefualts.m */; };
 		CEA8116620FE9EC7004C2FED /* HomeBooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8116520FE9EC7004C2FED /* HomeBooksViewController.m */; };
 		CEA8116C20FEA7D6004C2FED /* BookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA8116B20FEA7D6004C2FED /* BookCell.m */; };
 		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
@@ -118,6 +119,8 @@
 		CE54694320FEB8A400A02E13 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CE54694420FEB8A400A02E13 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		CE6967F620FFF56A004CF435 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE742E75210252A8000ED8F0 /* BTUserDefualts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTUserDefualts.h; sourceTree = "<group>"; };
+		CE742E76210252A8000ED8F0 /* BTUserDefualts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTUserDefualts.m; sourceTree = "<group>"; };
 		CEA8116420FE9EC7004C2FED /* HomeBooksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeBooksViewController.h; sourceTree = "<group>"; };
 		CEA8116520FE9EC7004C2FED /* HomeBooksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeBooksViewController.m; sourceTree = "<group>"; };
 		CEA8116A20FEA7D6004C2FED /* BookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BookCell.h; sourceTree = "<group>"; };
@@ -193,16 +196,16 @@
 		CE11884720FD0B8200C088BA /* BookTrader */ = {
 			isa = PBXGroup;
 			children = (
-				CE1188A620FD0F3300C088BA /* Controllers */,
-				CE1188A520FD0F2C00C088BA /* Views */,
-				CE1188A420FD0F2700C088BA /* Models */,
-				CE11887E20FD0C8800C088BA /* Services */,
-				CE11887F20FD0C9600C088BA /* AddBook */,
-				CE11887D20FD0C8200C088BA /* Messages */,
-				CE11887C20FD0C6C00C088BA /* UserProfile */,
-				CE11887B20FD0C6200C088BA /* HomeMap */,
-				CE11887A20FD0C3900C088BA /* FirstStop */,
-				CEEFE6D421010B3A0021CE63 /* Tests */,
+				CE1188A620FD0F3300C088BA /* BTControllers */,
+				CE1188A520FD0F2C00C088BA /* BTViews */,
+				CE1188A420FD0F2700C088BA /* BTModels */,
+				CE11887E20FD0C8800C088BA /* BTServices */,
+				CE11887F20FD0C9600C088BA /* BTAddBook */,
+				CE11887D20FD0C8200C088BA /* BTMessages */,
+				CE11887C20FD0C6C00C088BA /* BTUserProfile */,
+				CE11887B20FD0C6200C088BA /* BTHomeMap */,
+				CE11887A20FD0C3900C088BA /* BTFirstStop */,
+				CEEFE6D421010B3A0021CE63 /* BTTests */,
 				CE11884820FD0B8200C088BA /* AppDelegate.h */,
 				CE11884920FD0B8200C088BA /* AppDelegate.m */,
 				CE11884B20FD0B8200C088BA /* ViewController.h */,
@@ -234,65 +237,66 @@
 			path = BookTraderUITests;
 			sourceTree = "<group>";
 		};
-		CE11887A20FD0C3900C088BA /* FirstStop */ = {
+		CE11887A20FD0C3900C088BA /* BTFirstStop */ = {
 			isa = PBXGroup;
 			children = (
 				CE11888E20FD0D1B00C088BA /* Controllers */,
 				CE11888D20FD0D1500C088BA /* Views */,
 				CE11888C20FD0D1100C088BA /* Models */,
 			);
-			path = FirstStop;
+			path = BTFirstStop;
 			sourceTree = "<group>";
 		};
-		CE11887B20FD0C6200C088BA /* HomeMap */ = {
+		CE11887B20FD0C6200C088BA /* BTHomeMap */ = {
 			isa = PBXGroup;
 			children = (
 				CE11888B20FD0D0600C088BA /* Controllers */,
 				CE11888A20FD0D0100C088BA /* Views */,
 				CE11888920FD0CFC00C088BA /* Models */,
 			);
-			path = HomeMap;
+			path = BTHomeMap;
 			sourceTree = "<group>";
 		};
-		CE11887C20FD0C6C00C088BA /* UserProfile */ = {
+		CE11887C20FD0C6C00C088BA /* BTUserProfile */ = {
 			isa = PBXGroup;
 			children = (
 				CE11888820FD0CF600C088BA /* Controllers */,
 				CE11888720FD0CF200C088BA /* Views */,
 				CE11888620FD0CEC00C088BA /* Models */,
 			);
-			path = UserProfile;
+			path = BTUserProfile;
 			sourceTree = "<group>";
 		};
-		CE11887D20FD0C8200C088BA /* Messages */ = {
+		CE11887D20FD0C8200C088BA /* BTMessages */ = {
 			isa = PBXGroup;
 			children = (
 				CE11888520FD0CE600C088BA /* Controllers */,
 				CE11888420FD0CE200C088BA /* Views */,
 				CE11888320FD0CDB00C088BA /* Models */,
 			);
-			path = Messages;
+			path = BTMessages;
 			sourceTree = "<group>";
 		};
-		CE11887E20FD0C8800C088BA /* Services */ = {
+		CE11887E20FD0C8800C088BA /* BTServices */ = {
 			isa = PBXGroup;
 			children = (
+				CE742E742102524F000ED8F0 /* BTUserDefaults */,
 				CECEDF9820FE627B00D36F03 /* GBooksAPI */,
 				CECEDF9720FE626E00D36F03 /* FBLoginAPI */,
 				CECEDF9620FE625D00D36F03 /* BarcodeAPI */,
 				CE201B7D20FD333F0055EE13 /* UI Tools */,
 			);
-			path = Services;
+			path = BTServices;
 			sourceTree = "<group>";
 		};
-		CE11887F20FD0C9600C088BA /* AddBook */ = {
+		CE11887F20FD0C9600C088BA /* BTAddBook */ = {
 			isa = PBXGroup;
 			children = (
 				CE11888220FD0CBD00C088BA /* Controllers */,
 				CE11888120FD0CB900C088BA /* Views */,
 				CE11888020FD0CB100C088BA /* Models */,
 			);
-			path = AddBook;
+			path = BTAddBook;
 			sourceTree = "<group>";
 		};
 		CE11888020FD0CB100C088BA /* Models */ = {
@@ -434,7 +438,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		CE1188A420FD0F2700C088BA /* Models */ = {
+		CE1188A420FD0F2700C088BA /* BTModels */ = {
 			isa = PBXGroup;
 			children = (
 				CE54694020FEB88700A02E13 /* Book.h */,
@@ -442,23 +446,23 @@
 				CE54694320FEB8A400A02E13 /* User.h */,
 				CE54694420FEB8A400A02E13 /* User.m */,
 			);
-			path = Models;
+			path = BTModels;
 			sourceTree = "<group>";
 		};
-		CE1188A520FD0F2C00C088BA /* Views */ = {
+		CE1188A520FD0F2C00C088BA /* BTViews */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			path = BTViews;
 			sourceTree = "<group>";
 		};
-		CE1188A620FD0F3300C088BA /* Controllers */ = {
+		CE1188A620FD0F3300C088BA /* BTControllers */ = {
 			isa = PBXGroup;
 			children = (
 				CE1188A720FD0F4400C088BA /* BookDetailViewController.h */,
 				CE1188A820FD0F4400C088BA /* BookDetailViewController.m */,
 			);
-			path = Controllers;
+			path = BTControllers;
 			sourceTree = "<group>";
 		};
 		CE201B7D20FD333F0055EE13 /* UI Tools */ = {
@@ -482,6 +486,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE742E742102524F000ED8F0 /* BTUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				CE742E75210252A8000ED8F0 /* BTUserDefualts.h */,
+				CE742E76210252A8000ED8F0 /* BTUserDefualts.m */,
+			);
+			path = BTUserDefaults;
+			sourceTree = "<group>";
+		};
 		CECEDF9620FE625D00D36F03 /* BarcodeAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,7 +516,7 @@
 			path = GBooksAPI;
 			sourceTree = "<group>";
 		};
-		CEEFE6D421010B3A0021CE63 /* Tests */ = {
+		CEEFE6D421010B3A0021CE63 /* BTTests */ = {
 			isa = PBXGroup;
 			children = (
 				CEEFE6D521010B860021CE63 /* BTBookTestModel.h */,
@@ -511,7 +524,7 @@
 				CEEFE6D821010B920021CE63 /* BTUserTestModel.h */,
 				CEEFE6D921010B920021CE63 /* BTUserTestModel.m */,
 			);
-			path = Tests;
+			path = BTTests;
 			sourceTree = "<group>";
 		};
 		F19A77F339C225C7A0A4C90E /* Pods */ = {
@@ -766,6 +779,7 @@
 				CEEFE6D721010B860021CE63 /* BTBookTestModel.m in Sources */,
 				CEEFE6DA21010B920021CE63 /* BTUserTestModel.m in Sources */,
 				CE1188A920FD0F4400C088BA /* BookDetailViewController.m in Sources */,
+				CE742E77210252A8000ED8F0 /* BTUserDefualts.m in Sources */,
 				CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */,
 				CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */,
 				CE11889A20FD0E1500C088BA /* HomeViewController.m in Sources */,
