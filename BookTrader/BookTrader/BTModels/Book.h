@@ -17,15 +17,9 @@
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverURL;
 @property (strong, nonatomic) NSString *overview;
-@property (strong, nonatomic) NSString *genre;
-@property (nonatomic) BOOL sell;
-@property (nonatomic) BOOL gift;
-@property (nonatomic) BOOL trade;
-@property (nonatomic) int location;
-@property (strong, nonatomic) User *user;
-<<<<<<< HEAD:BookTrader/BookTrader/BTModels/Book.h
 
-=======
+@property (strong, nonatomic) User *user;
+
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *longitude;
 @property (nonatomic, assign) BOOL own;
