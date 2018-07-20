@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "Book.h"
 #import "HomeNavigationViewController.h"
+#import "BTUserDefualts.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
@@ -39,9 +40,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // get user defaults
+    CLLocationCoordinate2D myLocation = [BTUserDefualts getCurrentLocation];
+    
     // set up map view
     self.mapView.delegate = self;
-    self.currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
+    self.currentLocation = MKCoordinateRegionMake(myLocation, MKCoordinateSpanMake(0.1, 0.1));
     [self.mapView setRegion:self.currentLocation animated:false];
     
     // set up search bar
@@ -99,6 +103,8 @@
         self.currentLocation = currentLocation;
         [self.mapView setRegion:currentLocation animated:true];
         self.locationFlag = false;
+        [BTUserDefualts setCurrentLocation:currentLocation];
+        
     } else {
         
     }

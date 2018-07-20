@@ -67,10 +67,13 @@ BOOL location;
     newBook.author = author;
     newBook.date = date;
     newBook.coverURL = coverURL;
-  //  newBook.user = [PFUser currentUser];
-    //newBook.overview = overview;
-
+    newBook.sell = sell;
+    newBook.trade = trade;
+    newBook.gift = gift;
+    newBook.longitude = longitude;
+    newBook.latitude = latitude;
     [newBook saveInBackgroundWithBlock: completion];
+    
     
 }
 @end

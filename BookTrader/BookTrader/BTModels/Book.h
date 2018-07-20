@@ -23,12 +23,9 @@
 @property (nonatomic) BOOL trade;
 @property (nonatomic) int location;
 @property (strong, nonatomic) User *user;
-<<<<<<< HEAD:BookTrader/BookTrader/BTModels/Book.h
-
-=======
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *longitude;
->>>>>>> a2062f0a17fd4718b6f28e78e3e8a7d0b6cecef0:BookTrader/BookTrader/Models/Book.h
+
 
 - (void) setIsbn:(NSString *)str_bsn;
 + (NSDictionary *) fetchData:(NSString *)isbn;
