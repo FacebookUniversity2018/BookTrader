@@ -23,9 +23,14 @@
 @property (strong, nonatomic) IBOutlet UIButton *buyButton;
 @property (strong, nonatomic) IBOutlet UIButton *wantTradeButton;
 @property (strong, nonatomic) IBOutlet UIButton *wantGiftButton;
+@property (strong, nonatomic) IBOutlet UIButton *locationButton;
 @property (strong, nonatomic) NSString *bookURL;
 //post
 @property (strong, nonatomic) NSURL *url;
+@property (strong, nonatomic) NSString *author;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *title;
+
 
 @property (nonatomic, assign) BOOL sell;
 @property (nonatomic, assign) BOOL trade;
@@ -44,11 +49,12 @@
     [self.book setIsbn:self.isbn];
     NSDictionary *currentBook = [Book fetchData:self.isbn];
     self.titleLabel.text = currentBook[@"title"];
-    NSLog(@"%@", self.titleLabel.text);
-
+    self.title = currentBook[@"title"];
     NSArray *authors = currentBook[@"authors"];
     self.authorLabel.text = authors[0];
+    self.author = authors[0];
     self.dateLabel.text = currentBook[@"publishedDate"];
+    self.date = currentBook[@"publishedDate"];
     NSDictionary *images = currentBook[@"imageLinks"];
     self.bookURL = images[@"thumbnail"];
 
@@ -59,18 +65,12 @@
 }
 
 - (IBAction)onPublish:(id)sender {
-    NSString *title =  self.titleLabel.text;
-
-    NSLog(@"%@", _titleLabel.text);
-
-NSString *author = self.authorLabel.text;
-NSString *date = self.dateLabel.text;
-NSString *urlString = self.bookURL;
     
-[Book addBookToDatabase:title withAuthor:author withDate:date withCover:urlString withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
+    NSLog(@"%@", self.title);
+
+[Book addBookToDatabase:self.title withAuthor:self.author withDate:self.date withCover: self.bookURL withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
 [self dismissViewControllerAnimated:true completion:nil];
     NSLog(@"published!");
-    NSLog(@"%@", _titleLabel.text);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,13 +94,13 @@ NSString *urlString = self.bookURL;
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"bookAddDetailsToBarcodeSegue"]) {
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ //   if ([[segue identifier] isEqualToString:@"bookAddDetailsToBarcodeSegue"]) {
         
-    } else {
-        NSLog([segue identifier]);
-    }
-}
+   // } else {
+  //      NSLog([segue identifier]);
+   // }
+//}
 
 
 - (IBAction)sellButton:(id)sender {
@@ -131,6 +131,17 @@ NSString *urlString = self.bookURL;
         [self.giftButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
     }
 }
+- (IBAction)locationButton:(id)sender {
+    if (!self.location) {
+        self.location = true;
+        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-4-240.png"] forState:UIControlStateNormal];
+    } else if (self.location) {
+        self.location = false;
+        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
+    }
+    
+}
+
 - (IBAction)buyButton:(id)sender {
     if (!self.buy) {
         self.buy = true;
@@ -161,5 +172,6 @@ NSString *urlString = self.bookURL;
         [self.wantGiftButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
     }
 }
+
 
 @end
