@@ -14,7 +14,7 @@
 
 @implementation Book
 
-@dynamic author, title, date, coverURL;
+@dynamic author, title, date, coverURL,longitude,latitude;
 NSString *str_bsnNum;
 NSDictionary *rawJson;
 BOOL getInfo;
@@ -60,7 +60,7 @@ BOOL location;
 }
 
 
-+(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withCompletion:(PFBooleanResultBlock _Nullable)completion {
++(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withCompletion:(PFBooleanResultBlock _Nullable)completion {
     
     Book *newBook = [Book new];
     newBook.title = title;
