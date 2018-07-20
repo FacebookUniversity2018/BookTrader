@@ -59,7 +59,9 @@
     
     NSLog(@"%@", self.title);
 
-    [Book addBookToDatabase:self.title withAuthor:self.author withDate:self.date withCover:(NSString *)self.bookURL withSell:sell withTrade:self.trade withGift:self.gift withLatitude:latitude withLongitude:longitude withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
+    [Book addBookToDatabase:@"thisBook" withAuthor:nil withDate:nil withCover:nil withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        return;
+    }];
     
 [self dismissViewControllerAnimated:true completion:nil];
     NSLog(@"published!");

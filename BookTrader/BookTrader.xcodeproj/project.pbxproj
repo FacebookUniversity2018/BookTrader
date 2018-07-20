@@ -958,18 +958,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5TQ98F5H4;
-=======
-				DEVELOPMENT_TEAM = KV6X26527X;
->>>>>>> e6eb2553664b5f67e6ace2dbee5538f82bcbc7b3
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader00;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
->>>>>>> e6eb2553664b5f67e6ace2dbee5538f82bcbc7b3
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -984,18 +978,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5TQ98F5H4;
-=======
-				DEVELOPMENT_TEAM = KV6X26527X;
->>>>>>> e6eb2553664b5f67e6ace2dbee5538f82bcbc7b3
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader00;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
->>>>>>> e6eb2553664b5f67e6ace2dbee5538f82bcbc7b3
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

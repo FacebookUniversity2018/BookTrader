@@ -19,11 +19,6 @@
 @property (strong, nonatomic) NSString *overview;
 
 @property (strong, nonatomic) User *user;
-<<<<<<< HEAD
-@property (strong, nonatomic) NSString *latitude;
-@property (strong, nonatomic) NSString *longitude;
-=======
-
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *longitude;
 @property (nonatomic, assign) BOOL own;
@@ -32,8 +27,6 @@
 @property (nonatomic, assign) BOOL trade;
 @property (nonatomic, assign) BOOL gift;
 @property (nonatomic, assign) BOOL location;
->>>>>>> e6eb2553664b5f67e6ace2dbee5538f82bcbc7b3
-
 
 - (void) setIsbn:(NSString *)str_bsn;
 + (NSDictionary *) fetchData:(NSString *)isbn;
