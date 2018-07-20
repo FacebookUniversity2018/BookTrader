@@ -17,6 +17,7 @@
 		CE6734EA2102A648003CFB2B /* PostingBookDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6734E92102A648003CFB2B /* PostingBookDemoUITests.m */; };
 		CE6734FC2102A6AB003CFB2B /* BarcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6734FB2102A6AB003CFB2B /* BarcodeScanViewController.m */; };
 		CE6734FF2102A6B5003CFB2B /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6734FE2102A6B5003CFB2B /* AddBookViewController.m */; };
+		CE6735032102AA74003CFB2B /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6735022102AA74003CFB2B /* APIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		CE6734FB2102A6AB003CFB2B /* BarcodeScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarcodeScanViewController.m; sourceTree = "<group>"; };
 		CE6734FD2102A6B5003CFB2B /* AddBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
 		CE6734FE2102A6B5003CFB2B /* AddBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
+		CE6735012102AA74003CFB2B /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		CE6735022102AA74003CFB2B /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 		CE6734C42102A647003CFB2B /* PostingBookDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CE6735002102AA58003CFB2B /* Services */,
 				CE6734F92102A672003CFB2B /* Controllers */,
 				CE6734F82102A660003CFB2B /* Views */,
 				CE6734F72102A65B003CFB2B /* Models */,
@@ -164,6 +168,15 @@
 				CE6734FE2102A6B5003CFB2B /* AddBookViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE6735002102AA58003CFB2B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE6735012102AA74003CFB2B /* APIManager.h */,
+				CE6735022102AA74003CFB2B /* APIManager.m */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +311,7 @@
 			files = (
 				CE6734CA2102A647003CFB2B /* ViewController.m in Sources */,
 				CE6734D52102A647003CFB2B /* main.m in Sources */,
+				CE6735032102AA74003CFB2B /* APIManager.m in Sources */,
 				CE6734FC2102A6AB003CFB2B /* BarcodeScanViewController.m in Sources */,
 				CE6734FF2102A6B5003CFB2B /* AddBookViewController.m in Sources */,
 				CE6734C72102A647003CFB2B /* AppDelegate.m in Sources */,

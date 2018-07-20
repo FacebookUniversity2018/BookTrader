@@ -9,14 +9,24 @@
 #import "AddBookViewController.h"
 
 @interface AddBookViewController ()
-
+@property (strong, nonatomic) NSDictionary *bookInfo;
 @end
 
 @implementation AddBookViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(self.isbn);
+    [self fetchData:self.isbn];
+}
+
+- (void) fetchData:(NSString *)isbn {
+    NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
+    NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body,
+                             isbn];
+    NSError *error;
+    NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_request]];
+    NSDictionary *bookInfo = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    NSLog(@"%@", bookInfo);
 }
 
 - (void)didReceiveMemoryWarning {
