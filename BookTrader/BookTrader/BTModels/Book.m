@@ -63,11 +63,12 @@ BOOL getInfo;
     newBook.sell = false;
     newBook.trade = false;
     newBook.own = own;
-    newBook.userID = @"claudia";
-    newBook.longitude = @"30";
-    newBook.latitude = @"20";
-    
+    newBook.userID = @"claudia"; 
+    newBook.longitude = longitude;
+    newBook.latitude = latitude;
+
     [newBook saveInBackgroundWithBlock: completion];
+    
     
 }
 @end

@@ -20,6 +20,7 @@
 
 @property (strong, nonatomic) User *user;
 
+
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *userID;
@@ -30,6 +31,7 @@
 @property (nonatomic, assign) BOOL trade;
 @property (nonatomic, assign) BOOL gift;
 @property (nonatomic, assign) BOOL location;
+
 
 
 - (void) setIsbn:(NSString *)str_bsn;
