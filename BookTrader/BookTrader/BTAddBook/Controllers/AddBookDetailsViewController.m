@@ -10,6 +10,7 @@
 #import "Book.h"
 
 @interface AddBookDetailsViewController ()
+//UI
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bookControl;
 @property (strong, nonatomic) IBOutlet UIImageView *bookCover;
 @property (strong, nonatomic) IBOutlet UIView *haveBookView;
@@ -24,21 +25,13 @@
 @property (strong, nonatomic) IBOutlet UIButton *wantTradeButton;
 @property (strong, nonatomic) IBOutlet UIButton *wantGiftButton;
 @property (strong, nonatomic) IBOutlet UIButton *locationButton;
+//variables
 @property (strong, nonatomic) NSString *bookURL;
 //post
-@property (strong, nonatomic) NSURL *url;
-@property (strong, nonatomic) NSString *author;
-@property (strong, nonatomic) NSString *date;
-@property (strong, nonatomic) NSString *title;
-
-
-@property (nonatomic, assign) BOOL sell;
-@property (nonatomic, assign) BOOL trade;
-@property (nonatomic, assign) BOOL gift;
-@property (nonatomic, assign) BOOL buy;
-@property (nonatomic, assign) BOOL wantGift;
-@property (nonatomic, assign) BOOL wantTrade;
-@property (nonatomic, assign) BOOL location;
+//@property (strong, nonatomic) NSURL *url;
+//@property (strong, nonatomic) NSString *author;
+//@property (strong, nonatomic) NSString *date;
+//@property (strong, nonatomic) NSString *title;
 
 @end
 
@@ -52,15 +45,13 @@
     self.title = currentBook[@"title"];
     NSArray *authors = currentBook[@"authors"];
     self.authorLabel.text = authors[0];
-    self.author = authors[0];
     self.dateLabel.text = currentBook[@"publishedDate"];
-    self.date = currentBook[@"publishedDate"];
     NSDictionary *images = currentBook[@"imageLinks"];
     self.bookURL = images[@"thumbnail"];
 
-    self.url = [NSURL URLWithString:self.
+    NSURL *url = [NSURL URLWithString:self.
                 bookURL];
-    NSData *imageData = [NSData dataWithContentsOfURL:self.url];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
     self.bookCover.image = [UIImage imageWithData:imageData];
 }
 
@@ -68,9 +59,7 @@
     
     NSLog(@"%@", self.title);
 
-    [Book addBookToDatabase:self.title withAuthor:self.author withDate:self.date withCover:self.bookURL withSell:NO withTrade:NO withGift:NO withLatitude:@"later" withLongitude:@"later" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        
-    }];
+    [Book addBookToDatabase:self.title withAuthor:self.author withDate:self.date withCover:(NSString *)self.bookURL withSell:sell withTrade:self.trade withGift:self.gift withLatitude:latitude withLongitude:longitude withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
     
 [self dismissViewControllerAnimated:true completion:nil];
     NSLog(@"published!");
