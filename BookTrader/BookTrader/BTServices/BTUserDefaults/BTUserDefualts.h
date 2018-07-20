@@ -13,4 +13,5 @@
 
 @interface BTUserDefualts : NSObject
 + (MKCoordinateRegion) getCurrentLocation;
++ (void) setCurrentLocation:(MKCoordinateRegion)currentLocation;
 @end

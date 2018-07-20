@@ -10,4 +10,10 @@
 
 @implementation BTUserDefualts
 
++ (void)setCurrentLocation:(MKCoordinateRegion)currentLocation {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *myArray = [NSMutableArray new];
+    
+    // [defaults setObject:currentLocation forKey:@"myLocation"];
+}
 @end
