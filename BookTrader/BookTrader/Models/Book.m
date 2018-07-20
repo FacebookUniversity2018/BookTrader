@@ -14,7 +14,9 @@
 
 @implementation Book
 
-@dynamic author, title, date, coverURL, str_bsnNum, rawJson;
+@dynamic author, title, date, coverURL;
+NSString *str_bsnNum;
+NSDictionary *rawJson;
 BOOL getInfo;
 BOOL sell;
 BOOL trade;
