@@ -2,17 +2,17 @@
 
 **Required:**
 
-1.) MapKit 
+1.) MapKit --DONE
 
-2.) CV Barcode Scan w/ API database
+2.) CV Barcode Scan w/ API database --DONE 
 
-3.) Facebook Login + Messenger/Text message access
+3.) Facebook Login + Messenger/Text message access  
 
-4.) Parse Backend to store Users and Books associated with User
+4.) Parse Backend to store Users and Books associated with User --DONE
 
-5.) User Profile with Books 
+5.) User Profile with Books -- DONE 
 
-6.) Search by name, genre
+6.) Search by name, genre, author --DONE
 
 
 **Optional:**
@@ -21,7 +21,13 @@
 
 2.) Messenger in App rather than outsourced
 
-3.) Location Services 
+3.) Location Services --DONE
+
+4.) Recognizing translation
+
+5.) Augmenteed Reality
+
+6.) Share Book to Facebook
 
 **API Endpoints:**
 
@@ -33,8 +39,6 @@ Barcode Scanner
 
 Book
 User
-
-
 
 **UI**
 
