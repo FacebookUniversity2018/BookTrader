@@ -25,6 +25,13 @@
 @property (strong, nonatomic) IBOutlet UIButton *wantTradeButton;
 @property (strong, nonatomic) IBOutlet UIButton *wantGiftButton;
 @property (strong, nonatomic) IBOutlet UIButton *locationButton;
+@property BOOL sell;
+@property BOOL trade;
+@property BOOL gift;
+@property BOOL location;
+@property BOOL buy;
+@property BOOL wantTrade;
+@property BOOL wantGift;
 //variables
 @property (strong, nonatomic) NSString *bookURL;
 //post
@@ -59,7 +66,7 @@
     
     NSLog(@"%@", self.title);
 
-    [Book addBookToDatabase:@"thisBook" withAuthor:nil withDate:nil withCover:nil withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Book addBookToDatabase:@"this is a test" withAuthor:nil withDate:nil withCover:nil withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         return;
     }];
     
