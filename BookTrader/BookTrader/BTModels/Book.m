@@ -13,7 +13,7 @@
 
 @implementation Book
 
-@dynamic author, title, date, coverURL,longitude,latitude, own, want, sell, trade, gift, location,user;
+@dynamic author, title, date, coverURL, userID, longitude, latitude, own, want, sell, trade, gift, location,user;
 NSString *str_bsnNum;
 NSDictionary *rawJson;
 BOOL getInfo;
@@ -52,16 +52,21 @@ BOOL getInfo;
 }
 
 
-+(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withCompletion:(PFBooleanResultBlock _Nullable)completion {
++(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withUser:(NSString *)userID withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withOwn:(BOOL)own withCompletion:(PFBooleanResultBlock)completion {
     
     Book *newBook = [Book new];
     newBook.title = title;
     newBook.author = author;
     newBook.date = date;
     newBook.coverURL = coverURL;
-  //  newBook.user = [PFUser currentUser];
-    //newBook.overview = overview;
-
+    newBook.gift = false;
+    newBook.sell = false;
+    newBook.trade = false;
+    newBook.own = own;
+    newBook.userID = @"claudia";
+    newBook.longitude = @"30";
+    newBook.latitude = @"20";
+    
     [newBook saveInBackgroundWithBlock: completion];
     
 }

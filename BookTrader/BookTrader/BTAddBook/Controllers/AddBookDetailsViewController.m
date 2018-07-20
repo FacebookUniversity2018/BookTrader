@@ -26,12 +26,26 @@
 @property (strong, nonatomic) IBOutlet UIButton *wantGiftButton;
 @property (strong, nonatomic) IBOutlet UIButton *locationButton;
 //variables
+@property (strong, nonatomic) NSDictionary *currentBook;
+@property (strong, nonatomic) NSDictionary *images;
+@property (strong, nonatomic) NSArray *authors;
 @property (strong, nonatomic) NSString *bookURL;
 //post
 //@property (strong, nonatomic) NSURL *url;
 //@property (strong, nonatomic) NSString *author;
 //@property (strong, nonatomic) NSString *date;
 //@property (strong, nonatomic) NSString *title;
+@property (nonatomic, assign) BOOL sell;
+@property (nonatomic, assign) BOOL trade;
+@property (nonatomic, assign) BOOL gift;
+@property (nonatomic, assign) BOOL location;
+@property (nonatomic, assign) BOOL own;
+
+
+@property (strong, nonatomic) NSValue *latitude;
+@property (strong, nonatomic) NSValue *longitude;
+
+
 
 @end
 
@@ -40,14 +54,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.book setIsbn:self.isbn];
-    NSDictionary *currentBook = [Book fetchData:self.isbn];
-    self.titleLabel.text = currentBook[@"title"];
-    self.title = currentBook[@"title"];
-    NSArray *authors = currentBook[@"authors"];
+    self.currentBook = [Book fetchData:self.isbn];
+    self.titleLabel.text = _currentBook[@"title"];
+    NSArray *authors = _currentBook[@"authors"];
     self.authorLabel.text = authors[0];
-    self.dateLabel.text = currentBook[@"publishedDate"];
-    NSDictionary *images = currentBook[@"imageLinks"];
-    self.bookURL = images[@"thumbnail"];
+    self.dateLabel.text = _currentBook[@"publishedDate"];
+    self.images = _currentBook[@"imageLinks"];
+    self.bookURL = self.images[@"thumbnail"];
 
     NSURL *url = [NSURL URLWithString:self.
                 bookURL];
@@ -55,14 +68,31 @@
     self.bookCover.image = [UIImage imageWithData:imageData];
 }
 
+- (IBAction)useCurrentLocation:(id)sender {
+    
+}
+
+
 - (IBAction)onPublish:(id)sender {
     
     NSLog(@"%@", self.title);
+    self.own = true;
+    
+    [Book addBookToDatabase: withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
+             withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+             }];
 
-    [Book addBookToDatabase:self.title withAuthor:self.author withDate:self.date withCover:(NSString *)self.bookURL withSell:sell withTrade:self.trade withGift:self.gift withLatitude:latitude withLongitude:longitude withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
+    
     
 [self dismissViewControllerAnimated:true completion:nil];
     NSLog(@"published!");
+}
+- (IBAction)onRequest:(id)sender {
+    self.own = false;
+    
+    [Book addBookToDatabase:nil withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
+             withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+             }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -133,7 +163,7 @@
     }
     
 }
-
+/*
 - (IBAction)buyButton:(id)sender {
     if (!self.buy) {
         self.buy = true;
@@ -154,6 +184,7 @@
     
 }
 
+
 - (IBAction)wantGiftButton:(id)sender {
 
     if (!self.wantGift) {
@@ -164,6 +195,6 @@
         [self.wantGiftButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
     }
 }
-
+*/
 
 @end
