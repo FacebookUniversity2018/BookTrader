@@ -7,6 +7,8 @@
 //
 
 #import "PersonalUserViewController.h"
+#import "MessagesHomeViewController.h"
+#import "SimpleBookDetailViewController.h"
 
 @interface PersonalUserViewController ()
 
@@ -29,9 +31,11 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"profileToMessagesSegue"]) {
-        
-    } else {
-        
+        MessagesHomeViewController *messagesViewController = [segue destinationViewController];
+        messagesViewController.navigationControl = @"profileView";
+    } else if ([[segue identifier] isEqualToString:@"personalProfileToBookDetailSegue"]) {
+        SimpleBookDetailViewController *bookDetailViewController = [segue destinationViewController];
+        bookDetailViewController.navigationControl = @"profile";
     }
 }
 

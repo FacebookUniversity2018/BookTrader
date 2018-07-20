@@ -54,6 +54,16 @@
     return 20;
 }
 
+- (IBAction)tappedBackButton:(id)sender {
+    
+    if ([self.navigationControl isEqualToString:@"navView"]) {
+        [self performSegueWithIdentifier:@"messagesToNavSegue" sender:nil];
+    } else if ([self.navigationControl isEqualToString:@"profileView"]) {
+        [self performSegueWithIdentifier:@"messagesToProfileSegue" sender:nil];
+    } else {
+        NSLog(@"error in navigation control, assign a segue");
+    }
+}
 
 
 @end

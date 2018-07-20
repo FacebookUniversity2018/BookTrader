@@ -77,6 +77,7 @@
     if ([[segue identifier] isEqualToString:@"barcodeToDetailsSegue"]) {
         AddBookDetailsViewController *bookDetailsViewController = [segue destinationViewController];
         bookDetailsViewController.isbn = self.isbn;
+        bookDetailsViewController.currentLocation = self.currentLocation;
     } else if ([[segue identifier] isEqualToString:@"barcodeAddToHomeSegue"]) {
         
     } else {

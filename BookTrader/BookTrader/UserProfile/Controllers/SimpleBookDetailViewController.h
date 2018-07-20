@@ -13,5 +13,5 @@
 
 @property NSString *isbn;
 @property (strong, nonatomic) Book *book;
-
+@property (strong, nonatomic) NSString *navigationControl;
 @end

@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Book.h"
 #import "BarcodeAddViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+
 
 @interface AddBookDetailsViewController : UIViewController
 @property NSString *isbn;
 @property (strong, nonatomic) Book *book;
-
-
+@property (nonatomic) MKCoordinateRegion currentLocation;
 @end

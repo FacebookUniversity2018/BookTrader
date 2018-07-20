@@ -7,6 +7,8 @@
 //
 
 #import "HomeNavigationViewController.h"
+#import "BarcodeAddViewController.h"
+#import "MessagesHomeViewController.h"
 #import <MapKit/MapKit.h>
 
 @interface HomeNavigationViewController () <MKMapViewDelegate>
@@ -45,9 +47,11 @@
     } else if ([[segue identifier] isEqualToString:@"navToProfileSegue"]) {
         
     } else if ([[segue identifier] isEqualToString:@"navToBarcodeSegue"]) {
-        
+        BarcodeAddViewController *barcodeViewController = [segue destinationViewController];
+        barcodeViewController.currentLocation = self.currentLocation;
     } else if ([[segue identifier] isEqualToString:@"homeToMessagesSegue"]) {
-        
+        MessagesHomeViewController *messagesViewController = [segue destinationViewController];
+        messagesViewController.navigationControl = @"navView";
     } else {
         NSLog([segue identifier]);
     }

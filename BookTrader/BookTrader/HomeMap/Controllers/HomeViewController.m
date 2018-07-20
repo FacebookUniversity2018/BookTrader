@@ -8,8 +8,10 @@
 
 #import "HomeViewController.h"
 #import "Book.h"
+#import "HomeNavigationViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+
 
 // for test
 #import "BTBookTestModel.h"
@@ -25,7 +27,7 @@
 @property (strong, nonatomic) NSArray *books;
 @property (strong, nonatomic) NSArray *users;
 @property (strong, nonatomic) NSArray *filteredData;
-
+@property BOOL locationFlag;
 
 @end
 
@@ -39,8 +41,8 @@
     
     // set up map view
     self.mapView.delegate = self;
-    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
-    [self.mapView setRegion:sfRegion animated:false];
+    self.currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
+    [self.mapView setRegion:self.currentLocation animated:false];
     
     // set up search bar
     self.searchBar.delegate = self;
@@ -48,6 +50,7 @@
     [self.searchBar setBackgroundImage:[UIImage new]];
     
     // user location
+    self.locationFlag = true;
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
     [self.locationManager requestWhenInUseAuthorization];
@@ -90,12 +93,15 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-    CLLocation *location = [locations lastObject];
-    MKCoordinateRegion currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1));
-    self.currentLocation = currentLocation;
-    [self.mapView setRegion:currentLocation animated:true];
-//    NSLog([NSString stringWithFormat:@"%f", location.coordinate.latitude]);
-//    NSLog([NSString stringWithFormat:@"%f", location.coordinate.longitude]);
+    if (self.locationFlag) {
+        CLLocation *location = [locations lastObject];
+        MKCoordinateRegion currentLocation = MKCoordinateRegionMake(CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude), MKCoordinateSpanMake(0.1, 0.1));
+        self.currentLocation = currentLocation;
+        [self.mapView setRegion:currentLocation animated:true];
+        self.locationFlag = false;
+    } else {
+        
+    }
 }
 
 
@@ -116,6 +122,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier]  isEqual: @"navigationSegue"]) {
         // for nav header
+        HomeNavigationViewController *navViewController = [segue destinationViewController];
+        navViewController.currentLocation = self.currentLocation;
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         // for my books
     } else {
