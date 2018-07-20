@@ -46,6 +46,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(printStateOfBookCall) userInfo:nil repeats:true];
+
+    
     [self.book setIsbn:self.isbn];
     NSDictionary *currentBook = [Book fetchData:self.isbn];
     self.titleLabel.text = currentBook[@"title"];
@@ -66,7 +70,7 @@
     
     NSLog(@"%@", self.title);
 
-    [Book addBookToDatabase:@"this is a test" withAuthor:nil withDate:nil withCover:nil withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Book addBookToDatabase:nil withAuthor:nil withDate:nil withCover:nil withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         return;
     }];
     
@@ -113,6 +117,7 @@
     [self.sellButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
 }
 }
+
 
 - (IBAction)tradeButton:(id)sender {
     if (!self.trade) {
@@ -163,6 +168,8 @@
     
 }
 
+
+
 - (IBAction)wantGiftButton:(id)sender {
 
     if (!self.wantGift) {
@@ -173,6 +180,7 @@
         [self.wantGiftButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
     }
 }
+
 
 
 @end
