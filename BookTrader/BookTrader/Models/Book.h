@@ -17,8 +17,10 @@
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverURL;
 @property (strong, nonatomic) User *user;
-
-
+@property (strong, nonatomic) NSString *str_bsnNum;
+@property (strong, nonatomic) NSDictionary *rawJson;
+@property CGFloat *latitude;
+@property CGFloat *longitude;
 
 - (void) setIsbn:(NSString *)str_bsn;
 + (NSDictionary *) fetchData:(NSString *)isbn;

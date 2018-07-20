@@ -14,13 +14,16 @@
 
 @implementation Book
 
-@dynamic author, title, date, coverURL;
-NSDictionary *rawJson;
-NSString *str_bsnNum;
+@dynamic author, title, date, coverURL, str_bsnNum, rawJson;
 BOOL getInfo;
 BOOL sell;
 BOOL trade;
 BOOL gift;
+BOOL buy;
+BOOL wantTrade;
+BOOL wantGift;
+BOOL location;
+
 
 + (nonnull NSString *)parseClassName {
     return @"Book";
