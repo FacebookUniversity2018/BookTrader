@@ -9,6 +9,8 @@
 #import "AddBookViewController.h"
 
 @interface AddBookViewController ()
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @property (strong, nonatomic) NSDictionary *bookInfo;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
@@ -41,6 +43,9 @@
             NSLog(@"%@", self.bookInfo[@"authors"][0]);
             self.title = self.bookInfo[@"title"];
             self.author = self.bookInfo[@"authors"][0];
+            self.titleLabel.text = self.title;
+            self.authorLabel.text = self.author;
+            
         }
     }];
     [task resume];
