@@ -33,7 +33,7 @@
 };
 
 // function that takes a user id and returns a User object
-+ (id) getUserWithID: (NSString *) userID {
+- (void) getUserWithID: (NSString *) userID {
     __block User *user = [User new];
     PFQuery *query = [PFQuery queryWithClassName:@"User"];
     [query includeKey:@"userId"];
@@ -47,7 +47,6 @@
             user = nil;
         }
     }];
-    return user;
 }
 
 /**
