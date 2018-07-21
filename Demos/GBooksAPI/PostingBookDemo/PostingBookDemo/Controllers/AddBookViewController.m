@@ -10,6 +10,8 @@
 
 @interface AddBookViewController ()
 @property (strong, nonatomic) NSDictionary *bookInfo;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *author;
 @end
 
 @implementation AddBookViewController
@@ -23,10 +25,30 @@
     NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
     NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body,
                              isbn];
-    NSError *error;
-    NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_request]];
-    NSDictionary *bookInfo = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSLog(@"%@", bookInfo);
+    NSURL *url = [NSURL URLWithString:url_request];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.bookInfo = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.bookInfo = self.bookInfo[@"items"][0][@"volumeInfo"];
+            NSLog(@"%@", self.bookInfo[@"title"]);
+            NSLog(@"%@", self.bookInfo[@"authors"][0]);
+            self.title = self.bookInfo[@"title"];
+            self.author = self.bookInfo[@"authors"][0];
+        }
+    }];
+    [task resume];
+}
+
+
+- (IBAction)publishBook:(id)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {
