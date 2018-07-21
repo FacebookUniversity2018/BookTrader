@@ -7,6 +7,7 @@
 //
 
 #import "AddBookViewController.h"
+#import "Book.h"
 
 @interface AddBookViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -53,7 +54,13 @@
 
 
 - (IBAction)publishBook:(id)sender {
-    
+    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"posted book");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

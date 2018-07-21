@@ -8,6 +8,8 @@ target 'PostingBookDemo' do
   # Pods for PostingBookDemo
 
   pod 'BDBOAuth1Manager'
+  pod 'Parse'
+  pod 'ParseUI'
 
   target 'PostingBookDemoTests' do
     inherit! :search_paths

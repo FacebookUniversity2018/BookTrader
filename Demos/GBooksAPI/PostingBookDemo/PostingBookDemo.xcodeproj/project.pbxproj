@@ -20,6 +20,7 @@
 		CE6734EA2102A648003CFB2B /* PostingBookDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6734E92102A648003CFB2B /* PostingBookDemoUITests.m */; };
 		CE6734FC2102A6AB003CFB2B /* BarcodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6734FB2102A6AB003CFB2B /* BarcodeScanViewController.m */; };
 		CE6734FF2102A6B5003CFB2B /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6734FE2102A6B5003CFB2B /* AddBookViewController.m */; };
+		CE6735062102B42F003CFB2B /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6735052102B42F003CFB2B /* Book.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		CE6734FB2102A6AB003CFB2B /* BarcodeScanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarcodeScanViewController.m; sourceTree = "<group>"; };
 		CE6734FD2102A6B5003CFB2B /* AddBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
 		CE6734FE2102A6B5003CFB2B /* AddBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
+		CE6735042102B42F003CFB2B /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		CE6735052102B42F003CFB2B /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		DCB2504B0479AAFE3A52F423 /* Pods-PostingBookDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostingBookDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PostingBookDemo/Pods-PostingBookDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FE7F320DC22205703F17440F /* Pods-PostingBookDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostingBookDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PostingBookDemoTests/Pods-PostingBookDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,6 +188,8 @@
 		CE6734F72102A65B003CFB2B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE6735042102B42F003CFB2B /* Book.h */,
+				CE6735052102B42F003CFB2B /* Book.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				CE6734BE2102A647003CFB2B /* Sources */,
 				CE6734BF2102A647003CFB2B /* Frameworks */,
 				CE6734C02102A647003CFB2B /* Resources */,
+				4F6E1DED64D048D408E246F6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,6 +385,30 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4F6E1DED64D048D408E246F6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PostingBookDemo/Pods-PostingBookDemo-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PostingBookDemo/Pods-PostingBookDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D4E5CFF74AE109BBF356D7DD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,6 +438,7 @@
 				CE6734D52102A647003CFB2B /* main.m in Sources */,
 				CE6734FC2102A6AB003CFB2B /* BarcodeScanViewController.m in Sources */,
 				CE6734FF2102A6B5003CFB2B /* AddBookViewController.m in Sources */,
+				CE6735062102B42F003CFB2B /* Book.m in Sources */,
 				CE6734C72102A647003CFB2B /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
