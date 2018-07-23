@@ -15,9 +15,10 @@
 @property (strong, nonatomic) IBOutlet UIView *previewView;
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
+@property (nonatomic) BOOL capturing;
 @property (strong, nonatomic) NSString *isbn;
 
--(void) stopReading;
+//-(void) stopReading;
 
 @end
 
@@ -25,10 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.captureSession = nil;
+    self.capturing = NO;
     // Do any additional setup after loading the view.
-}
+//}
 
-- (void)viewDidAppear:(BOOL)animated {
+//- (void)viewDidAppear:(BOOL)animated {
     self.captureSession = nil;
     NSError *error;
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
@@ -73,16 +76,16 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    if ([[segue identifier] isEqualToString:@"barcodeToDetailsSegue"]) {
+ 
+  //  if ([[segue identifier] isEqualToString:@"barcodeToDetailsSegue"]) {
         AddBookDetailsViewController *bookDetailsViewController = [segue destinationViewController];
         bookDetailsViewController.isbn = self.isbn;
-        bookDetailsViewController.currentLocation = self.currentLocation;
-    } else if ([[segue identifier] isEqualToString:@"barcodeAddToHomeSegue"]) {
+      //  bookDetailsViewController.currentLocation = self.currentLocation;
+   // } else if ([[segue identifier] isEqualToString:@"barcodeAddToHomeSegue"]) {
         
-    } else {
-        NSLog([segue identifier]);
-    }
+   // } else {
+      //  NSLog([segue identifier]);
+   // }
 }
 
 @end

@@ -29,22 +29,20 @@
 //variables
 @property (strong, nonatomic) NSDictionary *currentBook;
 @property (strong, nonatomic) NSDictionary *images;
-@property (strong, nonatomic) NSArray *authors;
-@property (strong, nonatomic) NSString *bookURL;
 //post
-//@property (strong, nonatomic) NSURL *url;
-//@property (strong, nonatomic) NSString *author;
-//@property (strong, nonatomic) NSString *date;
-//@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *bookURL;
+@property (strong, nonatomic) NSString *author;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *btitle;
+@property (strong, nonatomic) NSValue *lat;
+@property (strong, nonatomic) NSValue *lon;
+
+//buttons
 @property (nonatomic, assign) BOOL sell;
 @property (nonatomic, assign) BOOL trade;
 @property (nonatomic, assign) BOOL gift;
 @property (nonatomic, assign) BOOL location;
 @property (nonatomic, assign) BOOL own;
-
-
-@property (strong, nonatomic) NSValue *latitude;
-@property (strong, nonatomic) NSValue *longitude;
 
 
 
@@ -54,42 +52,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(printStateOfBookCall) userInfo:nil repeats:true];
-
-    
-    [self.book setIsbn:self.isbn];
-    self.currentBook = [Book fetchData:self.isbn];
-    self.titleLabel.text = _currentBook[@"title"];
-    NSArray *authors = _currentBook[@"authors"];
-    self.authorLabel.text = authors[0];
-    self.dateLabel.text = _currentBook[@"publishedDate"];
-    self.images = _currentBook[@"imageLinks"];
-    self.bookURL = self.images[@"thumbnail"];
-
-    NSURL *url = [NSURL URLWithString:self.
-                bookURL];
-    NSData *imageData = [NSData dataWithContentsOfURL:url];
-    self.bookCover.image = [UIImage imageWithData:imageData];
+    [self fetchData:self.isbn];
 }
-
-- (IBAction)useCurrentLocation:(id)sender {
     
+- (void) fetchData:(NSString *)isbn {
+    NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
+    NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body, isbn];
+    NSURL *url = [NSURL URLWithString:url_request];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30.0];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.currentBook = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.currentBook = self.currentBook[@"items"][0][@"volumeInfo"];
+            NSLog(@"title is");
+            NSLog(@"%@", self.currentBook[@"title"]);
+            NSLog(@"%@", self.currentBook[@"authors"][0]);
+            self.btitle = self.currentBook[@"title"];
+            self.author = self.currentBook[@"authors"][0];
+            self.date = self.currentBook[@"publishedDate"];
+            self.images = self.currentBook[@"imageLinks"];
+            self.bookURL = self.images[@"thumbnail"];
+            
+            NSURL *url = [NSURL URLWithString:self.
+                          bookURL];
+            NSData *imageData = [NSData dataWithContentsOfURL:url];
+            //set UI
+            self.titleLabel.text = self.btitle;
+            self.authorLabel.text = self.author;
+            self.dateLabel.text = self.date;
+            self.bookCover.image = [UIImage imageWithData:imageData];
+        }
+    }];
+    [task resume];
 }
-
 
 - (IBAction)onPublish:(id)sender {
     
     self.own = true;
-    
-    /*[Book addBookToDatabase: withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
+    //latitude
+    //longitude
+    [Book addBookToDatabase:self.btitle withAuthor:self.author withDate: self.date withCover:self.bookURL
+                   //withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:nil
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+                 if (succeeded) {
+                     NSLog(@"posted book");
+                 } else {
+                     NSLog(@"%@", error);
+                 }
              }];
-    */
-    
+
 [self dismissViewControllerAnimated:true completion:nil];
-    NSLog(@"published!");
 }
+
 - (IBAction)onRequest:(id)sender {
     self.own = false;
     
@@ -128,6 +148,9 @@
    // }
 //}
 
+- (IBAction)useCurrentLocation:(id)sender {
+    
+}
 
 - (IBAction)sellButton:(id)sender {
     if (!self.sell) {
