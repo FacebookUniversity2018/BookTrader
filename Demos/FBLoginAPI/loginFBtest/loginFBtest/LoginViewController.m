@@ -14,9 +14,7 @@
 #import "ProfielCheckViewController.h"
 
 @interface LoginViewController ()
-    
-    @property (strong, nonatomic) NSDictionary *profile;
-
+@property (strong, nonatomic) NSDictionary *profile;
 @end
 
 @implementation LoginViewController

@@ -40,6 +40,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+  
+    
     // get user defaults
     CLLocationCoordinate2D myLocation = [BTUserDefualts getCurrentLocation];
     

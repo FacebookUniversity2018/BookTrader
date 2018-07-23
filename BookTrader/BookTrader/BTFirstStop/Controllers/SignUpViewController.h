@@ -10,4 +10,6 @@
 
 @interface SignUpViewController : UIViewController
 
+@property (strong, nonatomic) NSDictionary *userInfo;
+
 @end

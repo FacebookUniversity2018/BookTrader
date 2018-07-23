@@ -44,7 +44,8 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     // Get the current logged in user
-    self.currUser = [User getUserWithID:[FBSDKAccessToken currentAccessToken].userID];
+    //
+    // self.currUser = [User getUserWithID:[FBSDKAccessToken currentAccessToken].userID];
     NSLog(@"%@", self.currUser);
 }
 
