@@ -29,7 +29,7 @@ BOOL getInfo;
 
 
 +(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverurl
-                //withUser:(NSString *)userID withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSValue *)longitude withLatitude:(NSValue *)latitude withOwn:(BOOL)own
+                withUser:(NSString *)userID withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSValue *)longitude withLatitude:(NSValue *)latitude withOwn:(BOOL)own
           withCompletion:(PFBooleanResultBlock)completion {
     
     Book *newBook = [Book new];
@@ -37,13 +37,13 @@ BOOL getInfo;
     newBook.author = author;
     newBook.date = date;
     newBook.coverurl = coverurl;
-//    newBook.gift = gift;
-//    newBook.sell = sell;
- //   newBook.trade = trade;
- //   newBook.own = own;
-    //newBook.userID = userID;
-   // newBook.longitude = longitude;
-   // newBook.latitude = latitude;
+   //newBook.gift = gift;
+//newBook.sell = sell;
+   //newBook.trade = trade;
+  //newBook.own = own;
+  newBook.userID = userID;
+ newBook.longitude = longitude;
+  newBook.latitude = latitude;
 
     [newBook saveInBackgroundWithBlock: completion];
 
