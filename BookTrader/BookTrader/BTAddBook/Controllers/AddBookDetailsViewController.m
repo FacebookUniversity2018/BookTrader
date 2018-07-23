@@ -25,6 +25,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *wantTradeButton;
 @property (strong, nonatomic) IBOutlet UIButton *wantGiftButton;
 @property (strong, nonatomic) IBOutlet UIButton *locationButton;
+
 //variables
 @property (strong, nonatomic) NSDictionary *currentBook;
 @property (strong, nonatomic) NSDictionary *images;
@@ -53,6 +54,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(printStateOfBookCall) userInfo:nil repeats:true];
+
+    
     [self.book setIsbn:self.isbn];
     self.currentBook = [Book fetchData:self.isbn];
     self.titleLabel.text = _currentBook[@"title"];
@@ -80,7 +85,6 @@
     /*[Book addBookToDatabase: withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
              }];
-
     */
     
 [self dismissViewControllerAnimated:true completion:nil];
@@ -134,6 +138,7 @@
     [self.sellButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
 }
 }
+
 
 - (IBAction)tradeButton:(id)sender {
     if (!self.trade) {

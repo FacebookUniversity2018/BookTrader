@@ -42,12 +42,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-<<<<<<< HEAD:BookTrader/BookTrader/HomeMap/Controllers/HomeNavigationViewController.m
 - (void) viewWillAppear:(BOOL)animated {
     // Get the current logged in user
     self.currUser = [User getUserWithID:[FBSDKAccessToken currentAccessToken].userID];
     NSLog(@"%@", self.currUser);
 }
+
 /*
 #pragma mark - Navigation
 =======
@@ -69,6 +69,6 @@
         NSLog([segue identifier]);
     }
 }
-
+*/
 
 @end
