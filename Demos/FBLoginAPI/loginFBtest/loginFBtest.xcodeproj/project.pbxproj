@@ -18,6 +18,7 @@
 		A4F3A79920FE69E400534E8A /* loginFBtestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F3A79820FE69E400534E8A /* loginFBtestTests.m */; };
 		A4F3A7A420FE69E400534E8A /* loginFBtestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F3A7A320FE69E400534E8A /* loginFBtestUITests.m */; };
 		B7FBE48E61409751EE320426 /* libPods-loginFBtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E565986604B457DE575F2FBD /* libPods-loginFBtest.a */; };
+		CECF5A2F2106795F008563B5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = CECF5A2E2106795F008563B5 /* User.m */; };
 		F4443ADF9C02B42D42981CE1 /* libPods-loginFBtestUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39C12E33D36D5A8DF0BF2152 /* libPods-loginFBtestUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		A4F3A7A320FE69E400534E8A /* loginFBtestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = loginFBtestUITests.m; sourceTree = "<group>"; };
 		A4F3A7A520FE69E400534E8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C352B450F90C9198C7AEE669 /* Pods-loginFBtestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loginFBtestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-loginFBtestUITests/Pods-loginFBtestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CECF5A2D2106795F008563B5 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		CECF5A2E2106795F008563B5 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		E565986604B457DE575F2FBD /* libPods-loginFBtest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-loginFBtest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -142,6 +145,8 @@
 				A481186E20FE969300D68A5B /* ProfileViewController.m */,
 				A481187020FE990000D68A5B /* LoginViewController.h */,
 				A481187120FE990000D68A5B /* LoginViewController.m */,
+				CECF5A2D2106795F008563B5 /* User.h */,
+				CECF5A2E2106795F008563B5 /* User.m */,
 			);
 			path = loginFBtest;
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CECF5A2F2106795F008563B5 /* User.m in Sources */,
 				A481187220FE990000D68A5B /* LoginViewController.m in Sources */,
 				A4F3A78F20FE69E400534E8A /* main.m in Sources */,
 				A481186F20FE969300D68A5B /* ProfileViewController.m in Sources */,

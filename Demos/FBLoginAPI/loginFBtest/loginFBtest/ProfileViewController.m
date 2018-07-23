@@ -12,6 +12,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "Parse.h"
 #import "ParseUI.h"
+#import "User.h"
 
 @interface ProfileViewController ()
     
