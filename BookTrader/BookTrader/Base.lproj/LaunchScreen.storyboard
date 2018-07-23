@@ -30,11 +30,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconmonstr-book-17-240" translatesAutoresizingMaskIntoConstraints="NO" id="fgO-hD-UtX">
-                                <rect key="frame" x="100" y="183" width="174" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="1" green="0.48928192659999997" blue="0.20121947949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.83268348816479176" green="1" blue="0.99663526261532664" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
@@ -50,7 +45,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="iconmonstr-book-17-240" width="240" height="240"/>
-    </resources>
 </document>

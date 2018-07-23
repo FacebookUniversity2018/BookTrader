@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
 @interface HomeNavigationViewController : UIViewController
+
 @property (nonatomic) MKCoordinateRegion currentLocation;
+@property (strong, nonatomic) User *user;
+
 @end
