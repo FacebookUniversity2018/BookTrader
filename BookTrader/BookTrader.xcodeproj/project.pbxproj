@@ -68,6 +68,18 @@
 		32794741CDC4D192FA8F4FD0 /* Pods-BookTraderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderUITests/Pods-BookTraderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		34F91E018A39D750259885D7 /* Pods-BookTrader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTrader.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookTrader/Pods-BookTrader.release.xcconfig"; sourceTree = "<group>"; };
 		3C87B8860B5E35372BE544EF /* Pods-BookTraderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookTraderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookTraderTests/Pods-BookTraderTests.release.xcconfig"; sourceTree = "<group>"; };
+		A47DB90A210652D800F9D2CD /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = ../../../../Downloads/ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		A47DB90C210654A400F9D2CD /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Downloads/Parse-iOS/Bolts.framework"; sourceTree = "<group>"; };
+		A47DB90D210654A400F9D2CD /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Downloads/Parse-iOS/Parse.framework"; sourceTree = "<group>"; };
+		A47DB90E210655B500F9D2CD /* ParseFacebookUtilsV4 2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "ParseFacebookUtilsV4 2.framework"; path = "../../../../Downloads/ParseFacebookUtilsV4 2.framework"; sourceTree = "<group>"; };
+		A47DB90F2106563100F9D2CD /* libParseFacebookUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libParseFacebookUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47DB9112106564600F9D2CD /* libFacebook-iOS-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libFacebook-iOS-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47DB9142106569D00F9D2CD /* libFBSDKCoreKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBSDKCoreKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47DB9162106569D00F9D2CD /* libFBSDKLoginKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBSDKLoginKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47DB9182106573000F9D2CD /* libFacebook-iOS-SDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libFacebook-iOS-SDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47DB91A2106573000F9D2CD /* libParseFacebookUtils.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libParseFacebookUtils.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47DB91D2106577E00F9D2CD /* libFBSDKCoreKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFBSDKCoreKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A47DB91F210657A200F9D2CD /* libBolts.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libBolts.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08C3C53361151E73DA239E2 /* libPods-BookTraderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookTraderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11F464220FE64E7000564BE /* SimpleBookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleBookDetailViewController.h; sourceTree = "<group>"; };
 		B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleBookDetailViewController.m; sourceTree = "<group>"; };
@@ -477,6 +489,18 @@
 		CE201B8120FD36840055EE13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A47DB91F210657A200F9D2CD /* libBolts.a */,
+				A47DB91D2106577E00F9D2CD /* libFBSDKCoreKit.a */,
+				A47DB9182106573000F9D2CD /* libFacebook-iOS-SDK.a */,
+				A47DB91A2106573000F9D2CD /* libParseFacebookUtils.a */,
+				A47DB9142106569D00F9D2CD /* libFBSDKCoreKit.a */,
+				A47DB9162106569D00F9D2CD /* libFBSDKLoginKit.a */,
+				A47DB9112106564600F9D2CD /* libFacebook-iOS-SDK.a */,
+				A47DB90F2106563100F9D2CD /* libParseFacebookUtils.a */,
+				A47DB90E210655B500F9D2CD /* ParseFacebookUtilsV4 2.framework */,
+				A47DB90C210654A400F9D2CD /* Bolts.framework */,
+				A47DB90D210654A400F9D2CD /* Parse.framework */,
+				A47DB90A210652D800F9D2CD /* ParseFacebookUtilsV4.framework */,
 				CE6967F620FFF56A004CF435 /* CoreLocation.framework */,
 				CE201B8220FD36840055EE13 /* MapKit.framework */,
 				FCCE42FF7AAF54DC635123BB /* libPods-BookTrader.a */,
@@ -957,13 +981,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5TQ98F5H4;
+				DEVELOPMENT_TEAM = KV6X26527X;
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader00;
+				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -977,13 +1001,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = A5TQ98F5H4;
+				DEVELOPMENT_TEAM = KV6X26527X;
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader00;
+				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -33,6 +33,10 @@
 //@property (strong, nonatomic) NSString *date;
 //@property (strong, nonatomic) NSString *title;
 
+@property (nonatomic, assign) BOOL sell;
+@property (nonatomic, assign) BOOL trade;
+@property (nonatomic, assign) BOOL gift;
+@property (nonatomic, assign) BOOL location;
 @end
 
 @implementation AddBookDetailsViewController
@@ -59,8 +63,8 @@
     
     NSLog(@"%@", self.title);
 
-    [Book addBookToDatabase:self.title withAuthor:self.author withDate:self.date withCover:(NSString *)self.bookURL withSell:sell withTrade:self.trade withGift:self.gift withLatitude:latitude withLongitude:longitude withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
-    
+   /* [Book addBookToDatabase:self.title withAuthor:self.author withDate:self.date withCover:(NSString *)self.bookURL withSell:sell withTrade:self.trade withGift:self.gift withLatitude:latitude withLongitude:longitude withCompletion:^(BOOL succeeded, NSError * _Nullable error) {}];
+    */
 [self dismissViewControllerAnimated:true completion:nil];
     NSLog(@"published!");
 }
@@ -134,6 +138,7 @@
     
 }
 
+/**
 - (IBAction)buyButton:(id)sender {
     if (!self.buy) {
         self.buy = true;
@@ -165,5 +170,5 @@
     }
 }
 
-
+*/
 @end
