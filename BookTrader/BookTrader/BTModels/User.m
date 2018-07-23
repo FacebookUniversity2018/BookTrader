@@ -33,22 +33,26 @@
 };
 
 /**
- Method to convert UIImage to PFFile
+ Method to convert UIImage to PFFile:
+ 
  - parameter image: Image that the user wants to upload to parse
  - returns: PFFile for the the data in the image
  */
 + (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
+    
     // check if image is not nil
     if (!image) {
         return nil;
     }
-    NSData *imageData = UIImagePNGRepresentation(image);
     
-    // get image data and check ifthat is not nil
+    NSData *imageData = UIImagePNGRepresentation(image);
+    // get image data and check if that is not nil
     if (!imageData) {
         return nil;
     }
+    
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
+
 
 @end

@@ -26,23 +26,6 @@
     NSLog(@"Succesfully loaded Profile VC");
     self.username.text = self.name;
     [self.profileImage setImageWithURL:self.pictureURL];
-    
-    // Code to retrieve the UIImage raw data
-    NSData *imageData = [NSData dataWithContentsOfURL:self.pictureURL];
-    UIImage *image = [UIImage imageWithData:imageData];
-    
-    // For Parse size purposes
-    [self resizeImage:image withSize:CGSizeMake(50, 50)];
-    
-    if(image!=nil)  {
-        NSLog(@"Image retrieved");
-        self.rawImage.image = image;
-        // Get PFFile
-        PFFile *imageFile = [ProfileViewController getPFFileFromImage:self.rawImage.image];
-        if(imageFile!=nil) {
-            NSLog(@"Created pffile for image");
-        }
-    }
 }
 - (IBAction)onBack:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

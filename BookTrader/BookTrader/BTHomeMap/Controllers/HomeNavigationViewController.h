@@ -13,6 +13,7 @@
 
 @interface HomeNavigationViewController : UIViewController
 
+@property (strong, nonatomic) User *user;
 @property (nonatomic) MKCoordinateRegion currentLocation;
 
 @end

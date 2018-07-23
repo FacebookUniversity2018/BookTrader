@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HomeNavigationViewController.h"
 #import <Parse/Parse.h>
 
 @interface User : PFObject<PFSubclassing>
@@ -22,6 +21,6 @@
 
 +(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withCompletion:(PFBooleanResultBlock)completion;
 
-- (void) getUserWithID: (NSString *) userID;
++ (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image;
 
 @end
