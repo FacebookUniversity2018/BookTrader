@@ -85,10 +85,6 @@
         }
     }];
 
-    
-    
-    
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
@@ -148,9 +144,6 @@
         self.filteredData = self.books;
     }
 }
-
-
-
 
 
 @end

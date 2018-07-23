@@ -1096,21 +1096,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arC-MC-8NV">
-                                <rect key="frame" x="0.0" y="473" width="375" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62843197770000003" green="0.19619659449999999" blue="0.66199412030000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <segue destination="4RQ-tJ-9CF" kind="embed" id="Nh3-Jx-v4v"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eah-Ty-4fn">
-                                <rect key="frame" x="0.0" y="473" width="375" height="158"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="Erd-Mq-cAq" kind="embed" id="SiO-Qy-Or9"/>
-                                </connections>
-                            </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="jPn-vt-54t">
                                 <rect key="frame" x="101" y="121" width="173" height="199"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1179,34 +1164,8 @@
                                     <action selector="showNewView:" destination="j06-5r-WOD" eventType="valueChanged" id="D42-4y-ryy"/>
                                 </connections>
                             </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="4ET-2u-A4r"/>
-                    </view>
-                    <connections>
-                        <outlet property="authorLabel" destination="Xar-sh-Ztl" id="tIX-AT-GCP"/>
-                        <outlet property="bookControl" destination="AdB-IX-hbl" id="AK6-vs-ZAT"/>
-                        <outlet property="bookCover" destination="jPn-vt-54t" id="DB8-sP-6hY"/>
-                        <outlet property="dateLabel" destination="ude-KV-MO6" id="cLa-YS-42v"/>
-                        <outlet property="haveBookView" destination="arC-MC-8NV" id="ha8-FB-Ey3"/>
-                        <outlet property="titleLabel" destination="QGP-le-LnX" id="qKa-Qg-BUo"/>
-                        <outlet property="wantBookView" destination="eah-Ty-4fn" id="Jtz-52-XEo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1EF-VP-AZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5384.8000000000002" y="2687.4062968515746"/>
-        </scene>
-        <!--List Book-->
-        <scene sceneID="5xz-kN-wsR">
-            <objects>
-                <viewController title="List Book" id="4RQ-tJ-9CF" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ABa-Yl-ioN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-2f-HtK">
-                                <rect key="frame" x="-9" y="119" width="375" height="39"/>
+                                <rect key="frame" x="120" y="162" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -1219,9 +1178,33 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="onPublish:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="J6k-eK-EU2"/>
+                                    <action selector="publishClicked:" destination="j06-5r-WOD" eventType="touchUpInside" id="PPN-N9-Q0e"/>
                                 </connections>
                             </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4ET-2u-A4r"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="Xar-sh-Ztl" id="tIX-AT-GCP"/>
+                        <outlet property="bookControl" destination="AdB-IX-hbl" id="AK6-vs-ZAT"/>
+                        <outlet property="bookCover" destination="jPn-vt-54t" id="DB8-sP-6hY"/>
+                        <outlet property="dateLabel" destination="ude-KV-MO6" id="cLa-YS-42v"/>
+                        <outlet property="titleLabel" destination="QGP-le-LnX" id="qKa-Qg-BUo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1EF-VP-AZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5384.8000000000002" y="2687.4062968515746"/>
+        </scene>
+        <!--List Book-->
+        <scene sceneID="5xz-kN-wsR">
+            <objects>
+                <viewController title="List Book" id="4RQ-tJ-9CF" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ABa-Yl-ioN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-kB-vc7">
                                 <rect key="frame" x="116" y="69.5" width="49" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1320,14 +1303,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9h-uD-OZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="JbO-T8-WnF"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="3250.9745127436286"/>
+            <point key="canvasLocation" x="4566" y="3251"/>
         </scene>
         <!--Want Book-->
         <scene sceneID="fM3-xa-Pob">
             <objects>
                 <viewController title="Want Book" id="Erd-Mq-cAq" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcZ-Az-vke">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-hH-dxm">

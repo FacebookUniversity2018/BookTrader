@@ -15,7 +15,7 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
-@property (strong, nonatomic) NSString *coverURL;
+@property (strong, nonatomic) NSString *coverurl;
 //@property (strong, nonatomic) NSString *overview;
 
 @property (strong, nonatomic) User *user;
@@ -34,11 +34,9 @@
 
 - (void) setIsbn:(NSString *)str_bsn;
 
-+(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL
++(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverurl
                 //withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSValue *)longitude withLatitude:(NSValue *)latitude withOwn:own
           withCompletion:(PFBooleanResultBlock)completion;
 
-+ (NSDictionary *) fetchData:(NSString *)isbn;
-+ (NSDictionary *) parseData:(NSDictionary *)raw;
 
 @end

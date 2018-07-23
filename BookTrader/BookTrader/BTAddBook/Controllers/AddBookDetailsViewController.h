@@ -17,4 +17,9 @@
 @property NSString *isbn;
 @property (strong, nonatomic) Book *book;
 @property (nonatomic) MKCoordinateRegion currentLocation;
+@property (strong, nonatomic) NSDictionary *currentBook;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *author;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *coverurl;
 @end

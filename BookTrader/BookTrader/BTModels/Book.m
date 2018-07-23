@@ -13,7 +13,7 @@
 
 @implementation Book
 
-@dynamic author, title, date, coverURL, userID, longitude, latitude, own, want, sell, trade, gift, location,user;
+@dynamic author, title, date, coverurl, userID, longitude, latitude, own, want, sell, trade, gift, location,user;
 NSString *str_bsnNum;
 NSDictionary *rawJson;
 BOOL getInfo;
@@ -28,7 +28,7 @@ BOOL getInfo;
 }
 
 
-+(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL
++(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverurl
                 //withUser:(NSString *)userID withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSValue *)longitude withLatitude:(NSValue *)latitude withOwn:(BOOL)own
           withCompletion:(PFBooleanResultBlock)completion {
     
@@ -36,7 +36,7 @@ BOOL getInfo;
     newBook.title = title;
     newBook.author = author;
     newBook.date = date;
-    newBook.coverURL = coverURL;
+    newBook.coverurl = coverurl;
 //    newBook.gift = gift;
 //    newBook.sell = sell;
  //   newBook.trade = trade;

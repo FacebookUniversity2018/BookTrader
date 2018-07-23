@@ -17,8 +17,12 @@
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property (nonatomic) BOOL capturing;
 @property (strong, nonatomic) NSString *isbn;
-
-//-(void) stopReading;
+@property (strong, nonatomic) NSDictionary *currentBook;
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *author;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *coverurl;
+@property (strong, nonatomic) NSDictionary *images;
 
 @end
 
@@ -28,11 +32,6 @@
     [super viewDidLoad];
     self.captureSession = nil;
     self.capturing = NO;
-    // Do any additional setup after loading the view.
-//}
-
-//- (void)viewDidAppear:(BOOL)animated {
-    self.captureSession = nil;
     NSError *error;
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
@@ -65,7 +64,7 @@
     [self.captureSession stopRunning];
     self.captureSession = nil;
     [self.videoPreviewLayer removeFromSuperlayer];
-    [self performSegueWithIdentifier:@"barcodeToDetailsSegue" sender:nil];
+    [self fetchData:self.isbn];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,15 +76,51 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  
-  //  if ([[segue identifier] isEqualToString:@"barcodeToDetailsSegue"]) {
-        AddBookDetailsViewController *bookDetailsViewController = [segue destinationViewController];
-        bookDetailsViewController.isbn = self.isbn;
+    if ([[segue identifier] isEqualToString:@"barcodeToDetailsSegue"]) {
+    AddBookDetailsViewController *vc = [segue destinationViewController];
+    vc.isbn = self.isbn;
+    vc.title = self.title;
+    vc.author = self.author;
+    vc.date = self.date;
+    vc.coverurl = self.coverurl;
       //  bookDetailsViewController.currentLocation = self.currentLocation;
-   // } else if ([[segue identifier] isEqualToString:@"barcodeAddToHomeSegue"]) {
+    } else if ([[segue identifier] isEqualToString:@"barcodeAddToHomeSegue"]) {
         
-   // } else {
-      //  NSLog([segue identifier]);
-   // }
+    } else {
+        NSLog([segue identifier]);
+   }
+}
+
+- (void) fetchData:(NSString *)isbn {
+    NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
+    NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body,
+                             isbn];
+    NSURL *url = [NSURL URLWithString:url_request];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
+    
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.currentBook = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            self.currentBook = self.currentBook[@"items"][0][@"volumeInfo"];
+            NSLog(@"%@", self.currentBook[@"title"]);
+            NSLog(@"%@", self.currentBook[@"authors"][0]);
+            self.title= self.currentBook[@"title"];
+            self.author = self.currentBook[@"authors"][0];
+            self.date = self.currentBook[@"publishedDate"];
+            self.images = self.currentBook[@"imageLinks"];
+            self.coverurl = self.images[@"thumbnail"];
+            NSLog(@"This is the title before the segue %@", self.title);
+            NSLog(@"This is the author before the segue %@", self.author);
+            [self performSegueWithIdentifier:@"barcodeToDetailsSegue" sender:nil];
+            
+        }
+    }];
+    [task resume];
 }
 
 @end

@@ -27,13 +27,18 @@
 @property (strong, nonatomic) IBOutlet UIButton *locationButton;
 
 //variables
-@property (strong, nonatomic) NSDictionary *currentBook;
+//@property (strong, nonatomic) NSDictionary *currentBook;
 @property (strong, nonatomic) NSDictionary *images;
+@property (nonatomic) CLLocationCoordinate2D bookLat;
+@property (nonatomic) CLLocationCoordinate2D bookLon;
+@property (nonatomic) NSValue *p_bookLat;
+@property (nonatomic) NSValue *p_bookLon;
+
 //post
-@property (strong, nonatomic) NSString *bookURL;
-@property (strong, nonatomic) NSString *author;
-@property (strong, nonatomic) NSString *date;
-@property (strong, nonatomic) NSString *btitle;
+//@property (strong, nonatomic) NSString *bookURL;
+// @property (strong, nonatomic) NSString *author;
+//@property (strong, nonatomic) NSString *date;
+//@property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSValue *lat;
 @property (strong, nonatomic) NSValue *lon;
 
@@ -52,52 +57,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self fetchData:self.isbn];
-}
-    
-- (void) fetchData:(NSString *)isbn {
-    NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
-    NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body, isbn];
-    NSURL *url = [NSURL URLWithString:url_request];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30.0];
-    
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            self.currentBook = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-            self.currentBook = self.currentBook[@"items"][0][@"volumeInfo"];
-            NSLog(@"title is");
-            NSLog(@"%@", self.currentBook[@"title"]);
-            NSLog(@"%@", self.currentBook[@"authors"][0]);
-            self.btitle = self.currentBook[@"title"];
-            self.author = self.currentBook[@"authors"][0];
-            self.date = self.currentBook[@"publishedDate"];
-            self.images = self.currentBook[@"imageLinks"];
-            self.bookURL = self.images[@"thumbnail"];
-            
-            NSURL *url = [NSURL URLWithString:self.
-                          bookURL];
-            NSData *imageData = [NSData dataWithContentsOfURL:url];
-            //set UI
-            self.titleLabel.text = self.btitle;
-            self.authorLabel.text = self.author;
-            self.dateLabel.text = self.date;
-            self.bookCover.image = [UIImage imageWithData:imageData];
-        }
-    }];
-    [task resume];
+    NSURL *url = [NSURL URLWithString:self.
+                  coverurl];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    //set UI
+    self.titleLabel.text = self.title;
+    self.authorLabel.text = self.author;
+    self.dateLabel.text = self.date;
+    self.bookCover.image = [UIImage imageWithData:imageData];
 }
 
-- (IBAction)onPublish:(id)sender {
-    
+- (void)viewDidAppear:(BOOL)animated {
+    NSLog(@"YO IM HERE");
+    NSLog(@"THIS IS THE TITLE OF THE BOOK %@", self.title);
+    NSLog(@"AUTHOR OF THE BOOK %@", self.author);
+}
+
+- (IBAction)publishClicked:(id)sender {
+
     self.own = true;
+    if (self.location) {
     //latitude
     //longitude
-    [Book addBookToDatabase:self.btitle withAuthor:self.author withDate: self.date withCover:self.bookURL
+  //      CLLocationCoordinate2D *lat = self.currentLocation.center.latitude;
+    //    CLLocationCoordinate2D *lon = self.currentLocation.center.longitude;
+      //  self.bookLat = currentLocation.center.latitude.integerValue;
+      //  self.bookLon = currentLocation.center.longitude.integerValue;
+    } else {
+        //use defaults
+    }
+    [Book addBookToDatabase:self.title withAuthor:self.author withDate: self.date withCover:self.coverurl
                    //withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:nil
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
                  if (succeeded) {
@@ -149,7 +138,14 @@
 //}
 
 - (IBAction)useCurrentLocation:(id)sender {
-    
+    if (!self.location) {
+        self.location = true;
+        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-4-240.png"] forState:UIControlStateNormal];
+    } else if (self.location) {
+        self.location = false;
+        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
+        //set book location with defaults
+    }
 }
 
 - (IBAction)sellButton:(id)sender {
@@ -181,17 +177,8 @@
         [self.giftButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
     }
 }
-- (IBAction)locationButton:(id)sender {
-    if (!self.location) {
-        self.location = true;
-        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-4-240.png"] forState:UIControlStateNormal];
-        //TODO:set lat and long here
-    } else if (self.location) {
-        self.location = false;
-        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
-    }
-    
-}
+
+
 
 /*
 - (IBAction)buyButton:(id)sender {
