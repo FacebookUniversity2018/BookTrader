@@ -29,18 +29,11 @@
 //variables
 //@property (strong, nonatomic) NSDictionary *currentBook;
 @property (strong, nonatomic) NSDictionary *images;
-@property (nonatomic) CLLocationCoordinate2D bookLat;
-@property (nonatomic) CLLocationCoordinate2D bookLon;
+@property (nonatomic) CLLocationDegrees bookLat;
+@property (nonatomic) CLLocationDegrees bookLon;
 @property (nonatomic) NSValue *p_bookLat;
 @property (nonatomic) NSValue *p_bookLon;
 
-//post
-//@property (strong, nonatomic) NSString *bookURL;
-// @property (strong, nonatomic) NSString *author;
-//@property (strong, nonatomic) NSString *date;
-//@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSValue *lat;
-@property (strong, nonatomic) NSValue *lon;
 
 //buttons
 @property (nonatomic, assign) BOOL sell;
@@ -67,11 +60,6 @@
     self.bookCover.image = [UIImage imageWithData:imageData];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    NSLog(@"YO IM HERE");
-    NSLog(@"THIS IS THE TITLE OF THE BOOK %@", self.title);
-    NSLog(@"AUTHOR OF THE BOOK %@", self.author);
-}
 
 - (IBAction)publishClicked:(id)sender {
 
@@ -79,15 +67,17 @@
     if (self.location) {
     //latitude
     //longitude
-  //      CLLocationCoordinate2D *lat = self.currentLocation.center.latitude;
-    //    CLLocationCoordinate2D *lon = self.currentLocation.center.longitude;
-      //  self.bookLat = currentLocation.center.latitude.integerValue;
-      //  self.bookLon = currentLocation.center.longitude.integerValue;
+        CLLocationDegrees lat = self.currentLocation.center.latitude;
+       CLLocationDegrees lon = self.currentLocation.center.longitude;
+        self.bookLat = self.currentLocation.center.latitude;
+        self.bookLon = self.currentLocation.center.longitude;
+        self.p_bookLat = @(self.bookLat);
+        self.p_bookLon = @(self.bookLon);
     } else {
         //use defaults
     }
-    [Book addBookToDatabase:self.title withAuthor:self.author withDate: self.date withCover:self.coverurl
-                   //withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:nil
+    [Book addBookToDatabase:nil withAuthor:nil withDate:nil withCover:nil
+                   withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:nil
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
                  if (succeeded) {
                      NSLog(@"posted book");
