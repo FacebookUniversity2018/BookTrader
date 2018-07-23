@@ -52,7 +52,7 @@ BOOL getInfo;
 }
 
 
-+(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withUser:(NSString *)userID withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withOwn:(BOOL)own withCompletion:(PFBooleanResultBlock)completion {
++(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withUser:(NSString *)userID withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSValue *)longitude withLatitude:(NSValue *)latitude withOwn:(BOOL)own withCompletion:(PFBooleanResultBlock)completion {
     
     Book *newBook = [Book new];
     newBook.title = title;

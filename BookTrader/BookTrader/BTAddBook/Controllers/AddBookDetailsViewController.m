@@ -75,7 +75,6 @@
 
 - (IBAction)onPublish:(id)sender {
     
-    NSLog(@"%@", self.title);
     self.own = true;
     
     /*[Book addBookToDatabase: withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
@@ -158,12 +157,14 @@
     if (!self.location) {
         self.location = true;
         [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-4-240.png"] forState:UIControlStateNormal];
+        //TODO:set lat and long here
     } else if (self.location) {
         self.location = false;
         [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
     }
     
 }
+
 /*
 - (IBAction)buyButton:(id)sender {
     if (!self.buy) {

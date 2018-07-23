@@ -16,13 +16,13 @@
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverURL;
-@property (strong, nonatomic) NSString *overview;
+//@property (strong, nonatomic) NSString *overview;
 
 @property (strong, nonatomic) User *user;
 
 
-@property (strong, nonatomic) NSString *latitude;
-@property (strong, nonatomic) NSString *longitude;
+@property (strong, nonatomic) NSValue *latitude;
+@property (strong, nonatomic) NSValue *longitude;
 @property (strong, nonatomic) NSString *userID;
 
 @property (nonatomic, assign) BOOL own;
@@ -32,12 +32,9 @@
 @property (nonatomic, assign) BOOL gift;
 @property (nonatomic, assign) BOOL location;
 
-
-
 - (void) setIsbn:(NSString *)str_bsn;
 
-
-+(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSString *)longitude withLatitude:(NSString *)latitude withOwn:own withCompletion:(PFBooleanResultBlock)completion;
++(void)addBookToDatabase:(NSString *)title withAuthor:(NSString *)author withDate:(NSString *)date withCover:(NSString *)coverURL withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withLongitude:(NSValue *)longitude withLatitude:(NSValue *)latitude withOwn:own withCompletion:(PFBooleanResultBlock)completion;
 
 + (NSDictionary *) fetchData:(NSString *)isbn;
 + (NSDictionary *) parseData:(NSDictionary *)raw;
