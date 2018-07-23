@@ -21,12 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.book setIsbn:self.isbn];
-    NSDictionary *currentBook = [Book fetchData:self.isbn];
-    self.titleLabel.text = currentBook[@"title"];
-    NSArray *authors = currentBook[@"authors"];
-    self.authorLabel.text = authors[0];
-    self.dateLabel.text = currentBook[@"publishedDate"];
+    //[self.book setIsbn:self.isbn];
+   // NSDictionary *currentBook = [Book fetchData:self.isbn];
+ //   self.titleLabel.text = currentBook[@"title"];
+ //   NSArray *authors = currentBook[@"authors"];
+ //   self.authorLabel.text = authors[0];
+ //   self.dateLabel.text = currentBook[@"publishedDate"];
     // Do any additional setup after loading the view.
 }
 

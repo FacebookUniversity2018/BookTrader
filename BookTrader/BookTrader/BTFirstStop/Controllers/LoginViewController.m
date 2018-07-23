@@ -10,7 +10,6 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "User.h"
-#import "HomeViewController.h"
 
 
 @interface LoginViewController ()
@@ -19,8 +18,6 @@
 @property BOOL logged;
 @property BOOL userExist;
 @property BOOL shouldSegue;
-
-
 
 @end
 
@@ -69,8 +66,8 @@
                 [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture, first_name, last_name"}]
                  startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                      if (!error) {
+                         NSLog(@"user:%@", result);
                          self.profileInfo = result;
-                         NSLog(@"YO IM RIGHT HERE %@", result);
                          if(!self.userExist) {
                              [self createUser];
                          }
@@ -120,19 +117,19 @@
 - (void) viewDidAppear:(BOOL)animated {
     // Everytime the view appears
     [self userExists: [FBSDKAccessToken currentAccessToken].userID];
-    if (self.logged==YES && self.shouldSegue) {
-       [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
+    if(self.logged==YES && self.shouldSegue) {
+        [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
     }
 }
 
+/*
+#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    HomeViewController *homeViewController = [segue destinationViewController];
-    homeViewController.userInfo = self.profileInfo;
-    
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end

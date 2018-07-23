@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vws-A0-hba">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1096,21 +1096,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="arC-MC-8NV">
-                                <rect key="frame" x="0.0" y="473" width="375" height="158"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.62843197770000003" green="0.19619659449999999" blue="0.66199412030000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <segue destination="4RQ-tJ-9CF" kind="embed" id="Nh3-Jx-v4v"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eah-Ty-4fn">
-                                <rect key="frame" x="0.0" y="473" width="375" height="158"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="Erd-Mq-cAq" kind="embed" id="SiO-Qy-Or9"/>
-                                </connections>
-                            </containerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="jPn-vt-54t">
                                 <rect key="frame" x="101" y="121" width="173" height="199"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1179,34 +1164,8 @@
                                     <action selector="showNewView:" destination="j06-5r-WOD" eventType="valueChanged" id="D42-4y-ryy"/>
                                 </connections>
                             </segmentedControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="4ET-2u-A4r"/>
-                    </view>
-                    <connections>
-                        <outlet property="authorLabel" destination="Xar-sh-Ztl" id="tIX-AT-GCP"/>
-                        <outlet property="bookControl" destination="AdB-IX-hbl" id="AK6-vs-ZAT"/>
-                        <outlet property="bookCover" destination="jPn-vt-54t" id="DB8-sP-6hY"/>
-                        <outlet property="dateLabel" destination="ude-KV-MO6" id="cLa-YS-42v"/>
-                        <outlet property="haveBookView" destination="arC-MC-8NV" id="ha8-FB-Ey3"/>
-                        <outlet property="titleLabel" destination="QGP-le-LnX" id="qKa-Qg-BUo"/>
-                        <outlet property="wantBookView" destination="eah-Ty-4fn" id="Jtz-52-XEo"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1EF-VP-AZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5384.8000000000002" y="2687.4062968515746"/>
-        </scene>
-        <!--List Book-->
-        <scene sceneID="5xz-kN-wsR">
-            <objects>
-                <viewController title="List Book" id="4RQ-tJ-9CF" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ABa-Yl-ioN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-2f-HtK">
-                                <rect key="frame" x="-9" y="119" width="375" height="39"/>
+                                <rect key="frame" x="120" y="162" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -1219,58 +1178,60 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="onPublish:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="J6k-eK-EU2"/>
+                                    <action selector="publishClicked:" destination="j06-5r-WOD" eventType="touchUpInside" id="PPN-N9-Q0e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vic-pN-WqU">
-                                <rect key="frame" x="169" y="91" width="19" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="iconmonstr-checkbox-6-240"/>
-                                <connections>
-                                    <action selector="locationButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="gza-OA-IIb"/>
-                                    <action selector="sellButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="YeD-AT-4mu"/>
-                                </connections>
-                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="4ET-2u-A4r"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="Xar-sh-Ztl" id="tIX-AT-GCP"/>
+                        <outlet property="bookControl" destination="AdB-IX-hbl" id="AK6-vs-ZAT"/>
+                        <outlet property="bookCover" destination="jPn-vt-54t" id="DB8-sP-6hY"/>
+                        <outlet property="dateLabel" destination="ude-KV-MO6" id="cLa-YS-42v"/>
+                        <outlet property="titleLabel" destination="QGP-le-LnX" id="qKa-Qg-BUo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1EF-VP-AZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5384.8000000000002" y="2687.4062968515746"/>
+        </scene>
+        <!--List Book-->
+        <scene sceneID="5xz-kN-wsR">
+            <objects>
+                <viewController title="List Book" id="4RQ-tJ-9CF" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ABa-Yl-ioN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-kB-vc7">
-                                <rect key="frame" x="115" y="92" width="49" height="16"/>
+                                <rect key="frame" x="116" y="69.5" width="49" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.014304199256002903" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="use current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JJ-3U-Hwh">
-                                <rect key="frame" x="196" y="91" width="129" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="use current location?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JJ-3U-Hwh">
+                                <rect key="frame" x="196" y="71" width="145" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lg6-1W-cVK">
-                                <rect key="frame" x="91" y="0.0" width="206" height="61"/>
+                                <rect key="frame" x="45" y="0.0" width="248" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="gift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-P5-jS6">
-                                        <rect key="frame" x="146" y="21" width="24" height="18"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-oO-79a">
-                                        <rect key="frame" x="177" y="22" width="23" height="18"/>
-                                        <state key="normal" image="iconmonstr-checkbox-6-240"/>
-                                        <connections>
-                                            <action selector="giftButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="Qnm-9D-PCo"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="trade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3T-Ea-hQ9">
-                                        <rect key="frame" x="69" y="22" width="41" height="17"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
+                                        <rect key="frame" x="80" y="23" width="52" height="17"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5S-9G-Cdv">
-                                        <rect key="frame" x="39" y="22" width="23" height="18"/>
+                                        <rect key="frame" x="35" y="23" width="23" height="18"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="iconmonstr-checkbox-6-240"/>
                                         <connections>
@@ -1278,7 +1239,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlV-ft-I1A">
-                                        <rect key="frame" x="112" y="22" width="23" height="18"/>
+                                        <rect key="frame" x="130" y="23" width="23" height="18"/>
                                         <state key="normal" image="iconmonstr-checkbox-6-240"/>
                                         <connections>
                                             <action selector="tradeButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="SFg-vc-mbk"/>
@@ -1286,10 +1247,23 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="sell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC6-2f-pb6">
                                         <rect key="frame" x="0.0" y="23" width="34" height="17"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="gift" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-P5-jS6">
+                                        <rect key="frame" x="170" y="22" width="38" height="18"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-oO-79a">
+                                        <rect key="frame" x="205" y="22" width="23" height="18"/>
+                                        <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                                        <connections>
+                                            <action selector="giftButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="Qnm-9D-PCo"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -1300,12 +1274,21 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="price?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRh-Mi-r0M">
-                                <rect key="frame" x="65" y="86" width="50" height="26"/>
+                                <rect key="frame" x="67" y="70" width="50" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vic-pN-WqU">
+                                <rect key="frame" x="169" y="70" width="19" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                                <connections>
+                                    <action selector="locationButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="gza-OA-IIb"/>
+                                    <action selector="sellButton:" destination="4RQ-tJ-9CF" eventType="touchUpInside" id="YeD-AT-4mu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="tt0-41-EQt"/>
@@ -1320,14 +1303,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9h-uD-OZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="JbO-T8-WnF"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="3250.9745127436286"/>
+            <point key="canvasLocation" x="4566" y="3251"/>
         </scene>
         <!--Want Book-->
         <scene sceneID="fM3-xa-Pob">
             <objects>
                 <viewController title="Want Book" id="Erd-Mq-cAq" customClass="AddBookDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcZ-Az-vke">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-hH-dxm">
@@ -1399,7 +1382,7 @@
         <segue reference="WpR-MN-ARB"/>
         <segue reference="t21-dR-ACs"/>
         <segue reference="Sfx-XH-8fp"/>
-        <segue reference="cml-hS-oe6"/>
+        <segue reference="GVg-UF-tiR"/>
         <segue reference="5qs-6K-ecv"/>
         <segue reference="iRC-o5-TUh"/>
     </inferredMetricsTieBreakers>

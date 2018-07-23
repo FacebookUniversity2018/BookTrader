@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSDictionary *profile;
 @property BOOL userExist;
 @property BOOL shouldSegue;
+
 @end
 
 @implementation LoginViewController

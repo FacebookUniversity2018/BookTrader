@@ -40,8 +40,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-  
-    
     // get user defaults
     CLLocationCoordinate2D myLocation = [BTUserDefualts getCurrentLocation];
     
@@ -87,10 +85,6 @@
         }
     }];
 
-    
-    
-    
-    
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
@@ -150,9 +144,6 @@
         self.filteredData = self.books;
     }
 }
-
-
-
 
 
 @end
