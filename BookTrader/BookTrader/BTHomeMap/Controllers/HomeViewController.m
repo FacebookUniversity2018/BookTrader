@@ -124,8 +124,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier]  isEqual: @"navigationSegue"]) {
         // for nav header
+        NSLog(@"Home location %f", self.currentLocation.center.latitude);
         HomeNavigationViewController *navViewController = [segue destinationViewController];
         navViewController.currentLocation = self.currentLocation;
+        
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         // for my books
     } else {

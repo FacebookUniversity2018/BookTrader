@@ -50,6 +50,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"add details %f", self.currentLocation.center.latitude);
     NSURL *url = [NSURL URLWithString:self.
                   coverurl];
     NSData *imageData = [NSData dataWithContentsOfURL:url];
@@ -64,11 +65,11 @@
 - (IBAction)publishClicked:(id)sender {
 
     self.own = true;
-    if (self.location) {
+    if (true) { // fix later when not testing
     //latitude
     //longitude
         CLLocationDegrees lat = self.currentLocation.center.latitude;
-       CLLocationDegrees lon = self.currentLocation.center.longitude;
+        CLLocationDegrees lon = self.currentLocation.center.longitude;
         self.bookLat = self.currentLocation.center.latitude;
         self.bookLon = self.currentLocation.center.longitude;
         self.p_bookLat = @(self.bookLat);
@@ -76,15 +77,13 @@
     } else {
         //use defaults
     }
-    [Book addBookToDatabase:nil withAuthor:nil withDate:nil withCover:nil
-                   withSell:nil withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:nil
-             withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-                 if (succeeded) {
-                     NSLog(@"posted book");
-                 } else {
-                     NSLog(@"%@", error);
-                 }
-             }];
+    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"I posted the book");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 
 [self dismissViewControllerAnimated:true completion:nil];
 }

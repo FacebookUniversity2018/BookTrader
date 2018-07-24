@@ -28,8 +28,7 @@
     
     // set up map view
     self.mapView.delegate = self;
-    MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
-    [self.mapView setRegion:sfRegion animated:false];
+    [self.mapView setRegion:self.currentLocation animated:false];
     
     // set up profile image
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
@@ -48,7 +47,7 @@
     NSLog(@"%@", self.currUser);
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -67,6 +66,6 @@
         NSLog([segue identifier]);
     }
 }
-*/
+
 
 @end

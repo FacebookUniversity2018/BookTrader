@@ -30,6 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"Home barcode %f", self.currentLocation.center.latitude);
     self.captureSession = nil;
     self.capturing = NO;
     NSError *error;
@@ -77,12 +78,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  
     if ([[segue identifier] isEqualToString:@"barcodeToDetailsSegue"]) {
+    NSLog(@"segue barcode %f", self.currentLocation.center.latitude);
     AddBookDetailsViewController *vc = [segue destinationViewController];
-    vc.isbn = self.isbn;
-    vc.title = self.title;
-    vc.author = self.author;
-    vc.date = self.date;
-    vc.coverurl = self.coverurl;
+        vc.isbn = self.isbn;
+        vc.title = self.title;
+        vc.author = self.author;
+        vc.date = self.date;
+        vc.coverurl = self.coverurl;
+        vc.currentLocation = self.currentLocation;
       //  bookDetailsViewController.currentLocation = self.currentLocation;
     } else if ([[segue identifier] isEqualToString:@"barcodeAddToHomeSegue"]) {
         
