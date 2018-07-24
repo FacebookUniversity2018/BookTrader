@@ -10,6 +10,8 @@
 		069FFA8BAC4BE940D97D6971 /* libPods-BookTraderUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDDEE762FF206EB7BAC1B49 /* libPods-BookTraderUITests.a */; };
 		638D487D364591D846D6CC51 /* libPods-BookTraderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B08C3C53361151E73DA239E2 /* libPods-BookTraderTests.a */; };
 		B11F464420FE64E7000564BE /* SimpleBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */; };
+		B1847D802106A1470088D05A /* ListBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1847D7F2106A1470088D05A /* ListBookViewController.m */; };
+		B1847D832106A1DD0088D05A /* RequestBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1847D822106A1DD0088D05A /* RequestBookViewController.m */; };
 		C1BABBFE04C461CE56267A64 /* libPods-BookTrader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCCE42FF7AAF54DC635123BB /* libPods-BookTrader.a */; };
 		CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11884920FD0B8200C088BA /* AppDelegate.m */; };
 		CE11884D20FD0B8200C088BA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE11884C20FD0B8200C088BA /* ViewController.m */; };
@@ -71,6 +73,10 @@
 		B08C3C53361151E73DA239E2 /* libPods-BookTraderTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BookTraderTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B11F464220FE64E7000564BE /* SimpleBookDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimpleBookDetailViewController.h; sourceTree = "<group>"; };
 		B11F464320FE64E7000564BE /* SimpleBookDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleBookDetailViewController.m; sourceTree = "<group>"; };
+		B1847D7E2106A1470088D05A /* ListBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListBookViewController.h; sourceTree = "<group>"; };
+		B1847D7F2106A1470088D05A /* ListBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListBookViewController.m; sourceTree = "<group>"; };
+		B1847D812106A1DC0088D05A /* RequestBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RequestBookViewController.h; sourceTree = "<group>"; };
+		B1847D822106A1DD0088D05A /* RequestBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RequestBookViewController.m; sourceTree = "<group>"; };
 		CE11884520FD0B8200C088BA /* BookTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE11884820FD0B8200C088BA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CE11884920FD0B8200C088BA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -320,6 +326,10 @@
 				CE1188AB20FD0FA400C088BA /* BarcodeAddViewController.m */,
 				CE1188AD20FD0FD500C088BA /* AddBookDetailsViewController.h */,
 				CE1188AE20FD0FD500C088BA /* AddBookDetailsViewController.m */,
+				B1847D7E2106A1470088D05A /* ListBookViewController.h */,
+				B1847D7F2106A1470088D05A /* ListBookViewController.m */,
+				B1847D812106A1DC0088D05A /* RequestBookViewController.h */,
+				B1847D822106A1DD0088D05A /* RequestBookViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -772,6 +782,7 @@
 				CEDDDD0420FD68D1007AF20B /* MessagesHeaderCell.m in Sources */,
 				CE54694220FEB88700A02E13 /* Book.m in Sources */,
 				B11F464420FE64E7000564BE /* SimpleBookDetailViewController.m in Sources */,
+				B1847D802106A1470088D05A /* ListBookViewController.m in Sources */,
 				CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */,
 				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
 				CE11884D20FD0B8200C088BA /* ViewController.m in Sources */,
@@ -780,6 +791,7 @@
 				CEEFE6DA21010B920021CE63 /* BTUserTestModel.m in Sources */,
 				CE1188A920FD0F4400C088BA /* BookDetailViewController.m in Sources */,
 				CE742E77210252A8000ED8F0 /* BTUserDefualts.m in Sources */,
+				B1847D832106A1DD0088D05A /* RequestBookViewController.m in Sources */,
 				CE11884A20FD0B8200C088BA /* AppDelegate.m in Sources */,
 				CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */,
 				CE11889A20FD0E1500C088BA /* HomeViewController.m in Sources */,
@@ -957,13 +969,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+
 				DEVELOPMENT_TEAM = A5TQ98F5H4;
+
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTraderYay;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -978,11 +994,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5TQ98F5H4;
+
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTraderYay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

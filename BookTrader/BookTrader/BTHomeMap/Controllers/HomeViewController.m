@@ -84,6 +84,8 @@
             NSLog(@"books updated: %lu", self.books.count);
         }
     }];
+    
+    NSLog(@"HOME VIEW USER: %@", self.currentUser);
 
 }
 
@@ -127,6 +129,7 @@
         NSLog(@"Home location %f", self.currentLocation.center.latitude);
         HomeNavigationViewController *navViewController = [segue destinationViewController];
         navViewController.currentLocation = self.currentLocation;
+        navViewController.user = self.currentUser;
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         // for my books
