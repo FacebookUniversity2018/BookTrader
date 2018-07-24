@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Book.h"
+#import "User.h"
 #import "BarcodeAddViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
@@ -16,6 +17,7 @@
 @interface AddBookDetailsViewController : UIViewController
 @property NSString *isbn;
 @property (strong, nonatomic) Book *book;
+@property (strong, nonatomic) User *user;
 @property (nonatomic) MKCoordinateRegion currentLocation;
 @property (strong, nonatomic) NSDictionary *currentBook;
 @property (strong, nonatomic) NSString *title;
