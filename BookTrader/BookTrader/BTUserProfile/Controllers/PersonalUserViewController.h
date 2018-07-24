@@ -11,4 +11,6 @@
 
 @interface PersonalUserViewController : UIViewController
 
+@property (strong, nonatomic) User *currentUser;
+
 @end

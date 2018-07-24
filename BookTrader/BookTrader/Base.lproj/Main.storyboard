@@ -717,7 +717,7 @@
                                                 <rect key="frame" x="118" y="65" width="105" height="14"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_profile" translatesAutoresizingMaskIntoConstraints="NO" id="yE0-r8-AlA">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter_profile" translatesAutoresizingMaskIntoConstraints="NO" id="yE0-r8-AlA" customClass="PFImageView">
                                                 <rect key="frame" x="25" y="28" width="73" height="73"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <gestureRecognizers/>
@@ -785,7 +785,7 @@
                                         </state>
                                         <connections>
                                             <action selector="onSignOut:" destination="mKx-ja-pAo" eventType="touchUpInside" id="zcq-j7-sRX"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="BWy-3h-n2c"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="SignOut" id="BWy-3h-n2c"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-hp-weH">
@@ -803,6 +803,7 @@
                     <connections>
                         <outlet property="mapView" destination="HLv-uX-8K7" id="FFL-Vy-U2b"/>
                         <outlet property="profileImageView" destination="yE0-r8-AlA" id="64H-Sd-e2x"/>
+                        <outlet property="usernameLabel" destination="aia-6F-I4V" id="3sy-bQ-aRF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDk-66-mHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -835,7 +836,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration" identifier="background_image"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="KgJ-f9-hcd" userLabel="profile_image">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="KgJ-f9-hcd" userLabel="profile_image" customClass="PFImageView">
                                         <rect key="frame" x="16" y="156" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration" identifier="profile_image"/>
@@ -919,7 +920,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0E-N3-5Zb">
-                                                <rect key="frame" x="0.0" y="-1" width="85" height="22"/>
+                                                <rect key="frame" x="0.0" y="-1" width="331" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="username_label"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -949,10 +950,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6jh-lq-xXb"/>
                     </view>
+                    <connections>
+                        <outlet property="profileImage" destination="KgJ-f9-hcd" id="Odv-Cv-WQh"/>
+                        <outlet property="usernameLabel" destination="n0E-N3-5Zb" id="t8E-aa-h6B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="It3-k8-RTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4151" y="1829"/>
+            <point key="canvasLocation" x="-4151.1999999999998" y="1828.3358320839582"/>
         </scene>
         <!--Simple Book Detail View Controller-->
         <scene sceneID="Buw-hb-xmd">
@@ -1394,12 +1399,12 @@
         <image name="twitter_profile" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="quk-fy-MgF"/>
+        <segue reference="xeT-kZ-RnR"/>
         <segue reference="WpR-MN-ARB"/>
-        <segue reference="PS6-nd-cAq"/>
-        <segue reference="0Xp-aZ-7uA"/>
+        <segue reference="t21-dR-ACs"/>
+        <segue reference="7Aw-by-ogi"/>
         <segue reference="cml-hS-oe6"/>
-        <segue reference="wOB-wq-4dG"/>
-        <segue reference="DHM-n1-jTW"/>
+        <segue reference="5qs-6K-ecv"/>
+        <segue reference="iRC-o5-TUh"/>
     </inferredMetricsTieBreakers>
 </document>
