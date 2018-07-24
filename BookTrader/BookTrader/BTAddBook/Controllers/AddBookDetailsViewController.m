@@ -86,6 +86,8 @@
             NSLog(@"%@", error);
         }
     }];
+    // add isbn to the database
+    [self.currentUser addToBooksHave:self.isbn];
 
 [self dismissViewControllerAnimated:true completion:nil];
 }

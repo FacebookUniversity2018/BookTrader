@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Book.h"
+#import "User.h"
 #import "BarcodeAddViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
@@ -22,4 +23,5 @@
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverurl;
+@property (strong, nonatomic) User *currentUser;
 @end

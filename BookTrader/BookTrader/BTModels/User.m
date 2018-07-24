@@ -23,7 +23,7 @@
     return @"User";
 }
 
-+(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withBooks:(NSArray *)booksHave withWantBooks:(NSArray *)booksWant withCompletion:(PFBooleanResultBlock)completion {
++(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withBooks:(NSMutableArray *)booksHave withWantBooks:(NSMutableArray *)booksWant withCompletion:(PFBooleanResultBlock)completion {
     User *newUser = [User new];
     newUser.userId = userId;
     newUser.firstName = firstName;
@@ -72,12 +72,12 @@
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
-- (void)addToMyBooks:(NSString *)objectId {
+- (void)addToBooksHave:(NSString *)objectId {
     [self addObject:objectId forKey:@"myBooks"];
     [self saveInBackground];
 }
 
-- (void)removeFromMyBooks:(NSString *)objectId {
+- (void)removeFromBooksHave:(NSString *)objectId {
     [self removeObject:objectId forKey:@"myBooks"];
     [self saveInBackground];
 }
