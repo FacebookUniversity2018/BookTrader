@@ -9,6 +9,7 @@
 #import "MessagesHomeViewController.h"
 #import "MessagesHeaderCell.h"
 #import "MessageCell.h"
+#import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 
 @interface MessagesHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -22,6 +23,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView reloadData];
+    [FBSDKMessengerSharer openMessenger];
     // Do any additional setup after loading the view.
 }
 
