@@ -37,7 +37,46 @@
 }
 
 
-/*- (IBAction)showNewView:(id)sender {
+/*
+- (IBAction)publishClicked:(id)sender {
+
+    self.own = true;
+    if (true) { // fix later when not testing
+    //latitude
+    //longitude
+        CLLocationDegrees lat = self.currentLocation.center.latitude;
+        CLLocationDegrees lon = self.currentLocation.center.longitude;
+        self.bookLat = self.currentLocation.center.latitude;
+        self.bookLon = self.currentLocation.center.longitude;
+        self.p_bookLat = @(self.bookLat);
+        self.p_bookLon = @(self.bookLon);
+    } else {
+        //use defaults
+    }
+    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withOwn:self.own withSell:self.sell withTrade:self.trade withGift:self.gift withUserID:@"this is my id" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"posted book");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
+
+[self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (IBAction)onRequest:(id)sender {
+    self.own = false;
+    
+  /*  [Book addBookToDatabase:nil withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
+             withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+             }];
+   */
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+- (IBAction)showNewView:(id)sender {
 //segmented control to switch container views
     if(self.bookControl.selectedSegmentIndex==0){
         [UIView animateWithDuration:(0.5) animations:^{

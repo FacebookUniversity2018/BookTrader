@@ -9,8 +9,13 @@
 #import "PersonalUserViewController.h"
 #import "MessagesHomeViewController.h"
 #import "SimpleBookDetailViewController.h"
+#import "HomeNavigationViewController.h"
+#import "ParseUI.h"
 
 @interface PersonalUserViewController ()
+
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
 
@@ -18,7 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.usernameLabel.text = self.currentUser.firstName;
+    self.profileImage.file = self.currentUser.profilePicture;
+    [self.profileImage loadInBackground];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,6 +45,9 @@
     } else if ([[segue identifier] isEqualToString:@"personalProfileToBookDetailSegue"]) {
         SimpleBookDetailViewController *bookDetailViewController = [segue destinationViewController];
         bookDetailViewController.navigationControl = @"profile";
+    } else if([[segue identifier] isEqualToString:@"profileToHomeSegue"]) {
+        HomeNavigationViewController *homeNav = [segue destinationViewController];
+        homeNav.user = self.currentUser;
     }
 }
 
