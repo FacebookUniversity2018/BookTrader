@@ -23,4 +23,6 @@
 
 + (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image;
 
+- (void)addToMyBooks:(NSString *)objectId;
+- (void)removeFromMyBooks:(NSString *)objectId;
 @end

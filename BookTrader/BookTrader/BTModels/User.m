@@ -72,4 +72,15 @@
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
+- (void)addToMyBooks:(NSString *)objectId {
+    [self addObject:objectId forKey:@"myBooks"];
+    [self saveInBackground];
+}
+
+- (void)removeFromMyBooks:(NSString *)objectId {
+    [self removeObject:objectId forKey:@"myBooks"];
+    [self saveInBackground];
+}
+
+
 @end
