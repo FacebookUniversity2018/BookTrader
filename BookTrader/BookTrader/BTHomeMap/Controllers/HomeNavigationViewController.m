@@ -9,6 +9,7 @@
 #import "HomeNavigationViewController.h"
 #import "BarcodeAddViewController.h"
 #import "MessagesHomeViewController.h"
+#import "PersonalUserViewController.h"
 #import <MapKit/MapKit.h>
 #import "User.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -44,12 +45,13 @@
 
 
 
-#pragma mark - Navigation
+#pragma mark - Navigation 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier]  isEqual: @"homeProfilePictureToProfileSegue"]) {
-        
+    if ([[segue identifier]  isEqual: @"homeProfilePictureToProfileSegue"] || [[segue identifier]  isEqual: @"navToProfileSegue"]) {
+        PersonalUserViewController *profileViewController = [segue destinationViewController];
+        profileViewController.myBooks = self.myBooks;
     } else if ([[segue identifier] isEqualToString:@"navToProfileSegue"]) {
         
     } else if ([[segue identifier] isEqualToString:@"navToBarcodeSegue"]) {

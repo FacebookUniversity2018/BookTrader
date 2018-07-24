@@ -862,7 +862,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LUI-3h-DdL">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileBookCell" id="LUI-3h-DdL" customClass="ProfileBookCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -876,6 +876,7 @@
                                                     </subviews>
                                                 </view>
                                                 <connections>
+                                                    <outlet property="coverImageView" destination="SHm-SG-nGt" id="Kon-o5-3eO"/>
                                                     <segue destination="87K-le-6w6" kind="show" identifier="personalProfileToBookDetailSegue" id="WpR-MN-ARB"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -939,6 +940,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6jh-lq-xXb"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="bmr-4R-avb" id="K4n-xw-uEs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="It3-k8-RTo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1386,9 +1390,9 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xeT-kZ-RnR"/>
-        <segue reference="pUc-75-NA2"/>
-        <segue reference="t21-dR-ACs"/>
-        <segue reference="0Xp-aZ-7uA"/>
+        <segue reference="WpR-MN-ARB"/>
+        <segue reference="PS6-nd-cAq"/>
+        <segue reference="8dm-Tj-N7N"/>
         <segue reference="abl-o7-PdP"/>
         <segue reference="wOB-wq-4dG"/>
         <segue reference="iRC-o5-TUh"/>

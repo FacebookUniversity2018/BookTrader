@@ -142,6 +142,7 @@
         HomeNavigationViewController *navViewController = [segue destinationViewController];
         navViewController.currentLocation = self.currentLocation;
         navViewController.user = self.currentUser;
+        navViewController.myBooks = self.booksArray;
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         HomeBooksViewController *booksViewController = [segue destinationViewController];

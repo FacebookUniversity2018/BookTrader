@@ -10,5 +10,5 @@
 #import "User.h"
 
 @interface PersonalUserViewController : UIViewController
-
+@property (strong, nonatomic) NSArray *myBooks;
 @end

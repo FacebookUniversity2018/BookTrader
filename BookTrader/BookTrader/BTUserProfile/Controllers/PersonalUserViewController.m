@@ -9,8 +9,10 @@
 #import "PersonalUserViewController.h"
 #import "MessagesHomeViewController.h"
 #import "SimpleBookDetailViewController.h"
+#import "ProfileBookCell.h"
 
-@interface PersonalUserViewController ()
+@interface PersonalUserViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -18,7 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +31,15 @@
 }
 
 
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    ProfileBookCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ProfileBookCell" forIndexPath:indexPath];
+    cell.book = self.myBooks[indexPath.item];
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.myBooks.count;
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
