@@ -13,8 +13,7 @@
 //UI
 @property (strong, nonatomic) IBOutlet UISegmentedControl *bookControl;
 @property (strong, nonatomic) IBOutlet UIImageView *bookCover;
-@property (strong, nonatomic) IBOutlet UIView *haveBookView;
-@property (strong, nonatomic) IBOutlet UIView *wantBookView;
+
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
