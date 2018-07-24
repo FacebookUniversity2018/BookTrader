@@ -11,6 +11,7 @@ target 'BookTrader' do
   pod 'Parse'
   pod 'ParseUI'
   pod 'FBSDKLoginKit'
+  pod 'FBSDKMessengerShareKit' 
 
   target 'BookTraderTests' do
     inherit! :search_paths
