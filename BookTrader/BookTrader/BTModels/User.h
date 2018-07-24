@@ -19,7 +19,7 @@
 @property (strong, nonatomic) NSArray *booksHave;
 @property (strong, nonatomic) NSArray *booksWant;
 
-+(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withCompletion:(PFBooleanResultBlock)completion;
++(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withBooks:(NSArray *)booksHave withWantBooks:(NSArray *)booksWant withCompletion:(PFBooleanResultBlock)completion;
 
 + (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image;
 

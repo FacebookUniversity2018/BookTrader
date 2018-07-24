@@ -16,18 +16,22 @@
 @dynamic lastName;
 @dynamic bio;
 @dynamic profilePicture;
+@dynamic booksHave;
+@dynamic booksWant;
 
 + (nonnull NSString *)parseClassName {
     return @"User";
 }
 
-+(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withCompletion:(PFBooleanResultBlock _Nullable)completion {
++(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withBooks:(NSArray *)booksHave withWantBooks:(NSArray *)booksWant withCompletion:(PFBooleanResultBlock)completion {
     User *newUser = [User new];
     newUser.userId = userId;
     newUser.firstName = firstName;
     newUser.lastName = lastName;
     newUser.bio = bio;
     newUser.profilePicture = profilePicture;
+    newUser.booksWant = booksWant;
+    newUser.booksHave = booksHave;
     
     [newUser saveInBackgroundWithBlock:completion];
 };
