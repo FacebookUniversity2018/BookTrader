@@ -12,6 +12,7 @@
 #import <MapKit/MapKit.h>
 #import "User.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ParseUI.h"
 
 @interface HomeNavigationViewController () <MKMapViewDelegate>
@@ -42,6 +43,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onSignOut:(id)sender {
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logOut];
+    NSLog(@"Logout from Navigation Controller");
+}
 
 
 #pragma mark - Navigation
@@ -59,7 +65,7 @@
         MessagesHomeViewController *messagesViewController = [segue destinationViewController];
         messagesViewController.navigationControl = @"navView";
     } else {
-        NSLog([segue identifier]);
+        
     }
 }
 
