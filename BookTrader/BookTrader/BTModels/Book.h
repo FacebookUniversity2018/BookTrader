@@ -35,5 +35,5 @@
 - (void) setIsbn:(NSString *)str_bsn;
 
 
-+ (void) addBookToDatabaseWithTitle:(NSString *)title withAuthor:(NSString *)author withCoverURL:(NSString *)coverURL withLatitude:(NSValue *)latitude withLongitude:(NSValue *)longitude withCompletion:(PFBooleanResultBlock)completion;
++ (void) addBookToDatabaseWithTitle:(NSString *)title withAuthor:(NSString *)author withCoverURL:(NSString *)coverURL withLatitude:(NSValue *)latitude withLongitude:(NSValue *)longitude withOwn:(BOOL)own withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withUserID:(NSString *)userId withCompletion:(PFBooleanResultBlock)completion;
 @end

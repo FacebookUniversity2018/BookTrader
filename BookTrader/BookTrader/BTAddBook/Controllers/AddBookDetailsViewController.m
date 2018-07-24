@@ -8,6 +8,8 @@
 
 #import "AddBookDetailsViewController.h"
 #import "Book.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface AddBookDetailsViewController ()
 //UI
@@ -77,9 +79,9 @@
     } else {
         //use defaults
     }
-    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withOwn:self.own withSell:self.sell withTrade:self.trade withGift:self.gift withUserID:@"this is my id" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
-            NSLog(@"I posted the book");
+            NSLog(@"posted book");
         } else {
             NSLog(@"%@", error);
         }
