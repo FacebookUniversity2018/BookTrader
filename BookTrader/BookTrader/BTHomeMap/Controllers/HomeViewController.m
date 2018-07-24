@@ -84,6 +84,8 @@
             NSLog(@"books updated: %lu", self.books.count);
         }
     }];
+    
+    NSLog(@"HOME VIEW USER: %@", self.currentUser);
 
 }
 
@@ -126,6 +128,7 @@
         // for nav header
         HomeNavigationViewController *navViewController = [segue destinationViewController];
         navViewController.currentLocation = self.currentLocation;
+        navViewController.user = self.currentUser;
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         // for my books
     } else {

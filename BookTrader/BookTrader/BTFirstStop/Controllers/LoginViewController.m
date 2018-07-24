@@ -7,16 +7,18 @@
 //
 
 #import "LoginViewController.h"
+#import "HomeViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "User.h"
+#import "ParseUI.h"
 
 
 @interface LoginViewController ()
 
 @property (strong, nonatomic) NSDictionary *profileInfo;
+@property (strong, nonatomic) User *currentUser;
 @property BOOL logged;
-@property BOOL userExist;
 @property BOOL shouldSegue;
 
 @end
@@ -27,15 +29,15 @@
     [super viewDidLoad];
     self.shouldSegue = NO;
     
+    // Handle clicks on the button
+    [self.loginButton addTarget : self action : @selector (loginButtonClicked) forControlEvents : UIControlEventTouchUpInside ];
+    
     if([FBSDKAccessToken currentAccessTokenIsActive]) {
         self.logged = YES;
         self.shouldSegue = YES;
     } else{
         self.logged = NO;
     }
-    
-    // Handle clicks on the button
-    [self.loginButton addTarget : self action : @selector (loginButtonClicked) forControlEvents : UIControlEventTouchUpInside ];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,32 +64,10 @@
                 NSLog (@ "Canceled" );
             } else {
                 NSLog (@"Logged in" );
-                // Fetch user's information
-                [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture, first_name, last_name"}]
-                 startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-                     if (!error) {
-                         NSLog(@"user:%@", result);
-                         self.profileInfo = result;
-                         if(!self.userExist) {
-                             [self createUser];
-                         }
-                         self.shouldSegue = YES;
-                     }
-                 }];
             }
             self.logged = YES;
         }];
     }
-}
-
-// Add user to parse
-- (void) createUser {
-    [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"first_name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if(error) {
-            NSLog(@"%@", error.localizedDescription);
-        }
-    }];
-    
 }
 
 // Verify if user is already on Parse
@@ -103,9 +83,32 @@
             // do something with the array of object returned by the call
             NSLog(@"Successfully retrieved user if any %@", users);
             if(users.count == 0) {
-                self.userExist = NO;
+                // create new user
+                NSString *urlString = self.profileInfo[@"picture"][@"data"][@"url"];
+                NSURL *url = [NSURL URLWithString:urlString];
+                NSData *imageData = [NSData dataWithContentsOfURL:url];
+                UIImage *image = [UIImage imageWithData:imageData];
+                PFFile *imageFile = [User getPFFileFromImage:image];
+                [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:imageFile withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+                    if(succeeded) {
+                        NSLog(@"User added to Parse");
+                        // Create new user to pass around locally
+                        self.currentUser = [User new];
+                        self.currentUser.firstName = self.profileInfo[@"name"];
+                        self.currentUser.profilePicture = imageFile;
+                        NSLog(@"LOGIN USER: %@", self.currentUser);
+                        [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
+                        
+                    } else {
+                        NSLog(@"%@", error.localizedDescription);
+                    }
+                }];
+                
             } else {
-                self.userExist = YES;
+                // If user already exists
+                self.currentUser = users[0];
+                [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
+                
             }
             self.shouldSegue = YES;
         } else {
@@ -116,20 +119,29 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     // Everytime the view appears
-    [self userExists: [FBSDKAccessToken currentAccessToken].userID];
-    if(self.logged==YES && self.shouldSegue) {
-        [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
+    //[super viewDidAppear:YES];
+    if ([FBSDKAccessToken currentAccessToken ]) { // User is logged in, do work such as go to next view controller
+        [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture"}]
+         startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+             if (!error) {
+                 NSLog(@"user:%@", result);
+                 self.profileInfo = result;
+                 [self userExists:[FBSDKAccessToken currentAccessToken].userID];
+             }
+         }];
+        
     }
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    HomeViewController *homeVC = [segue destinationViewController];
+    homeVC.currentUser = self.currentUser;
+    
+    NSLog(@"LOGIN USER: %@", self.currentUser);
 }
-*/
 
 @end
