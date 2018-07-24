@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "Book.h"
 #import "HomeNavigationViewController.h"
+#import "HomeBooksViewController.h"
 #import "BTUserDefualts.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
@@ -143,7 +144,8 @@
         navViewController.user = self.currentUser;
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
-        // for my books
+        HomeBooksViewController *booksViewController = [segue destinationViewController];
+        booksViewController.myBooks = self.booksArray;
     } else {
         NSLog(@"error");
     }
