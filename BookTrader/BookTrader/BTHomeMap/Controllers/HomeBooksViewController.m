@@ -9,12 +9,13 @@
 #import "HomeBooksViewController.h"
 #import "SimpleBookDetailViewController.h"
 #import "BookCell.h"
+#import "Parse.h"
 #import <MapKit/MapKit.h>
 
 @interface HomeBooksViewController () <MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (strong, nonatomic) NSArray *booksArray;
+
 
 
 
@@ -39,9 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)fetchBooks {
-    
-}
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

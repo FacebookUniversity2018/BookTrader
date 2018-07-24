@@ -29,6 +29,7 @@
 @property (strong, nonatomic) NSArray *users;
 @property (strong, nonatomic) NSArray *filteredData;
 @property BOOL locationFlag;
+@property (strong, nonatomic) NSArray *booksArray;
 
 @end
 
@@ -62,28 +63,7 @@
     self.geocoder = [CLGeocoder new];
     [self.locationManager startUpdatingLocation];
     
-    // populate users (test data now can switch to real data when exists)
-    PFQuery *usersQuery = [PFQuery queryWithClassName:@"UserTest"];
-    [usersQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            self.users = objects;
-            NSLog(@"users updated: %lu", (unsigned long)self.users.count);
-        }
-    }];
-    
-    
-    // populate books (test data now can switch to real data when exists)
-    PFQuery *booksQuery = [PFQuery queryWithClassName:@"BookTest"];
-    [booksQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            self.books = objects;
-            NSLog(@"books updated: %lu", self.books.count);
-        }
-    }];
+    [self fetchBooks];
     
     NSLog(@"HOME VIEW USER: %@", self.currentUser);
 
@@ -116,6 +96,37 @@
 
 - (void)updateLocation {
     
+}
+
+
+- (void)fetchBooks {
+    PFQuery *query = [PFQuery queryWithClassName:@"Book"];
+    query.limit = 100;
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.booksArray = objects;
+            // update map with pins of books
+            [self updateBookLocations:self.booksArray];
+        }
+    }];
+}
+
+- (void)updateBookLocations:(NSArray *)books {
+    for (int i = 0; i < books.count; i++) {
+        Book *book = books[i];
+        if (book.latitude && book.latitude) {
+            // create location to drop pin
+            CLLocationCoordinate2D centerPoint;
+            centerPoint.latitude = [book.latitude doubleValue];
+            centerPoint.longitude = [book.longitude doubleValue];
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            [annotation setCoordinate:centerPoint];
+            [annotation setTitle:book.title];
+            [self.mapView addAnnotation:annotation];
+        }
+    }
 }
 
 

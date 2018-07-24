@@ -33,8 +33,8 @@
 @property (strong, nonatomic) NSDictionary *images;
 @property (nonatomic) CLLocationDegrees bookLat;
 @property (nonatomic) CLLocationDegrees bookLon;
-@property (nonatomic) NSValue *p_bookLat;
-@property (nonatomic) NSValue *p_bookLon;
+@property (nonatomic) NSNumber *p_bookLat;
+@property (nonatomic) NSNumber *p_bookLon;
 
 
 //buttons
