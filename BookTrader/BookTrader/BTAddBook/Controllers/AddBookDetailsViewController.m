@@ -67,10 +67,10 @@
 - (IBAction)onRequest:(id)sender {
     self.own = false;
     
-  /*  [Book addBookToDatabase:nil withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
+    [Book addBookToDatabase:nil withAuthor: withDate: withCover: withSell: withTrade:nil withGift:nil withLongitude:nil withLatitude:nil withOwn:own
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
              }];
-   */
+ 
 }
 
 - (void)didReceiveMemoryWarning {

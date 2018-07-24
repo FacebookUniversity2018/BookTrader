@@ -627,10 +627,10 @@
             </objects>
             <point key="canvasLocation" x="1449" y="922"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Logged In-->
         <scene sceneID="Z6N-jq-L1F">
             <objects>
-                <viewController id="l2W-ms-CPE" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loggedIn" title="Logged In" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l2W-ms-CPE" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Vc-jV-b05">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
