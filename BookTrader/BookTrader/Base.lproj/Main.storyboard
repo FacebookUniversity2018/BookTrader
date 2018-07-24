@@ -1164,18 +1164,20 @@
                                     <action selector="showNewView:" destination="j06-5r-WOD" eventType="valueChanged" id="D42-4y-ryy"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeV-hJ-SZQ">
-                                <rect key="frame" x="5" y="475" width="371" height="128"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zeV-hJ-SZQ" userLabel="Publish Book">
+                                <rect key="frame" x="0.0" y="475" width="376" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="wNO-EI-8QF" kind="embed" id="kK7-j2-AbR"/>
+                                    <segue destination="wNO-EI-8QF" kind="embed" identifier="listBookSegue" id="kK7-j2-AbR"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-6U-ORQ">
-                                <rect key="frame" x="0.0" y="475" width="375" height="128"/>
+                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wub-6U-ORQ" userLabel="Request Book">
+                                <rect key="frame" x="0.0" y="475" width="375" height="150"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="HSz-W7-YlW" kind="embed" id="DJe-Y1-7jq"/>
+                                    <segue destination="HSz-W7-YlW" kind="embed" identifier="requestBookSegue" id="DJe-Y1-7jq"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -1199,7 +1201,7 @@
             <objects>
                 <viewController id="wNO-EI-8QF" customClass="ListBookViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jwZ-X3-J9T">
-                        <rect key="frame" x="0.0" y="0.0" width="371" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lg6-1W-cVK">
@@ -1216,10 +1218,16 @@
                                         <rect key="frame" x="35" y="23" width="23" height="18"/>
                                         <gestureRecognizers/>
                                         <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                                        <connections>
+                                            <action selector="sellClicked:" destination="wNO-EI-8QF" eventType="touchUpInside" id="NUr-IE-zLg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlV-ft-I1A">
                                         <rect key="frame" x="130" y="23" width="23" height="18"/>
                                         <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                                        <connections>
+                                            <action selector="tradeClicked:" destination="wNO-EI-8QF" eventType="touchUpInside" id="bOl-Ag-IrL"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="sell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC6-2f-pb6">
                                         <rect key="frame" x="0.0" y="23" width="34" height="17"/>
@@ -1236,9 +1244,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejs-oO-79a">
                                         <rect key="frame" x="205" y="22" width="23" height="18"/>
                                         <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                                        <connections>
+                                            <action selector="giftClicked:" destination="wNO-EI-8QF" eventType="touchUpInside" id="bYI-4A-byJ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.83268348820000004" green="1" blue="0.99663526260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="aXf-P5-jS6" firstAttribute="top" secondItem="QC6-2f-pb6" secondAttribute="top" id="BCd-sg-zrK"/>
                                     <constraint firstItem="OlV-ft-I1A" firstAttribute="top" secondItem="v5S-9G-Cdv" secondAttribute="top" id="Ifk-DG-ywS"/>
@@ -1256,7 +1267,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="natural" minimumFontSize="12" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NEb-kB-vc7">
                                 <rect key="frame" x="139" y="69" width="49" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.83268348820000004" green="1" blue="0.99663526260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" red="0.014304199256002903" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -1274,7 +1285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CPj-2f-HtK">
-                                <rect key="frame" x="49" y="89" width="273" height="39"/>
+                                <rect key="frame" x="36" y="111" width="273" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -1287,32 +1298,35 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <action selector="publishClicked:" destination="j06-5r-WOD" eventType="touchUpInside" id="PPN-N9-Q0e"/>
+                                    <action selector="publishClicked:" destination="wNO-EI-8QF" eventType="touchUpInside" id="FOj-9I-Vit"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.83268348820000004" green="1" blue="0.99663526260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="mHQ-3n-LWK"/>
                     </view>
+                    <connections>
+                        <outlet property="giftButton" destination="ejs-oO-79a" id="PKR-Zq-2rf"/>
+                        <outlet property="locationButton" destination="Vic-pN-WqU" id="1wz-0a-eKk"/>
+                        <outlet property="priceField" destination="NEb-kB-vc7" id="u0x-vc-TLX"/>
+                        <outlet property="sellButton" destination="v5S-9G-Cdv" id="U6H-QM-1fN"/>
+                        <outlet property="tradeButton" destination="OlV-ft-I1A" id="ei6-k4-JQN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5J-FA-qEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4847" y="3346"/>
+            <point key="canvasLocation" x="4635" y="3327"/>
         </scene>
         <!--Request Book View Controller-->
         <scene sceneID="d6S-wx-3L1">
             <objects>
                 <viewController id="HSz-W7-YlW" customClass="RequestBookViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7ca-AU-aVl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKz-Iw-c93">
-                                <rect key="frame" x="100" y="19" width="19" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="iconmonstr-checkbox-6-240"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0gE-hH-dxm">
-                                <rect key="frame" x="0.0" y="69" width="375" height="39"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
@@ -1327,7 +1341,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07r-Uf-01Y">
-                                <rect key="frame" x="127" y="20" width="221" height="16"/>
+                                <rect key="frame" x="90" y="66" width="221" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <attributedString key="attributedText">
                                     <fragment content="be notified when this book is listed?">
@@ -1338,12 +1352,19 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKz-Iw-c93">
+                                <rect key="frame" x="63" y="64" width="19" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="iconmonstr-checkbox-6-240"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.83268348820000004" green="1" blue="0.99663526260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="ZEI-vt-fzi"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6g-Vt-Veh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="5828" y="3345"/>
         </scene>
     </scenes>
     <resources>
