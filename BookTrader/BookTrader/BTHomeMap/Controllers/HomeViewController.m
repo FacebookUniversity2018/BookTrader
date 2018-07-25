@@ -66,8 +66,6 @@
     [self fetchBooks];
     
     NSDictionary *currentUser = [BTUserDefualts getCurrentUser];
-    NSLog(@"%@", currentUser);
-    NSLog(@"HOME VIEW USER: %@", self.currentUser);
 
 }
 
