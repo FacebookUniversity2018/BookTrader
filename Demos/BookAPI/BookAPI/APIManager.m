@@ -27,7 +27,7 @@ BOOL getInfo;
 - (void) fetchData {
     NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
     NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body,
-                             str_bsnNum];
+                             @"0883929564057"];
     NSError *error;
     NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_request]];
     rawJson = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
