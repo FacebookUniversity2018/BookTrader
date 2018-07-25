@@ -39,7 +39,10 @@
     
     [Parse initializeWithConfiguration:config];
     
-    
+    if([FBSDKAccessToken currentAccessTokenIsActive]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"loggedIn"];
+    }
     return YES;
 }
 

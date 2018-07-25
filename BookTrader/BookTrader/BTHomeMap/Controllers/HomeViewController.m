@@ -10,13 +10,13 @@
 #import "BTUserDefualts.h"
 #import "Book.h"
 #import "HomeNavigationViewController.h"
+#import "HomeBooksViewController.h"
 #import "BTUserDefualts.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "BTUserDefualts.h"
 
 
-// for test
-#import "BTBookTestModel.h"
 
 
 @interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
@@ -30,6 +30,7 @@
 @property (strong, nonatomic) NSArray *users;
 @property (strong, nonatomic) NSArray *filteredData;
 @property BOOL locationFlag;
+@property (strong, nonatomic) NSArray *booksArray;
 
 @end
 
@@ -63,30 +64,9 @@
     self.geocoder = [CLGeocoder new];
     [self.locationManager startUpdatingLocation];
     
-    // populate users (test data now can switch to real data when exists)
-    PFQuery *usersQuery = [PFQuery queryWithClassName:@"UserTest"];
-    [usersQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            self.users = objects;
-            NSLog(@"users updated: %lu", (unsigned long)self.users.count);
-        }
-    }];
+    [self fetchBooks];
     
-    
-    // populate books (test data now can switch to real data when exists)
-    PFQuery *booksQuery = [PFQuery queryWithClassName:@"BookTest"];
-    [booksQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error);
-        } else {
-            self.books = objects;
-            NSLog(@"books updated: %lu", self.books.count);
-        }
-    }];
-    
-    NSLog(@"HOME VIEW USER: %@", self.currentUser);
+    NSDictionary *currentUser = [BTUserDefualts getCurrentUser];
 
 }
 
@@ -120,6 +100,37 @@
 }
 
 
+- (void)fetchBooks {
+    PFQuery *query = [PFQuery queryWithClassName:@"Book"];
+    query.limit = 100;
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.booksArray = objects;
+            // update map with pins of books
+            [self updateBookLocations:self.booksArray];
+        }
+    }];
+}
+
+- (void)updateBookLocations:(NSArray *)books {
+    for (int i = 0; i < books.count; i++) {
+        Book *book = books[i];
+        if (book.latitude && book.latitude) {
+            // create location to drop pin
+            CLLocationCoordinate2D centerPoint;
+            centerPoint.latitude = [book.latitude doubleValue];
+            centerPoint.longitude = [book.longitude doubleValue];
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            [annotation setCoordinate:centerPoint];
+            [annotation setTitle:book.title];
+            [self.mapView addAnnotation:annotation];
+        }
+    }
+}
+
+
 
 
 
@@ -131,9 +142,11 @@
         HomeNavigationViewController *navViewController = [segue destinationViewController];
         navViewController.currentLocation = self.currentLocation;
         navViewController.user = self.currentUser;
+        navViewController.myBooks = self.booksArray;
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
-        // for my books
+        HomeBooksViewController *booksViewController = [segue destinationViewController];
+        booksViewController.myBooks = self.booksArray;
     } else {
         NSLog(@"error");
     }
@@ -150,6 +163,8 @@
         self.filteredData = self.books;
     }
 }
+
+
 
 
 @end

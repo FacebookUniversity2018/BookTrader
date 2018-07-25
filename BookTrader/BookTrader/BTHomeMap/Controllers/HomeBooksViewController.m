@@ -9,11 +9,13 @@
 #import "HomeBooksViewController.h"
 #import "SimpleBookDetailViewController.h"
 #import "BookCell.h"
+#import "Parse.h"
 #import <MapKit/MapKit.h>
 
 @interface HomeBooksViewController () <MKMapViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+
 
 
 
@@ -39,6 +41,8 @@
 }
 
 
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"myBooksHomeToBookDetailSegue"]) {
         SimpleBookDetailViewController *bookDetailViewController = [segue destinationViewController];
@@ -53,11 +57,12 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     BookCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"BookCell" forIndexPath:indexPath];
+    cell.book = self.myBooks[indexPath.item];
     return cell;
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return self.myBooks.count;
 }
 
 

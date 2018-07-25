@@ -20,14 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //[self.book setIsbn:self.isbn];
-   // NSDictionary *currentBook = [Book fetchData:self.isbn];
- //   self.titleLabel.text = currentBook[@"title"];
- //   NSArray *authors = currentBook[@"authors"];
- //   self.authorLabel.text = authors[0];
- //   self.dateLabel.text = currentBook[@"publishedDate"];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,14 +27,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
 }
-*/
 
 @end

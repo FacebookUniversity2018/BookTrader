@@ -24,6 +24,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView reloadData];
+    [FBSDKMessengerSharer openMessenger];
     // Do any additional setup after loading the view.
 }
 

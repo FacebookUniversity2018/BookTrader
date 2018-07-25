@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "User.h"
 
 @interface BarcodeAddViewController : UIViewController
 @property (nonatomic) MKCoordinateRegion currentLocation;
+@property (strong, nonatomic) User *currentUser;
 @end

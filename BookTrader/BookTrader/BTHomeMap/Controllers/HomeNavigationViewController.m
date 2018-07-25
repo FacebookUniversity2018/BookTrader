@@ -16,6 +16,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ParseUI.h"
+#import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 
 @interface HomeNavigationViewController () <MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -44,6 +45,11 @@
     NSLog(@"NAVIGATION USER: %@", self.user);
 }
 
+- (IBAction)tappedMessages:(id)sender {
+    [FBSDKMessengerSharer openMessenger];
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,13 +62,14 @@
 }
 
 
-#pragma mark - Navigation
+#pragma mark - Navigation 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier]  isEqual: @"homeProfilePictureToProfileSegue"]) {
-        PersonalUserViewController *profile = [segue destinationViewController];
-        profile.currentUser = self.user;
+    if ([[segue identifier]  isEqual: @"homeProfilePictureToProfileSegue"] || [[segue identifier]  isEqual: @"navToProfileSegue"]) {
+        PersonalUserViewController *profileViewController = [segue destinationViewController];
+        profileViewController.myBooks = self.myBooks;
+        profileViewController.currentUser = self.user;
     } else if ([[segue identifier] isEqualToString:@"navToProfileSegue"]) {
         PersonalUserViewController *profile = [segue destinationViewController];
         profile.currentUser = self.user;
