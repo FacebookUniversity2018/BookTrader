@@ -63,10 +63,12 @@
     self.geocoder = [CLGeocoder new];
     [self.locationManager startUpdatingLocation];
     
-    [self fetchBooks];
-    
     NSDictionary *currentUser = [BTUserDefualts getCurrentUser];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self fetchBooks];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {

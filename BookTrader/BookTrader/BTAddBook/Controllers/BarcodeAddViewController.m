@@ -97,7 +97,7 @@
 - (void) fetchData:(NSString *)isbn {
     NSString *url_body = @"https://www.googleapis.com/books/v1/volumes?q=isbn:";
     NSString *url_request = [NSString stringWithFormat:@"%@%@", url_body,
-                             isbn];
+                             self.isbn];
     NSURL *url = [NSURL URLWithString:url_request];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];

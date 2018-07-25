@@ -92,14 +92,14 @@
                 PFFile *imageFile = [User getPFFileFromImage:image];
                
                 
-                [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:imageFile withBooks:[NSArray new] withWantBooks:[NSArray new] withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+                [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:imageFile withBooks:[NSMutableArray new] withWantBooks:[NSMutableArray new] withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
                     if (succeeded) {
                         NSLog(@"User added to Parse");
                         self.currentUser = [User new];
                         self.currentUser.firstName = self.profileInfo[@"name"];
                         self.currentUser.profilePicture = imageFile;
-                        self.currentUser.booksWant = [NSArray new];
-                        self.currentUser.booksHave = [NSArray new];
+                        self.currentUser.booksWant = [NSMutableArray new];
+                        self.currentUser.booksHave = [NSMutableArray new];
                         NSLog(@"LOGIN USER: %@", self.currentUser);
                         [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
                     } else {

@@ -7,6 +7,8 @@
 //
 
 #import "ListBookViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface ListBookViewController ()
 
@@ -54,7 +56,7 @@
     self.p_bookLat = @(self.bookLat);
     self.p_bookLon = @(self.bookLon);
     
-    [Book addBookToDatabaseWithTitle:self.title author:self.author coverURL:self.coverurl latitude:self.p_bookLat longitude:self.p_bookLon own:self.own sell:self.sell trade:self.trade gift:self.gift userID:@"fillThisLater" completion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Book addBookToDatabaseWithTitle:self.title author:self.author coverURL:self.coverurl latitude:self.p_bookLat longitude:self.p_bookLon own:self.own sell:self.sell trade:self.trade gift:self.gift userID:[FBSDKAccessToken currentAccessToken].userID completion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"book posted");
         } else {

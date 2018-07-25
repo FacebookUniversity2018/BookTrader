@@ -20,5 +20,6 @@
 - (NSString *) getCover;
 - (NSString *) getTitle;
 - (NSString *) getBookIsbn;
++ (void) fetchData;
 
 @end

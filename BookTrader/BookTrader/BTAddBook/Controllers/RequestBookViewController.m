@@ -16,8 +16,8 @@
 //location
 @property (nonatomic) CLLocationDegrees bookLat;
 @property (nonatomic) CLLocationDegrees bookLon;
-@property (nonatomic) NSValue *p_bookLat;
-@property (nonatomic) NSValue *p_bookLon;
+@property (nonatomic) NSNumber *p_bookLat;
+@property (nonatomic) NSNumber *p_bookLon;
 
 //booleans
 @property (nonatomic, assign) BOOL location;
@@ -43,6 +43,14 @@
     self.bookLon = self.currentLocation.center.longitude;
     self.p_bookLat = @(self.bookLat);
     self.p_bookLon = @(self.bookLon);
+    
+    [Book addBookToDatabaseWithTitle:self.title author:self.author coverURL:self.coverurl latitude:self.p_bookLat longitude:self.p_bookLon own:self.own sell:NO trade:NO gift:NO userID:@"fillThisLater" completion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"book posted");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
     
 }
 - (IBAction)useCurrentLocation:(id)sender {
