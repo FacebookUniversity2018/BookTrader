@@ -212,7 +212,7 @@
     PinAnnotation *pinAnnotation = view.annotation;
     NSLog(@"THIS IS THE PIN ANNOTATION %@", pinAnnotation.book.isbn);
     [self performSegueWithIdentifier:@"mapToBookSegue" sender:view];
-
+}
   
 // function that takes a user id and returns a User object
 - (void) getUserWithID: (NSString *) userID {
@@ -235,3 +235,4 @@
 
 
 @end
+
