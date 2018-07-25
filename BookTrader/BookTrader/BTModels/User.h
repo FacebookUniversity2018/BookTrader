@@ -24,7 +24,7 @@
 + (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image;
 + (User *) initUserWithDictionary: (NSDictionary *) dictionary;
 
-- (void)addToBooksHave:(NSString *)objectId;
-- (void)removeFromBooksHave:(NSString *)objectId;
+- (void)addToBooksHave:(NSString * _Nonnull)objectId;
+- (void)removeFromBooksHave:(NSString * _Nonnull)objectId;
 
 @end
