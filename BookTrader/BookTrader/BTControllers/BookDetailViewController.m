@@ -9,6 +9,8 @@
 #import "BookDetailViewController.h"
 #import "Book.h"
 #import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
+#import "UIImageView+AFNetworking.h"
+
 
 @interface BookDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *bookCover;
@@ -21,7 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.book);
+    NSURL *url = [NSURL URLWithString:self.book.coverurl];
+    [self.bookCover setImageWithURL:url];
+    self.titleLabel.text = self.book.title;
+    self.authorLabel.text = self.book.author;
+    self.dateLabel.text = self.book.date;
+
 }
 
 - (void)didReceiveMemoryWarning {
