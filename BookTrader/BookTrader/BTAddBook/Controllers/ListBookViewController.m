@@ -10,7 +10,8 @@
 
 @interface ListBookViewController ()
 
-//buttons
+//UI
+@property (strong, nonatomic) IBOutlet UIView *listView;
 @property (strong, nonatomic) IBOutlet UIButton *sellButton;
 @property (strong, nonatomic) IBOutlet UIButton *tradeButton;
 @property (strong, nonatomic) IBOutlet UIButton *giftButton;
@@ -55,13 +56,12 @@
    // } else {
         //use defaults
    // }
-    CLLocationDegrees lat = self.currentLocation.center.latitude;
-    CLLocationDegrees lon = self.currentLocation.center.longitude;
+   
     self.bookLat = self.currentLocation.center.latitude;
     self.bookLon = self.currentLocation.center.longitude;
     self.p_bookLat = @(self.bookLat);
     self.p_bookLon = @(self.bookLon);
-    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withOwn:self.own withSell:self.sell withTrade:self.trade withGift:self.gift withUserID:@"id" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"I posted the book");
         } else {
