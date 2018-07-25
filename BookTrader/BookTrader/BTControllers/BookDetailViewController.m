@@ -13,10 +13,16 @@
 
 
 @interface BookDetailViewController ()
+
+// Book owner (User) properties
+@property (weak, nonatomic) IBOutlet UIImageView *userImage;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+
 @property (strong, nonatomic) IBOutlet UIImageView *bookCover;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+
 @end
 
 @implementation BookDetailViewController
