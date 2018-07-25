@@ -74,12 +74,24 @@
 
 - (void)addToBooksHave:(NSString *)objectId {
     [self addObject:objectId forKey:@"myBooks"];
-    [self saveInBackground];
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"updated");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 - (void)removeFromBooksHave:(NSString *)objectId {
     [self removeObject:objectId forKey:@"myBooks"];
-    [self saveInBackground];
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"updated");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 
