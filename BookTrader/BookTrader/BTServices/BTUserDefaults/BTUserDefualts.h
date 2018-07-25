@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "User.h"
 
 
 @interface BTUserDefualts : NSObject
 + (CLLocationCoordinate2D) getCurrentLocation;
 + (void) setCurrentLocation:(MKCoordinateRegion)currentLocation;
+// User
 + (void) setCurrentUserWithId:(NSString *)userId withName:(NSString *)name withPicture:(NSString *)profilePicture withBooks:(NSArray *)booksHave withoutBooks:(NSArray *)booksWant;
 
 + (NSDictionary *)getCurrentUser;

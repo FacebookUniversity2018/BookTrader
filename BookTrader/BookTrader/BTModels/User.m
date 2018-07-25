@@ -20,10 +20,10 @@
 @dynamic booksWant;
 
 + (nonnull NSString *)parseClassName {
-    return @"User";
+    return @"UserProfiles";
 }
 
-+(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withBooks:(NSMutableArray *)booksHave withWantBooks:(NSMutableArray *)booksWant withCompletion:(PFBooleanResultBlock)completion {
++(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(NSString *)profilePicture withBooks:(NSMutableArray *)booksHave withWantBooks:(NSMutableArray *)booksWant withCompletion:(PFBooleanResultBlock)completion {
     User *newUser = [User new];
     newUser.userId = userId;
     newUser.firstName = firstName;
@@ -35,23 +35,6 @@
     
     [newUser saveInBackgroundWithBlock:completion];
 };
-
-// function that takes a user id and returns a User object
-- (void) getUserWithID: (NSString *) userID {
-    __block User *user = [User new];
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
-    [query includeKey:@"userId"];
-    [query whereKey:@"userId" containsString:userID];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if(!error) {
-            user = objects[0];
-        } else {
-            NSLog(@"%@", error.localizedDescription);
-            user = nil;
-        }
-    }];
-}
 
 /**
  Method to convert UIImage to PFFile
@@ -74,13 +57,35 @@
 
 - (void)addToBooksHave:(NSString *)objectId {
     [self addObject:objectId forKey:@"myBooks"];
-    [self saveInBackground];
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"updated");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
 - (void)removeFromBooksHave:(NSString *)objectId {
     [self removeObject:objectId forKey:@"myBooks"];
-    [self saveInBackground];
+    [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"updated");
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
 }
 
++ (User *) initUserWithDictionary: (NSDictionary *) dictionary {
+    User *user = [User new];
+    user.userId = dictionary[@"id"];
+    user.firstName = dictionary[@"name"];
+    user.profilePicture = dictionary[@"picture"];
+    user.booksHave = dictionary[@"booksHave"];
+    user.booksWant = dictionary[@"booksWant"];
+    
+    return user;
+}
 
 @end

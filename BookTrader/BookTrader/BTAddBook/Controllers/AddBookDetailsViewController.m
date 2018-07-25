@@ -25,6 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Get Local User
+    NSDictionary *user = [BTUserDefualts getCurrentUser];
+    self.user = [User initUserWithDictionary:user];
+    NSLog(@"ADD DETAILS USER: %@", self.user);
+    
     NSLog(@"add details %f", self.currentLocation.center.latitude);
     NSURL *url = [NSURL URLWithString:self.
                   coverurl];

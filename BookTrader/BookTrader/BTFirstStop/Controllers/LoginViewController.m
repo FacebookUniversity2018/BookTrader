@@ -74,7 +74,7 @@
 // Verify if user is already on Parse
 - (void) userExists: (NSString *) userID {
     
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    PFQuery *query = [PFQuery queryWithClassName:@"UserProfiles"];
     [query includeKey:@"userId"];
     [query whereKey:@"userId" containsString:userID];
     
@@ -84,23 +84,14 @@
             // do something with the array of object returned by the call
             NSLog(@"Successfully retrieved user if any %@", users);
             if(users.count == 0) {
-                // create new user
+                // Image URL
                 NSString *urlString = self.profileInfo[@"picture"][@"data"][@"url"];
-                NSURL *url = [NSURL URLWithString:urlString];
-                NSData *imageData = [NSData dataWithContentsOfURL:url];
-                UIImage *image = [UIImage imageWithData:imageData];
-                PFFile *imageFile = [User getPFFileFromImage:image];
-               
                 
-                [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:imageFile withBooks:[NSMutableArray new] withWantBooks:[NSMutableArray new] withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+
+                // Add User to parse
+                [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:urlString withBooks:[NSArray new] withWantBooks:[NSArray new] withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
                     if (succeeded) {
                         NSLog(@"User added to Parse");
-                        self.currentUser = [User new];
-                        self.currentUser.firstName = self.profileInfo[@"name"];
-                        self.currentUser.profilePicture = imageFile;
-                        self.currentUser.booksWant = [NSMutableArray new];
-                        self.currentUser.booksHave = [NSMutableArray new];
-                        NSLog(@"LOGIN USER: %@", self.currentUser);
                         [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
                     } else {
                         NSLog(@"%@", error);
@@ -109,11 +100,8 @@
                 }];
                 
             } else {
-                // If user already exists
-                self.currentUser = users[0];
+                // If user already exists segue
                 [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
-                [BTUserDefualts setCurrentUserWithId:self.currentUser.userId withName:self.currentUser.firstName withPicture:@"need image url" withBooks:[NSArray new] withoutBooks:[NSArray new]];
-                
             }
             self.shouldSegue = YES;
         } else {
@@ -124,12 +112,11 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     // Everytime the view appears
-    //[super viewDidAppear:YES];
     if ([FBSDKAccessToken currentAccessToken ]) { // User is logged in, do work such as go to next view controller
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields": @"name, picture"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
              if (!error) {
-                 NSLog(@"user:%@", result);
+                 NSLog(@"User dictionary after log in:%@", result);
                  self.profileInfo = result;
                  [self userExists:[FBSDKAccessToken currentAccessToken].userID];
              }
@@ -140,13 +127,10 @@
 
 
 #pragma mark - Navigation
-
+/*
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    HomeViewController *homeVC = [segue destinationViewController];
-    homeVC.currentUser = self.currentUser;
     
-    NSLog(@"LOGIN USER: %@", self.currentUser);
 }
-
+*/
 @end

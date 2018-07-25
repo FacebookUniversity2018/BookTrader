@@ -7,11 +7,14 @@
 //
 
 #import "HomeViewController.h"
+#import "BTUserDefualts.h"
 #import "Book.h"
 #import "HomeNavigationViewController.h"
 #import "HomeBooksViewController.h"
 #import "BTUserDefualts.h"
 #import <CoreLocation/CoreLocation.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <MapKit/MapKit.h>
 #import "BTUserDefualts.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
@@ -45,6 +48,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Set Default Local User
+    if(![BTUserDefualts getCurrentUser]) {
+        [self getUserWithID:[FBSDKAccessToken currentAccessToken].userID];
+    }
     
     // get user defaults
     CLLocationCoordinate2D myLocation = [BTUserDefualts getCurrentLocation];
@@ -159,7 +167,6 @@
         NSLog(@"Home location %f", self.currentLocation.center.latitude);
         HomeNavigationViewController *navViewController = [segue destinationViewController];
         navViewController.currentLocation = self.currentLocation;
-        navViewController.user = self.currentUser;
         navViewController.myBooks = self.booksArray;
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
@@ -172,8 +179,6 @@
         detailViewController.book = pinAnnotation.book;
     }
 }
-
-
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
@@ -201,11 +206,31 @@
     return annotationView;
 }
 
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     PinAnnotation *pinAnnotation = view.annotation;
     NSLog(@"THIS IS THE PIN ANNOTATION %@", pinAnnotation.book.isbn);
     [self performSegueWithIdentifier:@"mapToBookSegue" sender:view];
+
+  
+// function that takes a user id and returns a User object
+- (void) getUserWithID: (NSString *) userID {
+    PFQuery *query = [PFQuery queryWithClassName:@"UserProfiles"];
+    [query includeKey:@"userId"];
+    [query whereKey:@"userId" containsString:userID];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if(!error) {
+            self.currentUser = objects[0];
+            [BTUserDefualts setCurrentUserWithId:self.currentUser.userId withName:self.currentUser.firstName withPicture:self.currentUser.profilePicture withBooks:[NSArray new] withoutBooks:[NSArray new]];
+            NSLog(@"Home View User: %@", [BTUserDefualts getCurrentUser]);
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+            self.currentUser = nil;
+        }
+    }];
+
 }
 
 
