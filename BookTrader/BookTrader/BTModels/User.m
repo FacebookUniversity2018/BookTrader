@@ -55,8 +55,8 @@
     return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
-- (void)addToBooksHave:(NSString *)objectId {
-    [self addObject:objectId forKey:@"myBooks"];
+- (void)addToBooksWant:(NSString *)objectId {
+    [self addObject:objectId forKey:@"booksWant"];
     [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"updated");
@@ -66,8 +66,8 @@
     }];
 }
 
-- (void)removeFromBooksHave:(NSString *)objectId {
-    [self removeObject:objectId forKey:@"myBooks"];
+- (void)removeFromBooksWant:(NSString *)objectId {
+    [self removeObject:objectId forKey:@"booksWant"];
     [self saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"updated");

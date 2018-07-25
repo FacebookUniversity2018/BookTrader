@@ -222,7 +222,7 @@
     
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if(!error) {
-            self.currentUser = objects[0];
+            self.currentUser = objects[objects.count-1];
             [BTUserDefualts setCurrentUserWithId:self.currentUser.userId withName:self.currentUser.firstName withPicture:self.currentUser.profilePicture withBooks:[NSArray new] withoutBooks:[NSArray new]];
             NSLog(@"Home View User: %@", [BTUserDefualts getCurrentUser]);
         } else {
@@ -232,6 +232,10 @@
     }];
 }
 
+- (IBAction)tapOutOfSearchBar:(id)sender {
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
+}
 
 @end
 

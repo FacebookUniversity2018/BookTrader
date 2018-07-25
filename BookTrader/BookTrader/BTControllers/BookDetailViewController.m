@@ -8,8 +8,10 @@
 
 #import "BookDetailViewController.h"
 #import "Book.h"
+#import "User.h"
 #import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 #import "UIImageView+AFNetworking.h"
+#import "BTUserDefualts.h"
 
 
 @interface BookDetailViewController ()
@@ -18,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) User *bookOwner;
+@property (strong, nonatomic) User *currentUser;
 @end
 
 @implementation BookDetailViewController
@@ -30,6 +33,8 @@
     self.titleLabel.text = self.book.title;
     self.authorLabel.text = self.book.author;
     self.dateLabel.text = self.book.date;
+    NSDictionary *user = [BTUserDefualts getCurrentUser];
+    self.currentUser = [User initUserWithDictionary:user];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +56,8 @@
 }
 
 - (IBAction)favoriteBook:(id)sender {
-    [self.book.user addToBooksHave:self.book.title];
+    [self.currentUser addToBooksWant:self.book.title];
+    NSLog(@"%@", self.currentUser);
 }
 
 - (void) getUserWithID: (NSString *) userID {
