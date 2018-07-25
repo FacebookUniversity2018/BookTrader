@@ -29,8 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Get Local User
     NSDictionary *user = [BTUserDefualts getCurrentUser];
     self.currentUser = [User initUserWithDictionary:user];
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView reloadData];  
@@ -68,8 +70,7 @@
         SimpleBookDetailViewController *bookDetailViewController = [segue destinationViewController];
         bookDetailViewController.navigationControl = @"profile";
     } else if([[segue identifier] isEqualToString:@"profileToHomeSegue"]) {
-        HomeNavigationViewController *homeNav = [segue destinationViewController];
-        homeNav.user = self.currentUser;
+        
     }
 }
 

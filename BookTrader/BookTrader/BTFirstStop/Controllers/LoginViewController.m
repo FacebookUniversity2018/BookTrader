@@ -133,8 +133,6 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //HomeViewController *homeVC = [segue destinationViewController];
-    //homeVC.currentUser = self.currentUser;
     
     NSLog(@"LOGIN USER: %@", [BTUserDefualts getCurrentUser]);
 }
