@@ -14,6 +14,8 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 #import "BTUserDefualts.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 
 
@@ -30,6 +32,7 @@
 @property (strong, nonatomic) NSArray *filteredData;
 @property BOOL locationFlag;
 @property (strong, nonatomic) NSArray *booksArray;
+@property (strong, nonatomic) NSArray *myBooks;
 
 @end
 
@@ -69,6 +72,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [self fetchBooks];
+    [self fetchMyBooks];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
@@ -115,6 +119,20 @@
     }];
 }
 
+- (void)fetchMyBooks {
+    PFQuery *query = [PFQuery queryWithClassName:@"Book"];
+    [query includeKey:@"userID"];
+    [query whereKey:@"userID" containsString:[FBSDKAccessToken currentAccessToken].userID];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.myBooks = objects;
+        }
+    }];
+}
+
 - (void)updateBookLocations:(NSArray *)books {
     for (int i = 0; i < books.count; i++) {
         Book *book = books[i];
@@ -147,7 +165,7 @@
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         HomeBooksViewController *booksViewController = [segue destinationViewController];
-        booksViewController.myBooks = self.booksArray;
+        booksViewController.myBooks = self.myBooks;
     } else {
         NSLog(@"error");
     }
