@@ -63,6 +63,7 @@
        vc.date = self.date;
        vc.coverurl = self.coverurl;
        vc.currentLocation = self.currentLocation;
+       vc.isbn = self.isbn;
    } else if ([[segue identifier] isEqualToString:@"requestBookSegue"]) {
        RequestBookViewController *vc = [segue destinationViewController];
        vc.title = self.title;

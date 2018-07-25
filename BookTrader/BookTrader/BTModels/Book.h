@@ -18,9 +18,11 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *isbn;
 @property (strong, nonatomic) NSString *coverurl;
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
+
 
 @property (nonatomic) BOOL own;
 @property (nonatomic) BOOL want;
@@ -34,5 +36,6 @@
 + (void) addBookToDatabaseWithTitle:(NSString *)title author:(NSString *)author coverURL:(NSString *)coverURL
                            latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude own:(BOOL)own
                                sell:(BOOL)sell trade:(BOOL)trade gift:(BOOL)gift userID:(NSString *)userID
-                           withDate:(NSString *)date completion:(PFBooleanResultBlock)completion;
+                           withDate:(NSString *)date withISBN:(NSString *)isbn
+                         completion:(PFBooleanResultBlock)completion;
 @end

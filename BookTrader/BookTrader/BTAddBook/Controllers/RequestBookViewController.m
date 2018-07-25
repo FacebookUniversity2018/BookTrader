@@ -44,7 +44,7 @@
     self.p_bookLat = @(self.bookLat);
     self.p_bookLon = @(self.bookLon);
     
-    [Book addBookToDatabaseWithTitle:self.title author:self.author coverURL:self.coverurl latitude:self.p_bookLat longitude:self.p_bookLon own:self.own sell:NO trade:NO gift:NO userID:@"fillThisLater" withDate:self.date completion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Book addBookToDatabaseWithTitle:self.title author:self.author coverURL:self.coverurl latitude:self.p_bookLat longitude:self.p_bookLon own:self.own sell:NO trade:NO gift:NO userID:@"fillThisLater" withDate:self.date withISBN:@"101" completion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"book posted");
         } else {
