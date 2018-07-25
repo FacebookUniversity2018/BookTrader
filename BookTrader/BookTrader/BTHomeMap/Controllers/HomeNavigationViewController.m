@@ -69,7 +69,7 @@
     if ([[segue identifier]  isEqual: @"homeProfilePictureToProfileSegue"] || [[segue identifier]  isEqual: @"navToProfileSegue"]) {
         PersonalUserViewController *profileViewController = [segue destinationViewController];
         profileViewController.myBooks = self.myBooks;
-        profile.currentUser = self.user;
+        profileViewController.currentUser = self.user;
     } else if ([[segue identifier] isEqualToString:@"navToProfileSegue"]) {
         PersonalUserViewController *profile = [segue destinationViewController];
         profile.currentUser = self.user;

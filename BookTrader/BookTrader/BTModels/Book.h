@@ -19,10 +19,8 @@
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverurl;
-@property (strong, nonatomic) User *user;
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
-@property (strong, nonatomic) NSString *userID;
 
 @property (nonatomic) BOOL own;
 @property (nonatomic) BOOL want;

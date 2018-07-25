@@ -25,7 +25,7 @@
 @dynamic sell;
 @dynamic trade;
 @dynamic gift;
-@dynamic overview;
+
 
 //NSString *str_bsnNum;
 //NSDictionary *rawJson;
