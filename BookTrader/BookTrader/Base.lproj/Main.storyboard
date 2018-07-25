@@ -1446,15 +1446,7 @@
         <image name="twitter_profile" width="400" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-        <segue reference="quk-fy-MgF"/>
-        <segue reference="WpR-MN-ARB"/>
-        <segue reference="tmn-nk-c5j"/>
-        <segue reference="7Aw-by-ogi"/>
-        <segue reference="cml-hS-oe6"/>
-        <segue reference="wOB-wq-4dG"/>
-        <segue reference="DHM-n1-jTW"/>
-=======
+
         <segue reference="gs5-zp-Pix"/>
         <segue reference="quk-fy-MgF"/>
         <segue reference="WpR-MN-ARB"/>
@@ -1462,6 +1454,6 @@
         <segue reference="8dm-Tj-N7N"/>
         <segue reference="cml-hS-oe6"/>
         <segue reference="wOB-wq-4dG"/>
->>>>>>> afd1df2a05b7297e5580a4e210426863feeada6c
+
     </inferredMetricsTieBreakers>
 </document>
