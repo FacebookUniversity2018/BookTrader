@@ -17,12 +17,14 @@
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) User *bookOwner;
 @end
 
 @implementation BookDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getUserWithID:self.book.userID];
     NSURL *url = [NSURL URLWithString:self.book.coverurl];
     [self.bookCover setImageWithURL:url];
     self.titleLabel.text = self.book.title;
@@ -50,6 +52,22 @@
 
 - (IBAction)favoriteBook:(id)sender {
     [self.book.user addToBooksHave:self.book.title];
+}
+
+- (void) getUserWithID: (NSString *) userID {
+    PFQuery *query = [PFQuery queryWithClassName:@"UserProfiles"];
+    [query includeKey:@"userId"];
+    [query whereKey:@"userId" containsString:userID];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if(!error) {
+            self.bookOwner = objects[0];
+            NSLog(@"Book Owner User: %@", self.bookOwner);
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+            self.bookOwner = nil;
+        }
+    }];
 }
 
 @end
