@@ -29,7 +29,6 @@
 @property (nonatomic) BOOL sell;
 @property (nonatomic) BOOL trade;
 @property (nonatomic) BOOL gift;
-@property (nonatomic) BOOL location;
 
 - (void) setIsbn:(NSString *)str_bsn;
 
