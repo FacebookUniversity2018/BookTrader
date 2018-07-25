@@ -243,7 +243,7 @@
                                     </label>
                                 </subviews>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                       name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlw-TK-Lo7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="                       name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlw-TK-Lo7" userLabel="Username">
                                 <rect key="frame" x="0.0" y="98" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.96875897249999998" blue="0.86075985919999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -251,7 +251,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dy1-WD-tjq">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dy1-WD-tjq" userLabel="User Image">
                                 <rect key="frame" x="25" y="101" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <userDefinedRuntimeAttributes>
@@ -269,6 +269,8 @@
                         <outlet property="authorLabel" destination="VI8-zJ-E6c" id="cur-kt-gxk"/>
                         <outlet property="bookCover" destination="Fbb-Qb-aK0" id="LMC-QY-Hek"/>
                         <outlet property="titleLabel" destination="fbm-B6-Whw" id="BLa-SS-Hms"/>
+                        <outlet property="userImage" destination="Dy1-WD-tjq" id="ZMB-V4-LbN"/>
+                        <outlet property="usernameLabel" destination="jlw-TK-Lo7" id="M7Y-Yh-X76"/>
                         <segue destination="l2W-ms-CPE" kind="show" identifier="bookDetailsToHome" id="hx5-w3-dZD"/>
                     </connections>
                 </viewController>
