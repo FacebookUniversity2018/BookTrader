@@ -12,6 +12,7 @@
 #import "ProfileBookCell.h"
 #import "HomeNavigationViewController.h"
 #import "ParseUI.h"
+#import "BTUserDefualts.h"
 #import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 
 
@@ -27,6 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSDictionary *user = [BTUserDefualts getCurrentUser];
+    self.currentUser = [User initUserWithDictionary:user];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView reloadData];  

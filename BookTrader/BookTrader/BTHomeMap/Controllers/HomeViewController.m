@@ -13,6 +13,8 @@
 #import "HomeBooksViewController.h"
 #import "BTUserDefualts.h"
 #import <CoreLocation/CoreLocation.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <MapKit/MapKit.h>
 #import "BTUserDefualts.h"
 
@@ -42,6 +44,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Set Default Local User
+    if(![BTUserDefualts getCurrentUser]) {
+        [self getUserWithID:[FBSDKAccessToken currentAccessToken].userID];
+    }
+    
     // get user defaults
     CLLocationCoordinate2D myLocation = [BTUserDefualts getCurrentLocation];
     
@@ -65,8 +72,6 @@
     [self.locationManager startUpdatingLocation];
     
     [self fetchBooks];
-    
-    NSDictionary *currentUser = [BTUserDefualts getCurrentUser];
 
 }
 
@@ -141,7 +146,6 @@
         NSLog(@"Home location %f", self.currentLocation.center.latitude);
         HomeNavigationViewController *navViewController = [segue destinationViewController];
         navViewController.currentLocation = self.currentLocation;
-        navViewController.user = self.currentUser;
         navViewController.myBooks = self.booksArray;
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
@@ -151,8 +155,6 @@
         NSLog(@"error");
     }
 }
-
-
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
@@ -165,6 +167,23 @@
 }
 
 
+// function that takes a user id and returns a User object
+- (void) getUserWithID: (NSString *) userID {
+    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    [query includeKey:@"userId"];
+    [query whereKey:@"userId" containsString:userID];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if(!error) {
+            self.currentUser = objects[0];
+            [BTUserDefualts setCurrentUserWithId:self.currentUser.userId withName:self.currentUser.firstName withPicture:@"Need URL" withBooks:[NSArray new] withoutBooks:[NSArray new]];
+            NSLog(@"Home View User: %@", self.currentUser);
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+            self.currentUser = nil;
+        }
+    }];
+}
 
 
 @end

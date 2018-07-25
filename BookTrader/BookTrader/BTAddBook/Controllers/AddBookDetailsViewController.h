@@ -27,5 +27,4 @@
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverurl;
-@property (strong, nonatomic) User *currentUser;
 @end

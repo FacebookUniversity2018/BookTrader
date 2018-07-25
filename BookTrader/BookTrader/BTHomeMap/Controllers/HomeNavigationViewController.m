@@ -12,11 +12,11 @@
 #import "PersonalUserViewController.h"
 #import "HomeViewController.h"
 #import <MapKit/MapKit.h>
-#import "User.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ParseUI.h"
 #import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
+#import "BTUserDefualts.h"
 
 @interface HomeNavigationViewController () <MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -29,6 +29,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSDictionary *user = [BTUserDefualts getCurrentUser];
+    self.user = [User initUserWithDictionary:user];
     
     self.usernameLabel.text = self.user.firstName;
     self.profileImageView.file = self.user.profilePicture;
@@ -69,10 +72,9 @@
     if ([[segue identifier]  isEqual: @"homeProfilePictureToProfileSegue"] || [[segue identifier]  isEqual: @"navToProfileSegue"]) {
         PersonalUserViewController *profileViewController = [segue destinationViewController];
         profileViewController.myBooks = self.myBooks;
-        profileViewController.currentUser = self.user;
+    
     } else if ([[segue identifier] isEqualToString:@"navToProfileSegue"]) {
-        PersonalUserViewController *profile = [segue destinationViewController];
-        profile.currentUser = self.user;
+       
     } else if ([[segue identifier] isEqualToString:@"navToBarcodeSegue"]) {
         BarcodeAddViewController *barcodeViewController = [segue destinationViewController];
         barcodeViewController.currentLocation = self.currentLocation;
@@ -82,8 +84,7 @@
     } else if ([[segue identifier] isEqualToString:@"SignOut"]){
         
     } else if ([[segue identifier] isEqualToString:@"navToHomeSegue"]) {
-        HomeViewController *homeVC = [segue destinationViewController];
-        homeVC.currentUser = self.user;
+
     }
 }
 
