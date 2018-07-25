@@ -16,6 +16,7 @@
 #import "BTUserDefualts.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "PinAnnotation.h"
 
 
 
@@ -65,8 +66,6 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.geocoder = [CLGeocoder new];
     [self.locationManager startUpdatingLocation];
-    
-    NSDictionary *currentUser = [BTUserDefualts getCurrentUser];
 
 }
 
@@ -138,12 +137,14 @@
         Book *book = books[i];
         if (book.latitude && book.latitude) {
             // create location to drop pin
+            
             CLLocationCoordinate2D centerPoint;
             centerPoint.latitude = [book.latitude doubleValue];
             centerPoint.longitude = [book.longitude doubleValue];
-            MKPointAnnotation *annotation = [MKPointAnnotation new];
-            [annotation setCoordinate:centerPoint];
-            [annotation setTitle:book.title];
+//            MKPointAnnotation *annotation = [MKPointAnnotation new];
+//            [annotation setCoordinate:centerPoint];
+//            [annotation setTitle:book.title];
+            PinAnnotation *annotation = [[PinAnnotation alloc] initWithLocation:centerPoint title:book.title isbn:book.isbn owner:self.currentUser];
             [self.mapView addAnnotation:annotation];
         }
     }
@@ -183,7 +184,28 @@
     }
 }
 
+// map stuff
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    NSString *identifier = @"identity";
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    
+    return annotationView;
+}
 
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    PinAnnotation *pinAnnotation = view.annotation;
+    NSLog(@"THIS IS THE PIN ANNOTATION %@", pinAnnotation.isbn);
+ //   [self performSegueWithIdentifier:@"myBooksSegue" sender:view];
+}
 
 
 @end
