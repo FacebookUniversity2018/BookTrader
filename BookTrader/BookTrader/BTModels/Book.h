@@ -34,5 +34,5 @@
 + (void) addBookToDatabaseWithTitle:(NSString *)title author:(NSString *)author coverURL:(NSString *)coverURL
                            latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude own:(BOOL)own
                                sell:(BOOL)sell trade:(BOOL)trade gift:(BOOL)gift userID:(NSString *)userID
-                         completion:(PFBooleanResultBlock)completion;
+                           withDate:(NSString *)date completion:(PFBooleanResultBlock)completion;
 @end
