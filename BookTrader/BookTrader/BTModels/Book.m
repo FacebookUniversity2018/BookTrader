@@ -46,6 +46,7 @@
 + (void) addBookToDatabaseWithTitle:(NSString *)title author:(NSString *)author coverURL:(NSString *)coverURL
                            latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude own:(BOOL)own
                                sell:(BOOL)sell trade:(BOOL)trade gift:(BOOL)gift userID:(NSString *)userID
+                           withDate:(NSString *)date withISBN:(NSString *)isbn
                          completion:(PFBooleanResultBlock)completion {
     Book *book = [Book new];
     book.title = title;
@@ -58,6 +59,8 @@
     book.trade = trade;
     book.gift = gift;
     book.userID = userID;
+    book.date = date;
+    book.isbn = isbn;
     [book saveInBackgroundWithBlock:completion];
 }
 

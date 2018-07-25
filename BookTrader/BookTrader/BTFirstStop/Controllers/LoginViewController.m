@@ -87,6 +87,7 @@
                 // Image URL
                 NSString *urlString = self.profileInfo[@"picture"][@"data"][@"url"];
                 
+
                 // Add User to parse
                 [User addUserToDatabase:[FBSDKAccessToken currentAccessToken].userID withFirstName:self.profileInfo[@"name"] withLastName:self.profileInfo[@"last_name"] withBio:nil withProfilePicture:urlString withBooks:[NSArray new] withWantBooks:[NSArray new] withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
                     if (succeeded) {

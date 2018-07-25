@@ -8,6 +8,9 @@
 
 #import "BookDetailViewController.h"
 #import "Book.h"
+#import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
+#import "UIImageView+AFNetworking.h"
+
 
 @interface BookDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *bookCover;
@@ -20,6 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSURL *url = [NSURL URLWithString:self.book.coverurl];
+    [self.bookCover setImageWithURL:url];
+    self.titleLabel.text = self.book.title;
+    self.authorLabel.text = self.book.author;
+    self.dateLabel.text = self.book.date;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +37,19 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+}
+
+
+- (IBAction)messageButtonPressed:(id)sender {
+    [FBSDKMessengerSharer openMessenger];
+}
+
+- (IBAction)homeButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"bookDetailsToHome" sender:nil];
+}
+
+- (IBAction)favoriteBook:(id)sender {
+    [self.book.user addToBooksHave:self.book.title];
 }
 
 @end

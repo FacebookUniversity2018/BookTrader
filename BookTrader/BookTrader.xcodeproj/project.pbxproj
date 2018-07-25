@@ -45,6 +45,7 @@
 		CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDCFD20FD4CC8007AF20B /* MessageCell.m */; };
 		CEDDDD0120FD51A2007AF20B /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */; };
 		CEDDDD0420FD68D1007AF20B /* MessagesHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */; };
+		CEDFD6DC210900F100639CF4 /* PinAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDFD6DB210900F100639CF4 /* PinAnnotation.m */; };
 		CEEFE6D721010B860021CE63 /* BTBookTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE6D621010B860021CE63 /* BTBookTestModel.m */; };
 		CEEFE6DA21010B920021CE63 /* BTUserTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEFE6D921010B920021CE63 /* BTUserTestModel.m */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,8 @@
 		CEDDDD0020FD51A2007AF20B /* MessageDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
 		CEDDDD0220FD68D1007AF20B /* MessagesHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagesHeaderCell.h; sourceTree = "<group>"; };
 		CEDDDD0320FD68D1007AF20B /* MessagesHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagesHeaderCell.m; sourceTree = "<group>"; };
+		CEDFD6DA210900F100639CF4 /* PinAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PinAnnotation.h; sourceTree = "<group>"; };
+		CEDFD6DB210900F100639CF4 /* PinAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PinAnnotation.m; sourceTree = "<group>"; };
 		CEEFE6D521010B860021CE63 /* BTBookTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTBookTestModel.h; sourceTree = "<group>"; };
 		CEEFE6D621010B860021CE63 /* BTBookTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTBookTestModel.m; sourceTree = "<group>"; };
 		CEEFE6D821010B920021CE63 /* BTUserTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTUserTestModel.h; sourceTree = "<group>"; };
@@ -411,6 +414,8 @@
 			children = (
 				CEA8116A20FEA7D6004C2FED /* BookCell.h */,
 				CEA8116B20FEA7D6004C2FED /* BookCell.m */,
+				CEDFD6DA210900F100639CF4 /* PinAnnotation.h */,
+				CEDFD6DB210900F100639CF4 /* PinAnnotation.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -790,6 +795,7 @@
 				B1847D802106A1470088D05A /* ListBookViewController.m in Sources */,
 				CE1188AC20FD0FA400C088BA /* BarcodeAddViewController.m in Sources */,
 				CE1188A320FD0F1100C088BA /* MessagesDetailViewController.m in Sources */,
+				CEDFD6DC210900F100639CF4 /* PinAnnotation.m in Sources */,
 				CE11884D20FD0B8200C088BA /* ViewController.m in Sources */,
 				CE11885820FD0B8200C088BA /* main.m in Sources */,
 				CEEFE6D721010B860021CE63 /* BTBookTestModel.m in Sources */,
@@ -981,7 +987,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
+				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader121;
+
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -995,13 +1002,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KV6X26527X;
+				DEVELOPMENT_TEAM = PH9LZZN4D9;
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
+				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader121;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -17,6 +17,10 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <MapKit/MapKit.h>
 #import "BTUserDefualts.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "PinAnnotation.h"
+#import "BookDetailViewController.h"
 
 
 
@@ -33,6 +37,7 @@
 @property (strong, nonatomic) NSArray *filteredData;
 @property BOOL locationFlag;
 @property (strong, nonatomic) NSArray *booksArray;
+@property (strong, nonatomic) NSArray *myBooks;
 
 @end
 
@@ -70,9 +75,12 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.geocoder = [CLGeocoder new];
     [self.locationManager startUpdatingLocation];
-    
-    [self fetchBooks];
 
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self fetchBooks];
+    [self fetchMyBooks];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(nonnull NSError *)error {
@@ -119,17 +127,30 @@
     }];
 }
 
+- (void)fetchMyBooks {
+    PFQuery *query = [PFQuery queryWithClassName:@"Book"];
+    [query includeKey:@"userID"];
+    [query whereKey:@"userID" containsString:[FBSDKAccessToken currentAccessToken].userID];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.myBooks = objects;
+        }
+    }];
+}
+
 - (void)updateBookLocations:(NSArray *)books {
     for (int i = 0; i < books.count; i++) {
         Book *book = books[i];
         if (book.latitude && book.latitude) {
             // create location to drop pin
+            
             CLLocationCoordinate2D centerPoint;
             centerPoint.latitude = [book.latitude doubleValue];
             centerPoint.longitude = [book.longitude doubleValue];
-            MKPointAnnotation *annotation = [MKPointAnnotation new];
-            [annotation setCoordinate:centerPoint];
-            [annotation setTitle:book.title];
+            PinAnnotation *annotation = [[PinAnnotation alloc] initWithLocation:centerPoint title:book.title book:book];
             [self.mapView addAnnotation:annotation];
         }
     }
@@ -150,9 +171,12 @@
         
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         HomeBooksViewController *booksViewController = [segue destinationViewController];
-        booksViewController.myBooks = self.booksArray;
-    } else {
-        NSLog(@"error");
+        booksViewController.myBooks = self.myBooks;
+    } else if ([[segue identifier] isEqualToString:@"mapToBookSegue"]){
+        BookDetailViewController *detailViewController = [segue destinationViewController];
+        MKAnnotationView *view = sender;
+        PinAnnotation *pinAnnotation = view.annotation;
+        detailViewController.book = pinAnnotation.book;
     }
 }
 
@@ -166,7 +190,30 @@
     }
 }
 
+// map stuff
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    NSString *identifier = @"identity";
+    
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    
+    return annotationView;
+}
 
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    PinAnnotation *pinAnnotation = view.annotation;
+    NSLog(@"THIS IS THE PIN ANNOTATION %@", pinAnnotation.book.isbn);
+    [self performSegueWithIdentifier:@"mapToBookSegue" sender:view];
+
+  
 // function that takes a user id and returns a User object
 - (void) getUserWithID: (NSString *) userID {
     PFQuery *query = [PFQuery queryWithClassName:@"UserProfiles"];
@@ -183,6 +230,7 @@
             self.currentUser = nil;
         }
     }];
+
 }
 
 
