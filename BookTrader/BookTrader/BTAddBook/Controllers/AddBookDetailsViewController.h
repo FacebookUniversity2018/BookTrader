@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Book.h"
 #import "User.h"
+#import "BTUserDefualts.h"
 #import "BarcodeAddViewController.h"
 #import "ListBookViewController.h"
 #import "RequestBookViewController.h"
@@ -27,5 +28,4 @@
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverurl;
-@property (strong, nonatomic) User *currentUser;
 @end

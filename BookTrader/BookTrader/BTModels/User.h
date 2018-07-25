@@ -15,13 +15,14 @@
 @property (strong, nonatomic) NSString *firstName;
 @property (strong, nonatomic) NSString *lastName;
 @property (strong, nonatomic) NSString *bio;
-@property (strong, nonatomic) PFFile *profilePicture;
+@property (strong, nonatomic) NSString *profilePicture;
 @property (strong, nonatomic) NSMutableArray *booksHave;
 @property (strong, nonatomic) NSMutableArray *booksWant;
 
-+(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(PFFile *)profilePicture withBooks:(NSMutableArray *)booksHave withWantBooks:(NSMutableArray *)booksWant withCompletion:(PFBooleanResultBlock)completion;
++(void)addUserToDatabase:(NSString *)userId withFirstName:(NSString *)firstName withLastName:(NSString *)lastName withBio:(NSString *)bio withProfilePicture:(NSString *)profilePicture withBooks:(NSMutableArray *)booksHave withWantBooks:(NSMutableArray *)booksWant withCompletion:(PFBooleanResultBlock)completion;
 
 + (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image;
++ (User *) initUserWithDictionary: (NSDictionary *) dictionary;
 
 - (void)addToBooksHave:(NSString *)objectId;
 - (void)removeFromBooksHave:(NSString *)objectId;
