@@ -12,6 +12,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "User.h"
 #import "ParseUI.h"
+#import "BTUserDefualts.h"
 
 
 @interface LoginViewController ()
@@ -111,6 +112,7 @@
                 // If user already exists
                 self.currentUser = users[0];
                 [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
+                [BTUserDefualts setCurrentUserWithId:self.currentUser.userId withName:self.currentUser.firstName withPicture:@"need image url" withBooks:[NSArray new] withoutBooks:[NSArray new]];
                 
             }
             self.shouldSegue = YES;

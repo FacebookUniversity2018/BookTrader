@@ -13,10 +13,9 @@
 #import "BTUserDefualts.h"
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
+#import "BTUserDefualts.h"
 
 
-// for test
-#import "BTBookTestModel.h"
 
 
 @interface HomeViewController () <MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate>
@@ -66,6 +65,8 @@
     
     [self fetchBooks];
     
+    NSDictionary *currentUser = [BTUserDefualts getCurrentUser];
+    NSLog(@"%@", currentUser);
     NSLog(@"HOME VIEW USER: %@", self.currentUser);
 
 }
