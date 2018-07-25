@@ -6,6 +6,7 @@
 build/
 DerivedData/
 
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
@@ -17,6 +18,8 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
+*.pbxproj
+
 ## Other
 *.moved-aside
 *.xccheckout
@@ -27,6 +30,7 @@ xcuserdata/
 *.ipa
 *.dSYM.zip
 *.dSYM
+
 
 # CocoaPods
 #
