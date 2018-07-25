@@ -11,7 +11,7 @@
 #import "SimpleBookDetailViewController.h"
 #import "ProfileBookCell.h"
 #import "HomeNavigationViewController.h"
-#import "ParseUI.h"
+#import "UIImageView+AFNetworking.h"
 #import "BTUserDefualts.h"
 #import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 
@@ -19,7 +19,7 @@
 @interface PersonalUserViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
-@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
@@ -37,8 +37,9 @@
     self.collectionView.dataSource = self;
     [self.collectionView reloadData];  
     self.usernameLabel.text = self.currentUser.firstName;
-    self.profileImage.file = self.currentUser.profilePicture;
-    [self.profileImage loadInBackground];
+    
+    NSURL *url = [NSURL URLWithString:self.currentUser.profilePicture];
+    [self.profileImage setImageWithURL:url];
     
 }
 

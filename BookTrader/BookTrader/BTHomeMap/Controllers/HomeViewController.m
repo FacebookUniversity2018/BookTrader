@@ -169,15 +169,15 @@
 
 // function that takes a user id and returns a User object
 - (void) getUserWithID: (NSString *) userID {
-    PFQuery *query = [PFQuery queryWithClassName:@"User"];
+    PFQuery *query = [PFQuery queryWithClassName:@"UserProfiles"];
     [query includeKey:@"userId"];
     [query whereKey:@"userId" containsString:userID];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if(!error) {
             self.currentUser = objects[0];
-            [BTUserDefualts setCurrentUserWithId:self.currentUser.userId withName:self.currentUser.firstName withPicture:@"Need URL" withBooks:[NSArray new] withoutBooks:[NSArray new]];
-            NSLog(@"Home View User: %@", self.currentUser);
+            [BTUserDefualts setCurrentUserWithId:self.currentUser.userId withName:self.currentUser.firstName withPicture:self.currentUser.profilePicture withBooks:[NSArray new] withoutBooks:[NSArray new]];
+            NSLog(@"Home View User: %@", [BTUserDefualts getCurrentUser]);
         } else {
             NSLog(@"%@", error.localizedDescription);
             self.currentUser = nil;
