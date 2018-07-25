@@ -11,6 +11,8 @@
 #import "SimpleBookDetailViewController.h"
 #import "HomeNavigationViewController.h"
 #import "ParseUI.h"
+#import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
+
 
 @interface PersonalUserViewController ()
 
@@ -35,6 +37,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)messageButtonPressed:(id)sender {
+    [FBSDKMessengerSharer openMessenger];
+}
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

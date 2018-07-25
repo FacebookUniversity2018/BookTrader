@@ -16,6 +16,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ParseUI.h"
+#import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 
 @interface HomeNavigationViewController () <MKMapViewDelegate>
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -43,6 +44,11 @@
     
     NSLog(@"NAVIGATION USER: %@", self.user);
 }
+
+- (IBAction)tappedMessages:(id)sender {
+    [FBSDKMessengerSharer openMessenger];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

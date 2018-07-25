@@ -36,6 +36,14 @@
     self.bookCover.image = [UIImage imageWithData:imageData];
 }
 
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
 - (IBAction)showNewView:(id)sender {
 //segmented control to switch container views
     if(self.bookControl.selectedSegmentIndex==0){
