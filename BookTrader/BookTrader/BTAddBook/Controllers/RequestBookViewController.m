@@ -7,6 +7,7 @@
 //
 
 #import "RequestBookViewController.h"
+#import "Book.h"
 
 @interface RequestBookViewController ()
 //UI
@@ -42,14 +43,6 @@
     self.bookLon = self.currentLocation.center.longitude;
     self.p_bookLat = @(self.bookLat);
     self.p_bookLon = @(self.bookLon);
-    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withOwn:self.own withSell:nil withTrade:nil withGift:nil withUserID:@"id" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            NSLog(@"I requested the book");
-            //alert
-        } else {
-            NSLog(@"%@", error);
-        }
-    }];
     
 }
 - (IBAction)useCurrentLocation:(id)sender {

@@ -36,10 +36,6 @@
     self.bookCover.image = [UIImage imageWithData:imageData];
 }
 
-
-
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -54,10 +50,10 @@
     } else {
         [UIView animateWithDuration:(0.5) animations:^{
             self.listView.alpha = 0;
-            self.wantView.alpha = 1;     }];
+            self.wantView.alpha = 1;
+        }];
     }
 }
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
    if ([[segue identifier] isEqualToString:@"listBookSegue"]) {
@@ -77,7 +73,7 @@
    }
    else {
      NSLog([segue identifier]);
-}
+   }
 }
 
 @end

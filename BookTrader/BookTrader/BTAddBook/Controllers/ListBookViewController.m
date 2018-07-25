@@ -21,8 +21,8 @@
 //location
 @property (nonatomic) CLLocationDegrees bookLat;
 @property (nonatomic) CLLocationDegrees bookLon;
-@property (nonatomic) NSValue *p_bookLat;
-@property (nonatomic) NSValue *p_bookLon;
+@property (nonatomic) NSNumber *p_bookLat;
+@property (nonatomic) NSNumber *p_bookLon;
 
 //booleans
 @property (nonatomic, assign) BOOL sell;
@@ -49,21 +49,14 @@
 - (IBAction)publishClicked:(id)sender {
     
     self.own = true;
-    //if (true) { // fix later when not testing
-        //latitude
-        //longitude
-     
-   // } else {
-        //use defaults
-   // }
-   
     self.bookLat = self.currentLocation.center.latitude;
     self.bookLon = self.currentLocation.center.longitude;
     self.p_bookLat = @(self.bookLat);
     self.p_bookLon = @(self.bookLon);
-    [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withOwn:self.own withSell:self.sell withTrade:self.trade withGift:self.gift withUserID:@"id" withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    
+    [Book addBookToDatabaseWithTitle:self.title author:self.author coverURL:self.coverurl latitude:self.p_bookLat longitude:self.p_bookLon own:self.own sell:self.sell trade:self.trade gift:self.gift userID:@"fillThisLater" completion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
-            NSLog(@"I posted the book");
+            NSLog(@"book posted");
         } else {
             NSLog(@"%@", error);
         }
@@ -112,14 +105,11 @@
     }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
