@@ -8,6 +8,7 @@
 
 #import "BookDetailViewController.h"
 #import "Book.h"
+#import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 
 @interface BookDetailViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *bookCover;
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"%@", self.book);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +31,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+}
+
+
+- (IBAction)messageButtonPressed:(id)sender {
+    [FBSDKMessengerSharer openMessenger];
+}
+
+- (IBAction)homeButtonPressed:(id)sender {
+    [self performSegueWithIdentifier:@"bookDetailsToHome" sender:nil];
 }
 
 @end

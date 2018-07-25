@@ -9,13 +9,12 @@
 #import "PinAnnotation.h"
 @implementation PinAnnotation
 
-- (instancetype)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)title isbn:(NSString *)isbn owner:(User *)owner {
+- (instancetype)initWithLocation:(CLLocationCoordinate2D)coord title:(NSString *)title book:(Book *)book {
     self = [super init];
     if (self) {
         self.coordinate = coord;
         self.title = title;
-        self.isbn = isbn;
-        self.owner = owner;
+        self.book = book;
     }
     return self;
 }

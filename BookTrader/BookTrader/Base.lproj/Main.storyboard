@@ -133,6 +133,9 @@
                                 <rect key="frame" x="-20" y="25" width="80" height="15"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="burger"/>
+                                <connections>
+                                    <action selector="homeButtonPressed:" destination="yit-sE-hsa" eventType="touchUpInside" id="pyK-Dm-bM6"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images" translatesAutoresizingMaskIntoConstraints="NO" id="Fbb-Qb-aK0">
                                 <rect key="frame" x="113" y="126" width="148" height="160"/>
@@ -222,20 +225,18 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlf-Xf-kIE">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlf-Xf-kIE">
                                         <rect key="frame" x="170" y="56" width="34" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="34" id="RYH-Bl-w2U"/>
-                                            <constraint firstAttribute="height" constant="34" id="Us7-iR-pOE"/>
-                                        </constraints>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.37831836938858032" green="0.17030856013298035" blue="0.074392117559909821" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button" image="iconmonstr-email-4-240"/>
+                                        <connections>
+                                            <action selector="messageButtonPressed:" destination="yit-sE-hsa" eventType="touchUpInside" id="XNh-QY-WfM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.96875897251315468" blue="0.86075985924970622" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="tlf-Xf-kIE" firstAttribute="centerX" secondItem="Zvo-yF-nsM" secondAttribute="centerX" id="6bf-hH-JLF"/>
-                                    <constraint firstItem="tlf-Xf-kIE" firstAttribute="centerX" secondItem="Zvo-yF-nsM" secondAttribute="centerX" id="kuY-yJ-Idb"/>
                                     <constraint firstItem="ZuW-jV-0bc" firstAttribute="centerX" secondItem="Zvo-yF-nsM" secondAttribute="centerX" constant="-7" id="oHd-DS-gJJ"/>
                                 </constraints>
                             </view>
@@ -246,13 +247,13 @@
                     <connections>
                         <outlet property="authorLabel" destination="VI8-zJ-E6c" id="cur-kt-gxk"/>
                         <outlet property="bookCover" destination="Fbb-Qb-aK0" id="LMC-QY-Hek"/>
-                        <outlet property="genreLabel" destination="dW3-kg-mgg" id="Udg-Ha-wCW"/>
                         <outlet property="titleLabel" destination="fbm-B6-Whw" id="BLa-SS-Hms"/>
+                        <segue destination="l2W-ms-CPE" kind="show" identifier="bookDetailsToHome" id="hx5-w3-dZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HH-tL-HT4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3943" y="-458"/>
+            <point key="canvasLocation" x="3941.5999999999999" y="-458.32083958020991"/>
         </scene>
         <!--Other Person View Controller-->
         <scene sceneID="dBg-vy-1LE">
@@ -1461,7 +1462,7 @@
         <segue reference="WpR-MN-ARB"/>
         <segue reference="tmn-nk-c5j"/>
         <segue reference="0Xp-aZ-7uA"/>
-        <segue reference="cml-hS-oe6"/>
+        <segue reference="hx5-w3-dZD"/>
         <segue reference="wOB-wq-4dG"/>
     </inferredMetricsTieBreakers>
 </document>

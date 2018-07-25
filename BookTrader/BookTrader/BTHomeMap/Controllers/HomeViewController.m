@@ -17,6 +17,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "PinAnnotation.h"
+#import "BookDetailViewController.h"
 
 
 
@@ -141,10 +142,7 @@
             CLLocationCoordinate2D centerPoint;
             centerPoint.latitude = [book.latitude doubleValue];
             centerPoint.longitude = [book.longitude doubleValue];
-//            MKPointAnnotation *annotation = [MKPointAnnotation new];
-//            [annotation setCoordinate:centerPoint];
-//            [annotation setTitle:book.title];
-            PinAnnotation *annotation = [[PinAnnotation alloc] initWithLocation:centerPoint title:book.title isbn:book.isbn owner:self.currentUser];
+            PinAnnotation *annotation = [[PinAnnotation alloc] initWithLocation:centerPoint title:book.title book:book];
             [self.mapView addAnnotation:annotation];
         }
     }
@@ -167,8 +165,11 @@
     } else if ([[segue identifier] isEqualToString:@"myBooksSegue"]) {
         HomeBooksViewController *booksViewController = [segue destinationViewController];
         booksViewController.myBooks = self.myBooks;
-    } else {
-        NSLog(@"error");
+    } else if ([[segue identifier] isEqualToString:@"mapToBookSegue"]){
+        BookDetailViewController *detailViewController = [segue destinationViewController];
+        MKAnnotationView *view = sender;
+        PinAnnotation *pinAnnotation = view.annotation;
+        detailViewController.book = pinAnnotation.book;
     }
 }
 
@@ -203,8 +204,8 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     PinAnnotation *pinAnnotation = view.annotation;
-    NSLog(@"THIS IS THE PIN ANNOTATION %@", pinAnnotation.isbn);
- //   [self performSegueWithIdentifier:@"myBooksSegue" sender:view];
+    NSLog(@"THIS IS THE PIN ANNOTATION %@", pinAnnotation.book.isbn);
+    [self performSegueWithIdentifier:@"mapToBookSegue" sender:view];
 }
 
 

@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Book.h"
+#import "User.h"
 
 @interface BookDetailViewController : UIViewController
 
 @property (strong, nonatomic) Book *book;
-@property (strong, nonatomic) NSString *isbn;
 
 @end
