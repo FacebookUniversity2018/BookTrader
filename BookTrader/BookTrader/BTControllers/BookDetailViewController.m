@@ -28,7 +28,6 @@
     self.titleLabel.text = self.book.title;
     self.authorLabel.text = self.book.author;
     self.dateLabel.text = self.book.date;
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +46,10 @@
 
 - (IBAction)homeButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"bookDetailsToHome" sender:nil];
+}
+
+- (IBAction)favoriteBook:(id)sender {
+    [self.book.user addToBooksHave:self.book.title];
 }
 
 @end
