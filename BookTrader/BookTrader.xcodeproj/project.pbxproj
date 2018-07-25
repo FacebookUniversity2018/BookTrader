@@ -32,6 +32,7 @@
 		CE1188AF20FD0FD500C088BA /* AddBookDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188AE20FD0FD500C088BA /* AddBookDetailsViewController.m */; };
 		CE1188B220FD105800C088BA /* PersonalUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188B120FD105800C088BA /* PersonalUserViewController.m */; };
 		CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1188B420FD106400C088BA /* OtherPersonViewController.m */; };
+		CE1A8C472107D5ED000DDBB8 /* ProfileBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8C462107D5ED000DDBB8 /* ProfileBookCell.m */; };
 		CE201B8020FD33E10055EE13 /* BTUITools.m in Sources */ = {isa = PBXBuildFile; fileRef = CE201B7F20FD33E10055EE13 /* BTUITools.m */; };
 		CE201B8320FD36840055EE13 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE201B8220FD36840055EE13 /* MapKit.framework */; };
 		CE40C70120FE9611004E7300 /* MyMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE40C70020FE9611004E7300 /* MyMessageCell.m */; };
@@ -115,6 +116,8 @@
 		CE1188B120FD105800C088BA /* PersonalUserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalUserViewController.m; sourceTree = "<group>"; };
 		CE1188B320FD106400C088BA /* OtherPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherPersonViewController.h; sourceTree = "<group>"; };
 		CE1188B420FD106400C088BA /* OtherPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherPersonViewController.m; sourceTree = "<group>"; };
+		CE1A8C452107D5ED000DDBB8 /* ProfileBookCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileBookCell.h; sourceTree = "<group>"; };
+		CE1A8C462107D5ED000DDBB8 /* ProfileBookCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileBookCell.m; sourceTree = "<group>"; };
 		CE201B7E20FD33E10055EE13 /* BTUITools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTUITools.h; sourceTree = "<group>"; };
 		CE201B7F20FD33E10055EE13 /* BTUITools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTUITools.m; sourceTree = "<group>"; };
 		CE201B8220FD36840055EE13 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -211,7 +214,6 @@
 				CE11887C20FD0C6C00C088BA /* BTUserProfile */,
 				CE11887B20FD0C6200C088BA /* BTHomeMap */,
 				CE11887A20FD0C3900C088BA /* BTFirstStop */,
-				CEEFE6D421010B3A0021CE63 /* BTTests */,
 				CE11884820FD0B8200C088BA /* AppDelegate.h */,
 				CE11884920FD0B8200C088BA /* AppDelegate.m */,
 				CE11884B20FD0B8200C088BA /* ViewController.h */,
@@ -228,6 +230,7 @@
 		CE11886020FD0B8200C088BA /* BookTraderTests */ = {
 			isa = PBXGroup;
 			children = (
+				CEEFE6D421010B3A0021CE63 /* BTTests */,
 				CE11886120FD0B8200C088BA /* BookTraderTests.m */,
 				CE11886320FD0B8200C088BA /* Info.plist */,
 			);
@@ -377,6 +380,8 @@
 		CE11888720FD0CF200C088BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE1A8C452107D5ED000DDBB8 /* ProfileBookCell.h */,
+				CE1A8C462107D5ED000DDBB8 /* ProfileBookCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -796,6 +801,7 @@
 				CE1188B520FD106400C088BA /* OtherPersonViewController.m in Sources */,
 				CE11889A20FD0E1500C088BA /* HomeViewController.m in Sources */,
 				CEDDDCFE20FD4CC8007AF20B /* MessageCell.m in Sources */,
+				CE1A8C472107D5ED000DDBB8 /* ProfileBookCell.m in Sources */,
 				CE1188AF20FD0FD500C088BA /* AddBookDetailsViewController.m in Sources */,
 				CE1188A020FD0F0400C088BA /* MessagesHomeViewController.m in Sources */,
 			);
@@ -969,9 +975,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-
 				DEVELOPMENT_TEAM = A5TQ98F5H4;
-
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -995,12 +999,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PH9LZZN4D9;
 
-
 				INFOPLIST_FILE = BookTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 
 				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader121;
 

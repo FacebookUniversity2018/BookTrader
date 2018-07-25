@@ -10,7 +10,6 @@
 #import "User.h"
 
 @interface PersonalUserViewController : UIViewController
-
+@property (strong, nonatomic) NSArray *myBooks;
 @property (strong, nonatomic) User *currentUser;
-
 @end

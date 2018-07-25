@@ -9,12 +9,14 @@
 #import "PersonalUserViewController.h"
 #import "MessagesHomeViewController.h"
 #import "SimpleBookDetailViewController.h"
+#import "ProfileBookCell.h"
 #import "HomeNavigationViewController.h"
 #import "ParseUI.h"
 #import <FBSDKMessengerShareKit/FBSDKMessengerShareKit.h>
 
 
-@interface PersonalUserViewController ()
+@interface PersonalUserViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -25,7 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.collectionView reloadData];  
     self.usernameLabel.text = self.currentUser.firstName;
     self.profileImage.file = self.currentUser.profilePicture;
     [self.profileImage loadInBackground];
@@ -41,6 +45,15 @@
     [FBSDKMessengerSharer openMessenger];
 }
 
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    ProfileBookCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ProfileBookCell" forIndexPath:indexPath];
+    cell.book = self.myBooks[indexPath.item];
+    return cell;
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.myBooks.count;
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

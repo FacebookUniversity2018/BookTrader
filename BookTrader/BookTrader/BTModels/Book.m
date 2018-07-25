@@ -42,6 +42,7 @@
 //}
 
 
+
 + (void) addBookToDatabaseWithTitle:(NSString *)title author:(NSString *)author coverURL:(NSString *)coverURL
                            latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude own:(BOOL)own
                                sell:(BOOL)sell trade:(BOOL)trade gift:(BOOL)gift userID:(NSString *)userID
@@ -59,5 +60,8 @@
     book.userID = userID;
     [book saveInBackgroundWithBlock:completion];
 }
+
+
+
 
 @end

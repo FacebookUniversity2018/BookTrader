@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeBooksViewController : UIViewController
-
+@property (strong, nonatomic) NSArray *myBooks;
 @end

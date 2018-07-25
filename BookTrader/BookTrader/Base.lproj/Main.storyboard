@@ -593,15 +593,22 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BookCell" reuseIdentifier="BookCell" id="a7n-0y-VA5">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BookCell" reuseIdentifier="BookCell" id="a7n-0y-VA5" customClass="BookCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="172"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="105" height="172"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxY-CI-adZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="172"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
                                                 </view>
                                                 <color key="backgroundColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
+                                                    <outlet property="bookCoverImage" destination="bxY-CI-adZ" id="8oa-aW-M98"/>
                                                     <segue destination="87K-le-6w6" kind="show" identifier="myBooksHomeToBookDetailSegue" id="pUc-75-NA2"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -625,7 +632,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1449" y="922"/>
+            <point key="canvasLocation" x="1448.8" y="921.58920539730138"/>
         </scene>
         <!--Logged In-->
         <scene sceneID="Z6N-jq-L1F">
@@ -873,7 +880,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="LUI-3h-DdL">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileBookCell" id="LUI-3h-DdL" customClass="ProfileBookCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="99" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -887,6 +894,7 @@
                                                     </subviews>
                                                 </view>
                                                 <connections>
+                                                    <outlet property="coverImageView" destination="SHm-SG-nGt" id="Kon-o5-3eO"/>
                                                     <segue destination="87K-le-6w6" kind="show" identifier="personalProfileToBookDetailSegue" id="WpR-MN-ARB"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -951,6 +959,7 @@
                         <viewLayoutGuide key="safeArea" id="6jh-lq-xXb"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="bmr-4R-avb" id="K4n-xw-uEs"/>
                         <outlet property="profileImage" destination="KgJ-f9-hcd" id="Odv-Cv-WQh"/>
                         <outlet property="usernameLabel" destination="n0E-N3-5Zb" id="t8E-aa-h6B"/>
                     </connections>

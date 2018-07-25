@@ -32,5 +32,22 @@
 }
 
 
++ (void)setCurrentUserWithId:(NSString *)userId withName:(NSString *)name withPicture:(NSString *)profilePicture withBooks:(NSArray *)booksHave withoutBooks:(NSArray *)booksWant {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userDict = @{@"id":userId,
+                               @"name":name,
+                               @"picture":profilePicture,
+                               @"booksHave":booksHave,
+                               @"booksWant":booksWant,
+                               };
+    [defaults setObject:userDict forKey:@"currentUser"];
+}
+
++ (NSDictionary *)getCurrentUser {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *currentUser = [defaults objectForKey:@"currentUser"];
+    return currentUser;
+}
+
 
 @end
