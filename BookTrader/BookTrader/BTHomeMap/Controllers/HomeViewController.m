@@ -163,5 +163,32 @@
     }
 }
 
+- (void)fetchBooks {
+    PFQuery *query = [PFQuery queryWithClassName:@"Book"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error);
+        } else {
+            self.booksArray = objects;
+            [self updateBookLocations:self.booksArray];
+        }
+    }];
+}
+
+- (void)updateBookLocations:(NSArray *)books {
+    for (int i = 0; i < books.count; i++) {
+        Book *book = books[i];
+        if (book.latitude && book.longitude) {
+            CLLocationCoordinate2D centerPoint;
+            centerPoint.latitude = [book.latitude doubleValue];
+            centerPoint.longitude = [book.longitude doubleValue];
+            MKPointAnnotation *annotation = [MKPointAnnotation new];
+            [annotation setCoordinate:centerPoint];
+            [annotation setTitle:book.title];
+            [self.mapView addAnnotation:annotation];
+        }
+    }
+}
+
 
 @end

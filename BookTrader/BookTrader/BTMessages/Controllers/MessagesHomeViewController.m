@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [FBSDKMessengerSharer openMessenger];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView reloadData];

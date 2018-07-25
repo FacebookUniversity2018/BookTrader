@@ -12,15 +12,14 @@
 
 @interface Book : PFObject<PFSubclassing> 
 
+@property (strong, nonatomic) User *user;
+
+@property (strong, nonatomic) NSString *userID;
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *author;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *coverurl;
-//@property (strong, nonatomic) NSString *overview;
-
 @property (strong, nonatomic) User *user;
-
-
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSString *userID;
@@ -30,10 +29,12 @@
 @property (nonatomic) BOOL sell;
 @property (nonatomic) BOOL trade;
 @property (nonatomic) BOOL gift;
-@property (nonatomic) BOOL location;
 
 - (void) setIsbn:(NSString *)str_bsn;
 
 
-+ (void) addBookToDatabaseWithTitle:(NSString *)title withAuthor:(NSString *)author withCoverURL:(NSString *)coverURL withLatitude:(NSNumber *)latitude withLongitude:(NSNumber *)longitude withOwn:(BOOL)own withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withUserID:(NSString *)userId withCompletion:(PFBooleanResultBlock)completion;
++ (void) addBookToDatabaseWithTitle:(NSString *)title author:(NSString *)author coverURL:(NSString *)coverURL
+                           latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude own:(BOOL)own
+                               sell:(BOOL)sell trade:(BOOL)trade gift:(BOOL)gift userID:(NSString *)userID
+                         completion:(PFBooleanResultBlock)completion;
 @end

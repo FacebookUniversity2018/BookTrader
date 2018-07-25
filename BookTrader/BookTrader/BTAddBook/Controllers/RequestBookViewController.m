@@ -7,8 +7,21 @@
 //
 
 #import "RequestBookViewController.h"
+#import "Book.h"
 
 @interface RequestBookViewController ()
+//UI
+@property (strong, nonatomic) IBOutlet UIButton *locationButton;
+
+//location
+@property (nonatomic) CLLocationDegrees bookLat;
+@property (nonatomic) CLLocationDegrees bookLon;
+@property (nonatomic) NSValue *p_bookLat;
+@property (nonatomic) NSValue *p_bookLon;
+
+//booleans
+@property (nonatomic, assign) BOOL location;
+@property (nonatomic, assign) BOOL own;
 
 @end
 
@@ -22,6 +35,26 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)requestClicked:(id)sender {
+    self.own = false;
+
+    self.bookLat = self.currentLocation.center.latitude;
+    self.bookLon = self.currentLocation.center.longitude;
+    self.p_bookLat = @(self.bookLat);
+    self.p_bookLon = @(self.bookLon);
+    
+}
+- (IBAction)useCurrentLocation:(id)sender {
+
+    if (!self.location) {
+        self.location = true;
+        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-4-240.png"] forState:UIControlStateNormal];
+    } else if (self.location) {
+        self.location = false;
+        [self.locationButton setImage:[UIImage imageNamed:@"iconmonstr-checkbox-6-240.png"] forState:UIControlStateNormal];
+        //set book location with defaults
+    }
 }
 
 /*

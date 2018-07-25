@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddBookDetailsViewController.h"
+#import "Book.h"
 
 @interface RequestBookViewController : UIViewController
+
+@property (strong, nonatomic) NSString *title;
+@property (strong, nonatomic) NSString *author;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *coverurl;
+@property (nonatomic) MKCoordinateRegion currentLocation;
+
 
 @end
