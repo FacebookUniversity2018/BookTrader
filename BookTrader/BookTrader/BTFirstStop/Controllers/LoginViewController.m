@@ -96,6 +96,8 @@
                         self.currentUser = [User new];
                         self.currentUser.firstName = self.profileInfo[@"name"];
                         self.currentUser.profilePicture = imageFile;
+                        
+                        
                         NSLog(@"LOGIN USER: %@", self.currentUser);
                         [self performSegueWithIdentifier:@"loginToHomeSegue" sender:self];
                         

@@ -61,6 +61,7 @@
     self.bookLon = self.currentLocation.center.longitude;
     self.p_bookLat = @(self.bookLat);
     self.p_bookLon = @(self.bookLon);
+    /*
     [Book addBookToDatabaseWithTitle:self.title withAuthor:self.author withCoverURL:self.coverurl withLatitude:self.p_bookLat withLongitude:self.p_bookLon withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"I posted the book");
@@ -68,6 +69,7 @@
             NSLog(@"%@", error);
         }
     }];
+     */
     
     [self dismissViewControllerAnimated:true completion:nil];
 }

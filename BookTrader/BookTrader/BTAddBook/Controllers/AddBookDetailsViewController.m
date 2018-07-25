@@ -71,8 +71,8 @@
              withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
              }];
    */
-}
 
+/*
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
