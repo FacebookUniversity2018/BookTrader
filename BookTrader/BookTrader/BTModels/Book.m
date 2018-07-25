@@ -13,22 +13,39 @@
 
 @implementation Book
 
-@dynamic author, title, date, coverurl, userID, longitude, latitude, own, want, sell, trade, gift, location,user;
-NSString *str_bsnNum;
-NSDictionary *rawJson;
-BOOL getInfo;
+@dynamic author;
+@dynamic title;
+@dynamic date;
+@dynamic coverurl;
+@dynamic userID;
+@dynamic longitude;
+@dynamic latitude;
+@dynamic own;
+@dynamic want;
+@dynamic sell;
+@dynamic trade;
+@dynamic gift;
+@dynamic overview;
+
+//NSString *str_bsnNum;
+//NSDictionary *rawJson;
+//BOOL getInfo;
 
 
 + (nonnull NSString *)parseClassName {
     return @"Book";
 }
 
-- (void) setIsbn:(NSString *)str_bsn {
-    str_bsnNum = str_bsn;
-}
+//- (void) setIsbn:(NSString *)str_bsn {
+//    NSString *str_bsnNum;
+//    str_bsnNum = str_bsn;
+//}
 
 
-+ (void) addBookToDatabaseWithTitle:(NSString *)title withAuthor:(NSString *)author withCoverURL:(NSString *)coverURL withLatitude:(NSValue *)latitude withLongitude:(NSValue *)longitude withOwn:(BOOL)own withSell:(BOOL)sell withTrade:(BOOL)trade withGift:(BOOL)gift withUserID:(NSString *)userId withCompletion:(PFBooleanResultBlock)completion {
++ (void) addBookToDatabaseWithTitle:(NSString *)title author:(NSString *)author coverURL:(NSString *)coverURL
+                           latitude:(NSNumber *)latitude longitude:(NSNumber *)longitude own:(BOOL)own
+                               sell:(BOOL)sell trade:(BOOL)trade gift:(BOOL)gift userID:(NSString *)userID
+                         completion:(PFBooleanResultBlock)completion {
     Book *book = [Book new];
     book.title = title;
     book.author = author;
@@ -39,8 +56,7 @@ BOOL getInfo;
     book.sell = sell;
     book.trade = trade;
     book.gift = gift;
-    book.userID = userId;
-    
+    book.userID = userID;
     [book saveInBackgroundWithBlock:completion];
 }
 
