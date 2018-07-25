@@ -987,11 +987,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader102;
->>>>>>> 65509f8bbdf6811013219932dd64020391b56e63
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1011,11 +1007,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = BookTrader;
-=======
-				PRODUCT_BUNDLE_IDENTIFIER = connorclancy.BookTrader102;
->>>>>>> 65509f8bbdf6811013219932dd64020391b56e63
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
