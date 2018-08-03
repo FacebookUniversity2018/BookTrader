@@ -194,15 +194,11 @@
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     NSString *identifier = @"identity";
-    
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
-    
     MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
     annotationView.canShowCallout = YES;
     annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    
     return annotationView;
 }
 
@@ -210,7 +206,6 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     PinAnnotation *pinAnnotation = view.annotation;
-    NSLog(@"THIS IS THE PIN ANNOTATION %@", pinAnnotation.book.isbn);
     [self performSegueWithIdentifier:@"mapToBookSegue" sender:view];
 }
   
